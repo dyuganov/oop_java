@@ -8,7 +8,7 @@ public class Robot implements Executor {
     Robot(){
         this.coords = new Coordinates();
     }
-    Robot(Coordinates coords){
+    public Robot(Coordinates coords){
         this.coords = coords;
     }
 
@@ -24,7 +24,7 @@ public class Robot implements Executor {
     public Coordinates getCoords;
 
     public void move(Direction direction){}
-    //public void move(ru.nsu.Dyuagnov.LogoWorld.Coordinates.ru.nsu.Dyuagnov.LogoWorld.Coordinates coords);
+    //public void move(ru.nsu.Dyuagnov.ru.nsu.Dyuagnov.LogoWorld.LogoWorld.Coordinates.ru.nsu.Dyuagnov.ru.nsu.Dyuagnov.LogoWorld.LogoWorld.Coordinates coords);
     public void teleport(Coordinates coords){}
     public void draw(){}
     public void ward(){}

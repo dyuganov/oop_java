@@ -7,4 +7,9 @@ public class Init implements Command{
     public void execute(String[] args, Field field) {
 
     }
+
+    // INIT <width> <height> <x> <y>
+    public Init(int width, int height, int x, int y){
+
+    }
 }
