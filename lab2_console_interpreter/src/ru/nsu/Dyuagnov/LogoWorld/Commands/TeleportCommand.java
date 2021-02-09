@@ -1,11 +1,14 @@
 package ru.nsu.Dyuagnov.LogoWorld.Commands;
 
+import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
-import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 
-public class Draw implements Command {
+import java.lang.reflect.Field;
+
+public class TeleportCommand implements Command{
+
     private Executor executor = null;
-    public Draw(Executor executor){
+    public TeleportCommand(Executor executor, Coordinates coords){
         this.executor = executor;
     }
 
@@ -13,4 +16,5 @@ public class Draw implements Command {
     public void execute() {
 
     }
+
 }

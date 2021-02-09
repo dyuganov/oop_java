@@ -4,11 +4,11 @@ import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 
 import java.lang.reflect.Field;
 
-public class Ward implements Command{
+public class WardCommand implements Command{
 
 
     private Executor executor = null;
-    public Ward(Executor executor){
+    public WardCommand(Executor executor){
         this.executor = executor;
     }
     @Override

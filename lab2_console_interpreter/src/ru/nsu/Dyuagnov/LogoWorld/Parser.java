@@ -5,6 +5,7 @@ import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Direction;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 
+import java.util.HashMap;
 import java.util.Locale;
 
 
@@ -21,34 +22,34 @@ public class Parser {
                 int height = parseInt(args[2]);
                 int x = parseInt(args[3]);
                 int y = parseInt(args[4]);
-                return new Init(executor, width, height, new Coordinates(x, y));
+                return new InitCommand(executor, width, height, new Coordinates(x, y));
 
             case "MOVE": // MOVE [L|R|U|D] <steps>
                 int stepsN = parseInt(args[2]);
                 switch(args[1]){
                     case "L":
-                        return new Move(executor, Direction.LEFT, stepsN);
+                        return new MoveCommand(executor, Direction.LEFT, stepsN);
 
                     case "R":
-                        return new Move(executor, Direction.RIGHT, stepsN);
+                        return new MoveCommand(executor, Direction.RIGHT, stepsN);
 
                     case "U":
-                        return new Move(executor, Direction.UP, stepsN);
+                        return new MoveCommand(executor, Direction.UP, stepsN);
 
                     case "D":
-                        return new Move(executor, Direction.DOWN, stepsN);
+                        return new MoveCommand(executor, Direction.DOWN, stepsN);
                 }
 
             case "DRAW": // DRAW
-                return new Draw(executor);
+                return new DrawCommand(executor);
 
             case "WARD": // WARD
-                return new Ward(executor);
+                return new WardCommand(executor);
 
             case "TELEPORT": // TELEPORT <x> <y>
                 x = parseInt(args[1]);
                 y = parseInt(args[2]);
-                return new Teleport(executor, new Coordinates(x, y));
+                return new TeleportCommand(executor, new Coordinates(x, y));
 
             default:
                 System.out.println("Wrong command.");

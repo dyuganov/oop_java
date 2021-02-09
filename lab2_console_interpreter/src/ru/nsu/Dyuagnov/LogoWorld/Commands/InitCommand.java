@@ -1,14 +1,13 @@
 package ru.nsu.Dyuagnov.LogoWorld.Commands;
 
-import ru.nsu.Dyuagnov.LogoWorld.Executor.Direction;
+import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 
-import java.lang.reflect.Field;
-
-public class Move implements Command{
+public class InitCommand implements Command{
 
     private Executor executor = null;
-    public Move(Executor executor, Direction direction, int stepsN){
+    // INIT <width> <height> <x> <y>
+    public InitCommand(Executor executor, int width, int height, Coordinates coords){
         this.executor = executor;
     }
 
@@ -16,4 +15,6 @@ public class Move implements Command{
     public void execute() {
 
     }
+
+
 }

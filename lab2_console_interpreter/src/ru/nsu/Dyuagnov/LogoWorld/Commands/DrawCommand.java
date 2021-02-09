@@ -1,13 +1,10 @@
 package ru.nsu.Dyuagnov.LogoWorld.Commands;
 
-import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 
-public class Init implements Command{
-
+public class DrawCommand implements Command {
     private Executor executor = null;
-    // INIT <width> <height> <x> <y>
-    public Init(Executor executor, int width, int height, Coordinates coords){
+    public DrawCommand(Executor executor){
         this.executor = executor;
     }
 
@@ -15,6 +12,4 @@ public class Init implements Command{
     public void execute() {
 
     }
-
-
 }
