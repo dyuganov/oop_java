@@ -1,15 +1,20 @@
 package ru.nsu.Dyuagnov.LogoWorld.Commands;
 
-import java.lang.reflect.Field;
+import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
+import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 
 public class Init implements Command{
-    @Override
-    public void execute(String[] args, Field field) {
 
-    }
-
+    private Executor executor = null;
     // INIT <width> <height> <x> <y>
-    public Init(int width, int height, int x, int y){
+    public Init(Executor executor, int width, int height, Coordinates coords){
+        this.executor = executor;
+    }
+
+    @Override
+    public void execute() {
 
     }
+
+
 }

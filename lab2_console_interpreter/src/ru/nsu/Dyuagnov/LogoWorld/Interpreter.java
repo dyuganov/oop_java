@@ -4,20 +4,19 @@ import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Robot;
 
-public class Interpreter {
-    private Executor executor = null;
+import java.util.Scanner;
 
-    public Interpreter(){
-        executor = new Robot(new Coordinates(0,0));
-    }
-    public Interpreter(Executor executor){
-        this.executor = executor;
-    }
+
+public class Interpreter {
+    public Interpreter(){}
 
     public void run(){
-
+        Scanner in = new Scanner(System.in);
+        Parser parser = new Parser();
+        Executor executor = new Robot(new Coordinates(0,0));
 
         while(true){
+            parser.parse(in.nextLine(), executor).execute();
 
         }
     }
