@@ -8,9 +8,8 @@ public class WardCommand implements Command{
 
 
     private Executor executor = null;
-    public WardCommand(Executor executor){
-        this.executor = executor;
-    }
+    public WardCommand(CommandArgs commandArgs){}
+
     @Override
     public void execute() {
 

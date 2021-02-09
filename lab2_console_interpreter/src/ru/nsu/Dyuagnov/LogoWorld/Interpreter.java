@@ -1,6 +1,5 @@
 package ru.nsu.Dyuagnov.LogoWorld;
 
-import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Robot;
 

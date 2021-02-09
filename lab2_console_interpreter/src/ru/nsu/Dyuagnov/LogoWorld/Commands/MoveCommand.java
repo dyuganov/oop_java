@@ -8,8 +8,7 @@ import java.lang.reflect.Field;
 public class MoveCommand implements Command{
 
     private Executor executor = null;
-    public MoveCommand(Executor executor, Direction direction, int stepsN){
-        this.executor = executor;
+    public MoveCommand(CommandArgs commandArgs){
     }
 
     @Override

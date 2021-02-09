@@ -1,6 +1,6 @@
 package ru.nsu.Dyuagnov.LogoWorld.Executor;
 
-import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
+import ru.nsu.Dyuagnov.LogoWorld.Coordinates;
 
 public class Robot implements Executor {
     private Coordinates coords = new Coordinates();

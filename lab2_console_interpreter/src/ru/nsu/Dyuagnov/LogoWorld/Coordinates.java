@@ -1,4 +1,4 @@
-package ru.nsu.Dyuagnov.LogoWorld.Coordinates;
+package ru.nsu.Dyuagnov.LogoWorld;
 
 public class Coordinates {
     private int x = 0;
