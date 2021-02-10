@@ -7,7 +7,6 @@ import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 
 import java.util.Locale;
 
-
 public class Parser {
     public Command parse(String commandLine, Executor executor, Field field){
         commandLine = commandLine.toUpperCase(Locale.ROOT);
