@@ -1,13 +1,17 @@
 package ru.nsu.Dyuagnov.LogoWorld.Commands;
 
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
+import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 
-import java.util.Map;
 
 public class DrawCommand implements Command {
     private Executor executor = null;
-    public DrawCommand(CommandArgs commandArgs){
+    private Field field = null;
 
+    // DRAW
+    public DrawCommand(CommandArgs commandArgs){
+        this.executor = commandArgs.getExecutor();
+        this.field = commandArgs.getField();
     }
 
     @Override
