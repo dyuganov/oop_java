@@ -9,4 +9,5 @@ public interface Executor {
     void ward();
     boolean isDrawing();
     Coordinates getCoordinates();
+    void setCoordinates(Coordinates coordinates);
 }

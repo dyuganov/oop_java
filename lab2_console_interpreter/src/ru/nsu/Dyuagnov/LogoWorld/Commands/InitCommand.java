@@ -26,8 +26,7 @@ public class InitCommand implements Command{
 
     @Override
     public void execute() {
-
+        executor.setCoordinates(coords);
+        field = new Field(width, height);
     }
-
-
 }
