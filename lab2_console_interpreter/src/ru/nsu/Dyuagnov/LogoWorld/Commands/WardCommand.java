@@ -5,7 +5,7 @@ import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 
 public class WardCommand implements Command{
     private Executor executor = null;
-    private Field field = null;
+    private Field field;
 
     // WARD
     public WardCommand(CommandArgs commandArgs){
@@ -15,7 +15,9 @@ public class WardCommand implements Command{
 
     @Override
     public void execute() {
+        if(executor == null){
+            throw new IllegalArgumentException("WardCommand.execute() error. Got null argument.");
+        }
         executor.ward();
     }
-
 }

@@ -3,14 +3,15 @@ package ru.nsu.Dyuagnov.LogoWorld.Commands;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Direction;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
+import ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
 
 import static java.lang.Integer.parseInt;
 
 public class MoveCommand implements Command{
     private Executor executor = null;
     private Field field = null;
-    Direction direction; // а оно вообще надо?
-    int stepsN = 0;
+    Direction direction;
+    int stepsN = 1;
 
     // MOVE [L|R|U|D] <steps>
     public MoveCommand(CommandArgs commandArgs){
@@ -28,6 +29,14 @@ public class MoveCommand implements Command{
 
     @Override
     public void execute() {
-        executor.move(direction);
+        if(executor == null || field == null){
+            throw new IllegalArgumentException("MoveCommand.execute() error. Got null argument.");
+        }
+        for(int i = 0; i < stepsN; ++i){
+            executor.move(direction);// TODO: обработка границ
+            if(executor.isDrawing()){
+                field.setObject(executor.getCoordinates(), Cell.FILLED);
+            }
+        }
     }
 }

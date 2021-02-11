@@ -2,7 +2,7 @@ package ru.nsu.Dyuagnov.LogoWorld.Commands;
 
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
-import ru.nsu.Dyuagnov.LogoWorld.Field.Object;
+import ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
 
 
 public class DrawCommand implements Command {
@@ -17,7 +17,10 @@ public class DrawCommand implements Command {
 
     @Override
     public void execute() {
+        if(executor == null || field == null){
+            throw new IllegalArgumentException("DrawCommand.execute() error. Got null argument.");
+        }
         executor.draw();
-        field.setObject(executor.getCoordinates(), Object.FILLED);
+        field.setObject(executor.getCoordinates(), Cell.FILLED);
     }
 }

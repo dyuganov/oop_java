@@ -7,11 +7,11 @@ import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 import static java.lang.Integer.parseInt;
 
 public class InitCommand implements Command{
-    private Executor executor = null;
-    private Field field = null;
-    private int width = 0;
-    private int height = 0;
-    private Coordinates coords = null;
+    final private Executor executor;
+    private Field field;
+    final int width;
+    final private int height;
+    final private Coordinates coords;
 
     // INIT <width> <height> <x> <y>
     public InitCommand(CommandArgs commandArgs){
@@ -27,6 +27,6 @@ public class InitCommand implements Command{
     @Override
     public void execute() {
         executor.setCoordinates(coords);
-        field = new Field(width, height);
+        field.resize(width, height);
     }
 }

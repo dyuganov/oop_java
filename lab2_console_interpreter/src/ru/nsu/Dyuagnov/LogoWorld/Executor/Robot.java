@@ -1,18 +1,18 @@
 package ru.nsu.Dyuagnov.LogoWorld.Executor;
-
 import ru.nsu.Dyuagnov.LogoWorld.Coordinates;
 
 public class Robot implements Executor {
-    private Coordinates coordinates = new Coordinates();
+    private Coordinates coordinates;
     private boolean isDrawing = false;
 
-    public Robot(){}
-
-    public Robot(Coordinates coords){
-        this.coordinates = coords;
+    public Robot(final Coordinates coordinates){
+        setCoordinates(coordinates);
     }
 
-    public void setCoordinates(Coordinates coordinates){
+    public void setCoordinates(final Coordinates coordinates){
+        if(coordinates == null){
+            throw new IllegalArgumentException("Robot.setCoordinates(Coordinates coordinates) error. Got coordinates == null.");
+        }
         this.coordinates = coordinates;
     }
 
@@ -37,16 +37,16 @@ public class Robot implements Executor {
     @Override
     public void move(Direction direction){
         switch (direction){
-            case UP -> setCoordX(coordinates.getX() + 1);
-            case DOWN -> setCoordX(coordinates.getX() - 1);
+            case UP -> setCoordX(coordinates.getX() - 1);
+            case DOWN -> setCoordX(coordinates.getX() + 1);
             case LEFT -> setCoordY(coordinates.getY() - 1);
             case RIGHT -> setCoordY(coordinates.getY() + 1);
         }
     }
 
     @Override
-    public void teleport(Coordinates coords){
-        this.coordinates = coords;
+    public void teleport(Coordinates coordinates){
+        this.setCoordinates(coordinates);
     }
 
     @Override

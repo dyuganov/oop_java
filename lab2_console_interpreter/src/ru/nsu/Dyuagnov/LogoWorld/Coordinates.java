@@ -7,15 +7,24 @@ public class Coordinates {
     public Coordinates(){}
 
     public Coordinates(int x, int y){
+        if(x < 0 || y < 0){
+            throw new IllegalArgumentException("Coordinates constructor got negative args.");
+        }
         this.x = x;
         this.y = y;
     }
 
     public void setX(int val){
+        if(val < 0){
+            throw new IllegalArgumentException("Coordinates.setX(int val) got negative arg.");
+        }
         this.x = val;
     }
 
     public void setY(int val){
+        if(val < 0){
+            throw new IllegalArgumentException("Coordinates.setY(int val) got negative arg.");
+        }
         this.y = val;
     }
 

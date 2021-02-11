@@ -14,17 +14,16 @@ public class ConsoleUI implements UI {
         final int viewField = 10;
         for(int i = -viewField; i < viewField; ++i){
             for(int j = -viewField; j < viewField; ++j){
-                if(executor.getCoordinates().getX() == i && executor.getCoordinates().getY() == j) {
-                    System.out.print("E");
-                    continue;
-                }
                 int x = i + executor.getCoordinates().getX();
                 int y = j + executor.getCoordinates().getY();
-                if(x < 0 || x >= field.getWidth() || y < 0 || y >= field.getHeight()) {
+                if(executor.getCoordinates().getX() == x && executor.getCoordinates().getY() == y) {
+                    System.out.print("E ");
+                }
+                else if(x < 0 || x >= field.getWidth() || y < 0 || y >= field.getHeight()) {
                     System.out.print("  ");
                 }
                 else {
-                    System.out.print(field.getObject(new Coordinates(x, y)).toString());
+                    System.out.print(field.getObject(new Coordinates(y, x)).toString() + ' ');
                 }
             }
             System.out.print('\n');

@@ -5,46 +5,50 @@ import ru.nsu.Dyuagnov.LogoWorld.Coordinates;
 import java.util.ArrayList;
 
 /*
-* 0------> width (X)
+* 0------> width (Y)
 * |
 * |
-* V height (Y)
+* V height (X)
 * */
 
 public class Field {
-    private int width = 10;
-    private int height = 10;
-    ArrayList<ArrayList<Object>> field = null; // хранить одномерно в стиле Си?
-    //Coordinates robotPosition = new Coordinates(0,0);
+    private int width;
+    private int height;
+    Cell[][] field;
 
-    public Field(int width, int height){
+    public Field(final int width, final int height){
+        resize(width, height);
+    }
+
+    public void resize(final int width, final int height){
         if(width > 0 && height > 0) {
             this.width = width;
             this.height = height;
-            field = new ArrayList<ArrayList<Object>>(width); // init field here
-            for(ArrayList<Object> line : field){
-                for (int i = 0; i < height; i++) {
-                    line.add(Object.EMPTY);
+
+            field = new Cell[width][height];
+            for (int i = 0; i < width; i++) {
+                for (int j = 0; j < height; j++) {
+                    field[i][j] = Cell.EMPTY;
                 }
             }
         }
         else {
-            throw new IllegalArgumentException("Wrong parameters (length or width) value in Field constructor.");
+            throw new IllegalArgumentException("Field.resize(int width, int height) error. Got negative or zero value.");
         }
     }
 
-    public void setObject(Coordinates coords, Object object){
+    public void setObject(final Coordinates coords, final Cell object){
         if(coords == null || object == null){
             throw new IllegalArgumentException("Field.setObject coords or object == null.");
         }
-        if(coords.getX() < 0 || coords.getX() > width || coords.getY() < 0 || coords.getY() > height){
+        if(coords.getX() < 0 || coords.getX() >= width || coords.getY() < 0 || coords.getY() >= height){
             throw new IllegalArgumentException("Wrong Field.setObject param coords values.");
         }
-        field.get(coords.getX()).set(coords.getY(), object);
+        field[coords.getX()][coords.getY()] = object;
     }
 
-    public Object getObject(Coordinates coords){
-        return field.get(coords.getX()).get(coords.getY());
+    public Cell getObject(final Coordinates coords){
+        return field[coords.getY()][coords.getX()];
     }
 
     public int getWidth(){
@@ -54,5 +58,4 @@ public class Field {
     public int getHeight(){
         return height;
     }
-
 }

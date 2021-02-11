@@ -5,9 +5,9 @@ import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 
 // command context and params
 public class CommandArgs {
-    private Executor executor = null;
-    private Field field = null;
-    private String[] args = null;
+    private Executor executor;
+    private Field field ;
+    private String[] args;
 
     public CommandArgs(Executor executor, Field field, String[] args){
         this.executor = executor;

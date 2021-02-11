@@ -13,7 +13,6 @@ public class Parser {
         String[] args = commandLine.split(" ");
 
         CommandFactory commandFactory = null;
-
         switch (args[0]) {
             // INIT <width> <height> <x> <y>
             case "INIT" -> commandFactory = new InitCommandFactory();

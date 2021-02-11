@@ -3,6 +3,7 @@ package ru.nsu.Dyuagnov.LogoWorld.Commands;
 import ru.nsu.Dyuagnov.LogoWorld.Coordinates;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
+import ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
 
 import static java.lang.Integer.parseInt;
 
@@ -22,7 +23,13 @@ public class TeleportCommand implements Command{
 
     @Override
     public void execute() {
-        executor.setCoordinates(coords);
+        if(executor == null || field == null){
+            throw new IllegalArgumentException("TeleportCommand.execute() error. Got null argument.");
+        }
+        executor.teleport(coords);
+        if(executor.isDrawing()){
+            field.setObject(executor.getCoordinates(), Cell.FILLED);
+        }
     }
 
 }
