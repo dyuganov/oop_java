@@ -8,6 +8,7 @@ import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 import java.util.Locale;
 
 public class Parser {
+    private boolean firstInit = false;
     public Command parse(String commandLine, Executor executor, Field field){
         commandLine = commandLine.toUpperCase(Locale.ROOT);
         String[] args = commandLine.split(" ");
@@ -15,7 +16,10 @@ public class Parser {
         CommandFactory commandFactory = null;
         switch (args[0]) {
             // INIT <width> <height> <x> <y>
-            case "INIT" -> commandFactory = new InitCommandFactory();
+            case "INIT" -> {
+                firstInit = true;
+                commandFactory = new InitCommandFactory();
+            }
             // MOVE [L|R|U|D] <steps>
             case "MOVE" -> commandFactory = new MoveCommandFactory();
             // DRAW
@@ -28,6 +32,9 @@ public class Parser {
                 System.out.println("Wrong command.");
                 return null;
             }
+        }
+        if(!firstInit){
+            throw new RuntimeException("Error in Parser.parse. No first init.");
         }
         return commandFactory.create(new CommandArgs(executor, field, args));
     }

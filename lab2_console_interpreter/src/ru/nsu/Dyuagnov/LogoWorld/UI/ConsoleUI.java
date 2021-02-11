@@ -19,11 +19,11 @@ public class ConsoleUI implements UI {
                 if(executor.getCoordinates().getX() == x && executor.getCoordinates().getY() == y) {
                     System.out.print("E ");
                 }
-                else if(x < 0 || x >= field.getWidth() || y < 0 || y >= field.getHeight()) {
+                else if(x < 0 || x >= field.getHeight() || y < 0 || y >= field.getWidth()) {
                     System.out.print("  ");
                 }
                 else {
-                    System.out.print(field.getObject(new Coordinates(y, x)).toString() + ' ');
+                    System.out.print(field.getObject(new Coordinates(x, y)).toString() + ' ');
                 }
             }
             System.out.print('\n');

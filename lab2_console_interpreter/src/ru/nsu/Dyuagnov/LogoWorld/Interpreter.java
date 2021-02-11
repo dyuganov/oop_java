@@ -18,7 +18,15 @@ public class Interpreter {
             Field field = new Field(1,1);
             UI UI = new ConsoleUI();
 
+            System.out.println("Available commands:\n" +
+                    "INIT <width> <height> <x> <y>\n" +
+                    "MOVE [L|R|U|D] <steps>\n" +
+                    "DRAW\n" +
+                    "WARD\n" +
+                    "TELEPORT <x> <y>\n");
+
             while (true) {
+                System.out.print("Your command: ");
                 parser.parse(in.nextLine(), executor, field).execute();
                 UI.draw(executor, field);
             }

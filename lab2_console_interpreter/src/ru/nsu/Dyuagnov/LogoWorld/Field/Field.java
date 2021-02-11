@@ -2,8 +2,6 @@ package ru.nsu.Dyuagnov.LogoWorld.Field;
 
 import ru.nsu.Dyuagnov.LogoWorld.Coordinates;
 
-import java.util.ArrayList;
-
 /*
 * 0------> width (Y)
 * |
@@ -24,10 +22,9 @@ public class Field {
         if(width > 0 && height > 0) {
             this.width = width;
             this.height = height;
-
-            field = new Cell[width][height];
-            for (int i = 0; i < width; i++) {
-                for (int j = 0; j < height; j++) {
+            field = new Cell[height][width];
+            for (int i = 0; i < height; i++) {
+                for (int j = 0; j < width; j++) {
                     field[i][j] = Cell.EMPTY;
                 }
             }
@@ -41,14 +38,14 @@ public class Field {
         if(coords == null || object == null){
             throw new IllegalArgumentException("Field.setObject coords or object == null.");
         }
-        if(coords.getX() < 0 || coords.getX() >= width || coords.getY() < 0 || coords.getY() >= height){
+        if(coords.getX() < 0 || coords.getX() >= height || coords.getY() < 0 || coords.getY() >= width){
             throw new IllegalArgumentException("Wrong Field.setObject param coords values.");
         }
         field[coords.getX()][coords.getY()] = object;
     }
 
     public Cell getObject(final Coordinates coords){
-        return field[coords.getY()][coords.getX()];
+        return field[coords.getX()][coords.getY()];
     }
 
     public int getWidth(){

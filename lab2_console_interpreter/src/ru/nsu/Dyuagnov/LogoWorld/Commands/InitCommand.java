@@ -26,7 +26,13 @@ public class InitCommand implements Command{
 
     @Override
     public void execute() {
-        executor.setCoordinates(coords);
         field.resize(width, height);
+        if(width > coords.getY() && height > coords.getX()){
+            executor.setCoordinates(coords);
+        }
+        else {
+            throw new IllegalArgumentException("InitCommand.execute error. Wrong executor coordinates.");
+        }
+
     }
 }
