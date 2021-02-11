@@ -22,7 +22,7 @@ public class TeleportCommand implements Command{
 
     @Override
     public void execute() {
-
+        executor.setCoordinates(coords);
     }
 
 }

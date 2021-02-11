@@ -15,7 +15,7 @@ public class WardCommand implements Command{
 
     @Override
     public void execute() {
-
+        executor.ward();
     }
 
 }

@@ -28,6 +28,6 @@ public class MoveCommand implements Command{
 
     @Override
     public void execute() {
-
+        executor.move(direction);
     }
 }
