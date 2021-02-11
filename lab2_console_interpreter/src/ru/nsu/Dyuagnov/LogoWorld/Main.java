@@ -7,7 +7,7 @@ public class Main {
             interpreter.run();
         }
         catch (RuntimeException e){
-            System.out.println("RuntimeException: " + e.getLocalizedMessage() + "\n" + e.getMessage());
+            System.out.println("RuntimeException: " + e.getLocalizedMessage());
         }
     }
 }

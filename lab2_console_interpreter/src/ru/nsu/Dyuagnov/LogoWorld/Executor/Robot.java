@@ -3,36 +3,65 @@ package ru.nsu.Dyuagnov.LogoWorld.Executor;
 import ru.nsu.Dyuagnov.LogoWorld.Coordinates;
 
 public class Robot implements Executor {
-    private Coordinates coords = new Coordinates();
-    private boolean drawing = false;
+    private Coordinates coordinates = new Coordinates();
+    private boolean isDrawing = false;
 
+    public Robot(){}
 
-
-    Robot(){
-
-    }
     public Robot(Coordinates coords){
-        this.coords = coords;
+        this.coordinates = coords;
     }
 
-    public void setCoords(Coordinates coords){
-        this.coords = coords;
+    public void setCoordinates(Coordinates coordinates){
+        this.coordinates = coordinates;
     }
+
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
     public void setCoordX(int val){
-        this.coords.setX(val);
+        if(val < 0){
+            throw new IllegalArgumentException("Robot.setCoordX can't be negative.");
+        }
+        this.coordinates.setX(val);
     }
+
     public void setCoordY(int val){
-        this.coords.setY(val);
+        if(val < 0){
+            throw new IllegalArgumentException("Robot.setCoordY can't be negative.");
+        }
+        this.coordinates.setY(val);
     }
 
-    public Coordinates getCoords() {
-        return coords;
+    @Override
+    public void move(Direction direction){
+        switch (direction){
+            case UP -> setCoordX(coordinates.getX() + 1);
+            case DOWN -> setCoordX(coordinates.getX() - 1);
+            case LEFT -> setCoordY(coordinates.getY() - 1);
+            case RIGHT -> setCoordY(coordinates.getY() + 1);
+        }
     }
 
-    public void move(Direction direction){}
-    //public void move(ru.nsu.Dyuagnov.ru.nsu.Dyuagnov.LogoWorld.LogoWorld.Coordinates.ru.nsu.Dyuagnov.ru.nsu.Dyuagnov.LogoWorld.LogoWorld.Coordinates coords);
-    public void teleport(Coordinates coords){}
-    public void draw(){}
+    @Override
+    public void teleport(Coordinates coords){
+        this.coordinates = coords;
+    }
 
-    public void ward(){}
+    @Override
+    public Coordinates draw(){
+        isDrawing = true;
+        return this.coordinates;
+    }
+
+    @Override
+    public void ward(){
+        isDrawing = false;
+    }
+
+    @Override
+    public boolean isDrawing() {
+        return isDrawing;
+    }
 }

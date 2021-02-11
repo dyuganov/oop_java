@@ -15,7 +15,7 @@ public class Interpreter {
         try (Scanner in = new Scanner(System.in)) {
             Parser parser = new Parser();
             Executor executor = new Robot(new Coordinates(0, 0));
-            Field field = new Field(1,1);
+            Field field = null;
             UI UI = new ConsoleUI();
 
             while (true) {
