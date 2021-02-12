@@ -7,13 +7,14 @@ import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Locale;
 
 public class Parser {
     private final CommandArgs commandArgs = new CommandArgs(null, null, null);
     private final CommandFactory commandFactory = new CommandFactory();
 
-    public Command parse(String commandLine, Executor executor, Field field) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public Command parse(String commandLine, Executor executor, Field field) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
         commandArgs.setArgs(commandLine.toUpperCase(Locale.ROOT).split(" "));
         commandArgs.setExecutor(executor);
         commandArgs.setField(field);

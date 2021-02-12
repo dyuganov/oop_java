@@ -1,6 +1,7 @@
 package ru.nsu.Dyuagnov.LogoWorld;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +12,8 @@ public class Main {
         catch (RuntimeException e){
             System.out.println("RuntimeException: " + e.getLocalizedMessage());
         }
-        catch (IOException | ClassNotFoundException e) {
+        catch (IOException | ClassNotFoundException | IllegalAccessException |
+                NoSuchMethodException | InvocationTargetException | InstantiationException e) {
             e.printStackTrace();
         }
 

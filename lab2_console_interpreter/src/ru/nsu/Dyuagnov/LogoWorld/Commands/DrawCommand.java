@@ -1,7 +1,5 @@
 package ru.nsu.Dyuagnov.LogoWorld.Commands;
 
-import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
-import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 import ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
 
 

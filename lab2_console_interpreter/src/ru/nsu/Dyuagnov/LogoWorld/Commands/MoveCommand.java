@@ -10,7 +10,7 @@ import static java.lang.Integer.parseInt;
 
 public final class MoveCommand implements Command{
     // MOVE [L|R|U|D] <steps>
-    public MoveCommand(CommandArgs commandArgs){}
+    public MoveCommand(){}
 
     @Override
     public void execute(CommandArgs commandArgs) {

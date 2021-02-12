@@ -8,12 +8,13 @@ import ru.nsu.Dyuagnov.LogoWorld.UI.ConsoleUI;
 import ru.nsu.Dyuagnov.LogoWorld.UI.UI;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Scanner;
 
 public class Interpreter {
     public Interpreter(){}
 
-    public void run() throws IOException, ClassNotFoundException {
+    public void run() throws IOException, ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
         try (Scanner in = new Scanner(System.in)) {
             Parser parser = new Parser();
             Executor executor = new Robot(new Coordinates(0, 0));
@@ -33,10 +34,6 @@ public class Interpreter {
                 parser.parse(in.nextLine(), executor, field);
                 UI.draw(executor, field);
             }
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
         }
     }
 }

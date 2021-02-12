@@ -12,6 +12,8 @@ public final class TeleportCommand implements Command{
     private Field field = null;
     private Coordinates coords = null;
 
+    public TeleportCommand(){}
+
     // TELEPORT <x> <y>
     public TeleportCommand(CommandArgs commandArgs){
         this.executor = commandArgs.getExecutor();
