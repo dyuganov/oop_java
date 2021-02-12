@@ -1,41 +1,28 @@
 package ru.nsu.Dyuagnov.LogoWorld;
 
-import ru.nsu.Dyuagnov.LogoWorld.Commands.*;
-import ru.nsu.Dyuagnov.LogoWorld.Commands.CommandFactories.*;
+import ru.nsu.Dyuagnov.LogoWorld.CommandFactories.CommandFactory;
+import ru.nsu.Dyuagnov.LogoWorld.Commands.Command;
+import ru.nsu.Dyuagnov.LogoWorld.Commands.CommandArgs;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 
+import java.io.IOException;
 import java.util.Locale;
 
 public class Parser {
-    private boolean firstInit = false;
-    public Command parse(String commandLine, Executor executor, Field field){
-        commandLine = commandLine.toUpperCase(Locale.ROOT);
-        String[] args = commandLine.split(" ");
+    private final CommandArgs commandArgs = new CommandArgs(null, null, null);
+    private final CommandFactory commandFactory = new CommandFactory();
 
-        CommandFactory commandFactory = null;
-        switch (args[0]) {
-            // INIT <width> <height> <x> <y>
-            case "INIT" -> {
-                firstInit = true;
-                commandFactory = new InitCommandFactory();
-            }
-            // MOVE [L|R|U|D] <steps>
-            case "MOVE" -> commandFactory = new MoveCommandFactory();
-            // DRAW
-            case "DRAW" -> commandFactory = new DrawCommandFactory();
-            // WARD
-            case "WARD" -> commandFactory = new WardCommandFactory();
-            // TELEPORT <x> <y>
-            case "TELEPORT" -> commandFactory = new TeleportCommandFactory();
-            default -> {
-                System.out.println("Wrong command.");
-                return null;
-            }
-        }
-        if(!firstInit){
-            throw new RuntimeException("Error in Parser.parse. No first init.");
-        }
-        return commandFactory.create(new CommandArgs(executor, field, args));
+    public Command parse(String commandLine, Executor executor, Field field) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        commandArgs.setArgs(commandLine.toUpperCase(Locale.ROOT).split(" "));
+        commandArgs.setExecutor(executor);
+        commandArgs.setField(field);
+        commandFactory.create(commandArgs.getArgs()[0]).execute(commandArgs);
+        // Варианты как сделать нормально:
+        // - команда при создании внутри по ссылке хранит класс аргументов,
+        // парсер меняет этот объект каждый раз, чтобы получались актуальные аргументы
+        // - парсер переносится в основной цикл
+
+        return null;
     }
 }

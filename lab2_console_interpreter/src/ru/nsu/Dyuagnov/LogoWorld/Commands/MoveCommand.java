@@ -8,17 +8,13 @@ import ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
 
 import static java.lang.Integer.parseInt;
 
-public class MoveCommand implements Command{
-    private Executor executor = null;
-    private Field field = null;
-    Direction direction;
-    int stepsN = 1;
-
+public final class MoveCommand implements Command{
     // MOVE [L|R|U|D] <steps>
-    public MoveCommand(CommandArgs commandArgs){
-        this.executor = commandArgs.getExecutor();
-        this.field = commandArgs.getField();
-        this.stepsN = parseInt(commandArgs.getArgs()[2]);
+    public MoveCommand(CommandArgs commandArgs){}
+
+    @Override
+    public void execute(CommandArgs commandArgs) {
+        Direction direction;
         switch (commandArgs.getArgs()[1]){
             case "L"->direction = Direction.LEFT;
             case "D"->direction = Direction.DOWN;
@@ -26,10 +22,11 @@ public class MoveCommand implements Command{
             case "R"->direction = Direction.RIGHT;
             default -> throw new IllegalArgumentException("Wrong move command direction.");
         }
-    }
 
-    @Override
-    public void execute() {
+        Executor executor = commandArgs.getExecutor();
+        Field field = commandArgs.getField();
+        int stepsN = parseInt(commandArgs.getArgs()[2]);
+
         if(executor == null || field == null){
             throw new IllegalArgumentException("MoveCommand.execute() error. Got null argument.");
         }

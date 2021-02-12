@@ -7,7 +7,7 @@ import ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
 
 import static java.lang.Integer.parseInt;
 
-public class TeleportCommand implements Command{
+public final class TeleportCommand implements Command{
     private Executor executor = null;
     private Field field = null;
     private Coordinates coords = null;
@@ -22,7 +22,7 @@ public class TeleportCommand implements Command{
     }
 
     @Override
-    public void execute() {
+    public void execute(CommandArgs commandArgs) {
         if(executor == null || field == null){
             throw new IllegalArgumentException("TeleportCommand.execute() error. Got null argument.");
         }

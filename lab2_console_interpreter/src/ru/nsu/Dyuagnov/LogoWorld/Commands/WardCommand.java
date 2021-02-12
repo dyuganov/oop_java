@@ -3,21 +3,15 @@ package ru.nsu.Dyuagnov.LogoWorld.Commands;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 
-public class WardCommand implements Command{
-    private Executor executor = null;
-    private Field field;
-
+public final class WardCommand implements Command{
     // WARD
-    public WardCommand(CommandArgs commandArgs){
-        this.executor = commandArgs.getExecutor();
-        this.field = commandArgs.getField();
-    }
+    public WardCommand(){}
 
     @Override
-    public void execute() {
-        if(executor == null){
+    public void execute(CommandArgs commandArgs) {
+        if(commandArgs.getExecutor() == null){
             throw new IllegalArgumentException("WardCommand.execute() error. Got null argument.");
         }
-        executor.ward();
+        commandArgs.getExecutor().ward();
     }
 }

@@ -5,22 +5,16 @@ import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 import ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
 
 
-public class DrawCommand implements Command {
-    private Executor executor = null;
-    private Field field = null;
-
+public final class DrawCommand implements Command {
     // DRAW
-    public DrawCommand(CommandArgs commandArgs){
-        this.executor = commandArgs.getExecutor();
-        this.field = commandArgs.getField();
-    }
+    public DrawCommand(){}
 
     @Override
-    public void execute() {
-        if(executor == null || field == null){
+    public void execute(CommandArgs commandArgs) {
+        if(commandArgs.getExecutor() == null || commandArgs.getField() == null){
             throw new IllegalArgumentException("DrawCommand.execute() error. Got null argument.");
         }
-        executor.draw();
-        field.setObject(executor.getCoordinates(), Cell.FILLED);
+        commandArgs.getExecutor().draw();
+        commandArgs.getField().setObject(commandArgs.getExecutor().getCoordinates(), Cell.FILLED);
     }
 }
