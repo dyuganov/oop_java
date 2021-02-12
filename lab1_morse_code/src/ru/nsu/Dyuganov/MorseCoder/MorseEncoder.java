@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class MorseEncoder {
+public final class MorseEncoder {
     private final Alphabet alphabet;
 
     public MorseEncoder(Alphabet alphabet){

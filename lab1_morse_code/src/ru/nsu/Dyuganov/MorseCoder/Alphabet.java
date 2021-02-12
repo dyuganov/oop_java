@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Alphabet {
+public final class Alphabet {
     private final Map<Character, String> charToMorse = new HashMap<Character, String>();
     private final Map<String,Character> morseToChar = new HashMap<String, Character>();
 

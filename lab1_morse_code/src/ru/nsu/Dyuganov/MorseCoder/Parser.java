@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public class Parser {
+public final class Parser {
     public ArrayList<String> parseForEncoder(String fileName) throws java.io.IOException {
         final ArrayList<String> result = new ArrayList<>();
         try (BufferedReader in = new BufferedReader(new FileReader(fileName))) {

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class MorseCode {
+public final class MorseCode {
     public void run() throws IOException {
         String command, inputFileName;
         try (Scanner in = new Scanner(System.in)) {

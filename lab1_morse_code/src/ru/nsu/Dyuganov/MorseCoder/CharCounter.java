@@ -1,6 +1,6 @@
 package ru.nsu.Dyuganov.MorseCoder;
 
-public class CharCounter {
+public final class CharCounter {
     private final Character symbol;
     private Integer counter = 1;
 

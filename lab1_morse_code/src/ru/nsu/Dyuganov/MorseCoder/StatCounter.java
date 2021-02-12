@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-public class StatCounter {
+public final class StatCounter {
     private final Set<CharCounter> statistics = new HashSet<CharCounter>();
 
     public StatCounter(){}
