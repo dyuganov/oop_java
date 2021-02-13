@@ -17,7 +17,7 @@ public class CommandFactory {
         }
         else{
             final Properties properties = new Properties();
-            properties.load(Command.class.getResourceAsStream("CommandFactory.properties")); // расположение относительно CLASS_NAME.class.getResourceAsStrea
+            properties.load(Command.class.getResourceAsStream("CommandList.properties")); // расположение относительно CLASS_NAME.class.getResourceAsStrea
             Class loadedClass = Class.forName(properties.getProperty(commandName));
             Command newCommand = (Command)loadedClass.getConstructor().newInstance();
             commands.put(commandName, newCommand);

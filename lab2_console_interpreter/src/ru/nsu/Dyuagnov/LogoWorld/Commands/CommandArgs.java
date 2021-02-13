@@ -3,7 +3,13 @@ package ru.nsu.Dyuagnov.LogoWorld.Commands;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 
-// command context and params
+
+
+/**
+ * Universal arguments for commands.
+ *
+ *
+ * */
 public class CommandArgs {
     private Executor executor;
     private Field field ;
