@@ -2,11 +2,16 @@ package ru.nsu.Dyuagnov.LogoWorld.Commands;
 
 import ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
 
-
+/**
+ * Format: DRAW
+ * */
 public final class DrawCommand implements Command {
-    // DRAW
     public DrawCommand(){}
 
+    /**
+     * Turns on executor draw mode and changes that cell in field.
+     * @param commandArgs - arguments for execution.
+     * */
     @Override
     public void execute(CommandArgs commandArgs) {
         if(commandArgs.getExecutor() == null || commandArgs.getField() == null){

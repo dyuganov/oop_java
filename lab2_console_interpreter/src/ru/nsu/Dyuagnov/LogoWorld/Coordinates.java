@@ -1,11 +1,16 @@
 package ru.nsu.Dyuagnov.LogoWorld;
 
+/**
+ * Stores x, y coordinates.
+ * */
 public class Coordinates {
     private int x = 0;
     private int y = 0;
 
-    public Coordinates(){}
-
+    /**
+     * @param x - new x coordinate.
+     * @param y - new y coordinate.
+     * */
     public Coordinates(int x, int y){
         if(x < 0 || y < 0){
             throw new IllegalArgumentException("Coordinates constructor got negative args.");
@@ -14,6 +19,9 @@ public class Coordinates {
         this.y = y;
     }
 
+    /**
+     * @param val - new x coordinate.
+     * */
     public void setX(int val){
         if(val < 0){
             throw new IllegalArgumentException("Coordinates.setX(int val) got negative arg.");
@@ -21,6 +29,9 @@ public class Coordinates {
         this.x = val;
     }
 
+    /**
+     * @param val - new y coordinate.
+     * */
     public void setY(int val){
         if(val < 0){
             throw new IllegalArgumentException("Coordinates.setY(int val) got negative arg.");

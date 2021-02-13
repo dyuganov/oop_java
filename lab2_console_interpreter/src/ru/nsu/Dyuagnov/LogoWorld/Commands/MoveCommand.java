@@ -8,10 +8,17 @@ import ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ * Format: MOVE [L|R|U|D] <steps>
+ * */
 public final class MoveCommand implements Command{
-    // MOVE [L|R|U|D] <steps>
     public MoveCommand(){}
 
+    /**
+     * Moves executor. If draw mode is on, changes field cells.
+     * Checks edges while moving.
+     * @param commandArgs - arguments for execution.
+     * */
     @Override
     public void execute(CommandArgs commandArgs) {
         Direction direction;

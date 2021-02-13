@@ -2,22 +2,32 @@ package ru.nsu.Dyuagnov.LogoWorld.Field;
 
 import ru.nsu.Dyuagnov.LogoWorld.Coordinates;
 
-/*
-* 0------> width (Y)
-* |
-* |
-* V height (X)
-* */
-
+/**
+ * Main LogoWorld field.
+ *
+ * Structure:
+ * 0------> width (Y)
+ * |
+ * |
+ * V height (X)
+ * */
 public class Field {
     private int width;
     private int height;
     Cell[][] field;
 
+    /**
+     * Create field with needed width and height.
+     * Params are non-negative.
+     * */
     public Field(final int width, final int height){
         resize(width, height);
     }
 
+    /**
+     * Change field size.
+     * Params are non-negative.
+     * */
     public void resize(final int width, final int height){
         if(width > 0 && height > 0) {
             this.width = width;
@@ -34,18 +44,29 @@ public class Field {
         }
     }
 
-    public void setObject(final Coordinates coords, final Cell object){
-        if(coords == null || object == null){
+    /**
+     * Set object at coordinates.
+     * @param coordinates - cell coordinates.
+     *                    Have to be non-negative and fit field size.
+     *                    Else throws IllegalArgumentException.
+     * @param object - new Object to put in cell.
+     * */
+    public void setObject(final Coordinates coordinates, final Cell object){
+        if(coordinates == null || object == null){
             throw new IllegalArgumentException("Field.setObject coords or object == null.");
         }
-        if(coords.getX() < 0 || coords.getX() >= height || coords.getY() < 0 || coords.getY() >= width){
+        if(coordinates.getX() < 0 || coordinates.getX() >= height || coordinates.getY() < 0 || coordinates.getY() >= width){
             throw new IllegalArgumentException("Wrong Field.setObject param coords values.");
         }
-        field[coords.getX()][coords.getY()] = object;
+        field[coordinates.getX()][coordinates.getY()] = object;
     }
 
-    public Cell getObject(final Coordinates coords){
-        return field[coords.getX()][coords.getY()];
+    /**
+     * @param coordinates - cell coordinates.
+     * @return object at coordinates.
+     * */
+    public Cell getObject(final Coordinates coordinates){
+        return field[coordinates.getX()][coordinates.getY()];
     }
 
     public int getWidth(){

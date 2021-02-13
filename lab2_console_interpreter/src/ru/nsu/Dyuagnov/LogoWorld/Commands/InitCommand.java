@@ -1,16 +1,20 @@
 package ru.nsu.Dyuagnov.LogoWorld.Commands;
 
 import ru.nsu.Dyuagnov.LogoWorld.Coordinates;
-import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
-import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 
 import static java.lang.Integer.parseInt;
 
-public final class InitCommand implements Command{
 
-    // INIT <width> <height> <x> <y>
+/**
+ * Format: INIT <width> <height> <x> <y>
+ * */
+public final class InitCommand implements Command{
     public InitCommand(){}
 
+    /**
+     * Changes field size
+     * @param commandArgs - arguments for execution.
+     * */
     @Override
     public void execute(CommandArgs commandArgs) {
         final int width = parseInt(commandArgs.getArgs()[1]);

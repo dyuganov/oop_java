@@ -1,12 +1,15 @@
 package ru.nsu.Dyuagnov.LogoWorld.Commands;
 
-import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
-import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
-
+/**
+ * Format: WARD
+ * */
 public final class WardCommand implements Command{
-    // WARD
     public WardCommand(){}
 
+    /**
+     * Turns off executor draw mode.
+     * @param commandArgs - arguments for execution.
+     * */
     @Override
     public void execute(CommandArgs commandArgs) {
         if(commandArgs.getExecutor() == null){

@@ -3,18 +3,20 @@ package ru.nsu.Dyuagnov.LogoWorld.Commands;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 
-
-
 /**
  * Universal arguments for commands.
- *
- *
+ * Contains Executor, Field and String[] with original line after splitting.
  * */
 public class CommandArgs {
     private Executor executor;
     private Field field ;
     private String[] args;
 
+    /**
+     * @param executor - abstract LogoWorld executor.
+     * @param field - main game field for executor to interact.
+     * @param args - parsed arguments from user command.
+     * */
     public CommandArgs(Executor executor, Field field, String[] args){
         this.executor = executor;
         this.field = field;

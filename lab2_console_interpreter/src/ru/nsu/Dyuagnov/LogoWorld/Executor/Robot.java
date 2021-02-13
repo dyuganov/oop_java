@@ -1,14 +1,27 @@
 package ru.nsu.Dyuagnov.LogoWorld.Executor;
 import ru.nsu.Dyuagnov.LogoWorld.Coordinates;
 
+
+/**
+ * Robot interacts with the field.
+ * Has position and can turn on draw mode.
+ * */
 public class Robot implements Executor {
     private Coordinates coordinates;
     private boolean isDrawing = false;
 
+    /**
+     * Creates robot with start position.
+     * @param coordinates - start position.
+     * */
     public Robot(final Coordinates coordinates){
         setCoordinates(coordinates);
     }
 
+    /**
+     * Set new coordinates.
+     * @param coordinates - new coordinates.
+     * */
     public void setCoordinates(final Coordinates coordinates){
         if(coordinates == null){
             throw new IllegalArgumentException("Robot.setCoordinates(Coordinates coordinates) error. Got coordinates == null.");
@@ -16,6 +29,9 @@ public class Robot implements Executor {
         this.coordinates = coordinates;
     }
 
+    /**
+     * @return current coordinates.
+     * */
     public Coordinates getCoordinates() {
         return coordinates;
     }
@@ -34,6 +50,9 @@ public class Robot implements Executor {
         this.coordinates.setY(val);
     }
 
+    /**
+     * Changes robot position, connected with Field realisation.
+     * */
     @Override
     public void move(Direction direction){
         switch (direction){
@@ -44,22 +63,36 @@ public class Robot implements Executor {
         }
     }
 
+    /**
+     * Change coordinates.
+     * @param coordinates - new position.
+     * */
     @Override
     public void teleport(Coordinates coordinates){
         this.setCoordinates(coordinates);
     }
 
+    /**
+     * Turns on draw mode.
+     * @return current position.
+     * */
     @Override
     public Coordinates draw(){
         isDrawing = true;
         return this.coordinates;
     }
 
+    /**
+     * Turns off draw mode.
+     * */
     @Override
     public void ward(){
         isDrawing = false;
     }
 
+    /**
+     * Checks draw mode.
+     * */
     @Override
     public boolean isDrawing() {
         return isDrawing;

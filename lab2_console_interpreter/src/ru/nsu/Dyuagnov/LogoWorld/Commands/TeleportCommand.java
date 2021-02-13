@@ -1,36 +1,32 @@
 package ru.nsu.Dyuagnov.LogoWorld.Commands;
 
 import ru.nsu.Dyuagnov.LogoWorld.Coordinates;
-import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
-import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 import ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ * Format: TELEPORT <x> <y>
+ * */
 public final class TeleportCommand implements Command{
-    private Executor executor = null;
-    private Field field = null;
-    private Coordinates coords = null;
-
     public TeleportCommand(){}
 
-    // TELEPORT <x> <y>
-    public TeleportCommand(CommandArgs commandArgs){
-        this.executor = commandArgs.getExecutor();
-        this.field = commandArgs.getField();
-        int x = parseInt(commandArgs.getArgs()[1]);
-        int y = parseInt(commandArgs.getArgs()[2]);
-        coords = new Coordinates(x, y);
-    }
-
+    /**
+     * Teleports executor to new position.
+     * If draw mode is on, changes new position field cell.
+     * @param commandArgs - arguments for execution.
+     * */
     @Override
     public void execute(CommandArgs commandArgs) {
-        if(executor == null || field == null){
+        int x = parseInt(commandArgs.getArgs()[1]);
+        int y = parseInt(commandArgs.getArgs()[2]);
+
+        if(commandArgs.getExecutor() == null || commandArgs.getField() == null){
             throw new IllegalArgumentException("TeleportCommand.execute() error. Got null argument.");
         }
-        executor.teleport(coords);
-        if(executor.isDrawing()){
-            field.setObject(executor.getCoordinates(), Cell.FILLED);
+        commandArgs.getExecutor().teleport(new Coordinates(x, y));
+        if(commandArgs.getExecutor().isDrawing()){
+            commandArgs.getField().setObject(commandArgs.getExecutor().getCoordinates(), Cell.FILLED);
         }
     }
 

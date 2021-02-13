@@ -1,9 +1,11 @@
 package ru.nsu.Dyuagnov.LogoWorld.Commands;
 
-import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
-
-import java.lang.reflect.Field;
-
+/**
+ * Command, which can be executed with different parameters.
+ * */
 public interface Command {
+    /**
+     * @param commandArgs - new arguments for command.
+     * */
     void execute(CommandArgs commandArgs);
 }
