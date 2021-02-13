@@ -46,12 +46,14 @@ public class RobotTest {
 
     @Test
     void drawMode(){
-        robot.draw();
+        // normal case
         robot.draw();
         assertTrue(robot.isDrawing());
 
+        // return value check
         assertEquals(robot.getCoordinates(), robot.draw());
 
+        // ward check
         robot.ward();
         assertFalse(robot.isDrawing());
     }
