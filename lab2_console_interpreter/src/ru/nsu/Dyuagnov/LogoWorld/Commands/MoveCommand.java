@@ -33,7 +33,9 @@ public final class MoveCommand implements Command{
         Executor executor = commandArgs.getExecutor();
         Field field = commandArgs.getField();
         int stepsN = parseInt(commandArgs.getArgs()[2]);
-
+        if(stepsN < 0){
+            throw new IllegalArgumentException("Got negative steps.");
+        }
         if(executor == null || field == null){
             throw new IllegalArgumentException("MoveCommand.execute() error. Got null argument.");
         }
