@@ -1,6 +1,6 @@
 package ru.nsu.Dyuagnov.LogoWorld.UI;
 
-import ru.nsu.Dyuagnov.LogoWorld.Coordinates;
+import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
 import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
 import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 

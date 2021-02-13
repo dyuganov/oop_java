@@ -1,6 +1,6 @@
 package ru.nsu.Dyuagnov.LogoWorld.Field;
 
-import ru.nsu.Dyuagnov.LogoWorld.Coordinates;
+import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
 
 /**
  * Main LogoWorld field.

@@ -1,5 +1,5 @@
 package ru.nsu.Dyuagnov.LogoWorld.Executor;
-import ru.nsu.Dyuagnov.LogoWorld.Coordinates;
+import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
 
 
 /**
@@ -24,7 +24,10 @@ public class Robot implements Executor {
      * */
     public void setCoordinates(final Coordinates coordinates){
         if(coordinates == null){
-            throw new IllegalArgumentException("Robot.setCoordinates(Coordinates coordinates) error. Got coordinates == null.");
+            throw new IllegalArgumentException("Got coordinates == null");
+        }
+        if(coordinates.getX() < 0 || coordinates.getY() < 0){
+            throw new IllegalArgumentException("Got negative coordinates");
         }
         this.coordinates = coordinates;
     }
@@ -52,6 +55,10 @@ public class Robot implements Executor {
 
     /**
      * Changes robot position, connected with Field realisation.
+     * Right: y += 1;
+     * Left: y -= 1;
+     * Up: x -= 1;
+     * Down: x += 1;
      * */
     @Override
     public void move(Direction direction){

@@ -1,6 +1,6 @@
 package ru.nsu.Dyuagnov.LogoWorld.Commands;
 
-import ru.nsu.Dyuagnov.LogoWorld.Coordinates;
+import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
 import ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
 
 import static java.lang.Integer.parseInt;

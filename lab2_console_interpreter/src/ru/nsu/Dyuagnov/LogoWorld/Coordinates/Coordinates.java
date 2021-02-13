@@ -1,4 +1,4 @@
-package ru.nsu.Dyuagnov.LogoWorld;
+package ru.nsu.Dyuagnov.LogoWorld.Coordinates;
 
 /**
  * Stores x, y coordinates.
