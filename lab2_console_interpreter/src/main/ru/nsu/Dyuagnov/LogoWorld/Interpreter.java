@@ -10,7 +10,11 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Locale;
 import java.util.Scanner;
-import java.util.logging.Logger;
+
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 
 /**
  * Always reads from console, generates command for Executor and field.
@@ -18,8 +22,7 @@ import java.util.logging.Logger;
  * */
 public class Interpreter {
     public Interpreter(){}
-
-    private Logger logger = Logger.getLogger(String.valueOf(Interpreter.class));
+    private final static Logger logger = LogManager.getLogger(String.valueOf(Interpreter.class));
 
     /**
      * Endless loop for program
@@ -29,6 +32,10 @@ public class Interpreter {
      * */
     public void run(Executor executor, Field field, UI UI) throws IOException, ClassNotFoundException, IllegalAccessException,
             InstantiationException, NoSuchMethodException, InvocationTargetException {
+        // basic log4j configurator
+        BasicConfigurator.configure();
+        DOMConfigurator.configure("src/main/ru/nsu/Dyuagnov/LogoWorld/log4j.xml");
+
         try (Scanner in = new Scanner(System.in)) {
             printAvailableCommands();
             logger.info("Start info message printed.");
