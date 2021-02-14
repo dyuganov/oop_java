@@ -3,9 +3,9 @@ package test.ru.nsu.Dyuganov.LogoWorld;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
-import ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
-import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
+import main.ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
+import main.ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
+import main.ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 
 public class FieldTest {
     private Field field = new Field(10, 10);

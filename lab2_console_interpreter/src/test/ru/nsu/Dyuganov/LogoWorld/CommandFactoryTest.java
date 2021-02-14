@@ -1,8 +1,8 @@
 package test.ru.nsu.Dyuganov.LogoWorld;
 
 import org.junit.jupiter.api.Test;
-import ru.nsu.Dyuagnov.LogoWorld.CommandFactories.CommandFactory;
-import ru.nsu.Dyuagnov.LogoWorld.Commands.Command;
+import main.ru.nsu.Dyuagnov.LogoWorld.CommandFactories.CommandFactory;
+import main.ru.nsu.Dyuagnov.LogoWorld.Commands.Command;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;

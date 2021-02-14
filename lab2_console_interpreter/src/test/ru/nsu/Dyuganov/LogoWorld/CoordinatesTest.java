@@ -1,7 +1,7 @@
 package test.ru.nsu.Dyuganov.LogoWorld;
 
 import org.junit.jupiter.api.Test;
-import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
+import main.ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
 
 import static org.junit.jupiter.api.Assertions.*;
 

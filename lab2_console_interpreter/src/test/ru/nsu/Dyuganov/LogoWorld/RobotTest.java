@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
-import ru.nsu.Dyuagnov.LogoWorld.Executor.Direction;
-import ru.nsu.Dyuagnov.LogoWorld.Executor.Robot;
+import main.ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
+import main.ru.nsu.Dyuagnov.LogoWorld.Executor.Direction;
+import main.ru.nsu.Dyuagnov.LogoWorld.Executor.Robot;
 
 public class RobotTest {
     private final Robot robot = new Robot(new Coordinates(0, 0));

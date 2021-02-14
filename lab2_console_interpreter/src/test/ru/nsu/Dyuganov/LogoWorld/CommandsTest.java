@@ -1,12 +1,12 @@
 package test.ru.nsu.Dyuganov.LogoWorld;
 
+import main.ru.nsu.Dyuagnov.LogoWorld.Commands.*;
 import org.junit.jupiter.api.Test;
-import ru.nsu.Dyuagnov.LogoWorld.Commands.*;
-import ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
-import ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
-import ru.nsu.Dyuagnov.LogoWorld.Executor.Robot;
-import ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
-import ru.nsu.Dyuagnov.LogoWorld.Field.Field;
+import main.ru.nsu.Dyuagnov.LogoWorld.Coordinates.Coordinates;
+import main.ru.nsu.Dyuagnov.LogoWorld.Executor.Executor;
+import main.ru.nsu.Dyuagnov.LogoWorld.Executor.Robot;
+import main.ru.nsu.Dyuagnov.LogoWorld.Field.Cell;
+import main.ru.nsu.Dyuagnov.LogoWorld.Field.Field;
 
 import static org.junit.jupiter.api.Assertions.*;
 
