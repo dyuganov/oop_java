@@ -1,0 +1,10 @@
+2021-02-17 15:09:03 DEBUG Main:22 - Main started.
+2021-02-17 15:09:03 DEBUG Main:47 - Main finished work.
+2021-02-17 15:13:14 DEBUG Main:22 - Main started.
+2021-02-17 15:15:06 DEBUG Main:22 - Main started.
+2021-02-17 15:15:06 DEBUG Interpreter:37 - Interpreter started.
+2021-02-17 15:15:06 DEBUG Interpreter:40 - Start info message printed.
+2021-02-17 15:15:06 DEBUG Interpreter:42 - Command args created.
+2021-02-17 15:15:06 DEBUG Interpreter:44 - Command factory created.
+2021-02-17 15:15:06 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 15:15:48 DEBUG Main:22 - Main started.

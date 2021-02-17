@@ -1,6 +1,7 @@
 package main.ru.nsu.dyuagnov.logoworld;
 
 import main.ru.nsu.dyuagnov.logoworld.CommandFactories.CommandFactory;
+import main.ru.nsu.dyuagnov.logoworld.Commands.Command;
 import main.ru.nsu.dyuagnov.logoworld.Commands.CommandArgs;
 import main.ru.nsu.dyuagnov.logoworld.Executor.Executor;
 import main.ru.nsu.dyuagnov.logoworld.Field.Field;
@@ -11,7 +12,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Locale;
 import java.util.Scanner;
 
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -31,28 +31,40 @@ public class Interpreter {
      * @param executor - object on field
      * @param UI - class to display the field and executor
      * */
-    public void run(Executor executor, Field field, UI UI) throws IOException, ClassNotFoundException, IllegalAccessException,
-            InstantiationException, NoSuchMethodException, InvocationTargetException {
+    public void run(Executor executor, Field field, UI UI) throws IOException, ReflectiveOperationException {
         DOMConfigurator.configure("src/java/resources/log4j_interpreter.xml");
-        logger.setLevel(Level.ALL);
+        logger.setLevel(Level.DEBUG);
+        logger.debug("Interpreter started.");
         try (Scanner in = new Scanner(System.in)) {
             printAvailableCommands();
-            logger.info("Start info message.");
+            logger.debug("Start info message printed.");
             final CommandArgs commandArgs = new CommandArgs(executor, field, null);
-            logger.info("Command args created.");
+            logger.debug("Command args created.");
             final CommandFactory commandFactory = new CommandFactory();
-            logger.info("Command factory created.");
+            logger.debug("Command factory created.");
+
             while (true) {
-                System.out.print("Your command: ");
-                commandArgs.setArgs(in.nextLine().toUpperCase(Locale.ROOT).split(" "));
-                commandFactory.create(commandArgs.getArgs()[0]).execute(commandArgs);
+                logger.info("Started command reading loop.");
+                String line = in.nextLine().toUpperCase(Locale.ROOT);
+                logger.debug("Got user command: " + line);
+                commandArgs.setArgs(line.split(" "));
+                logger.debug("Command args splitted.");
+                if(commandArgs.getArgs()[0].equals("EXIT")) {
+                    break;
+                }
+                Command currentCommand = commandFactory.create(commandArgs.getArgs()[0]);
+                logger.debug("Command created.");
+                currentCommand.execute(commandArgs);
+                logger.debug("Command executed.");
                 UI.draw(executor, field);
+                logger.debug("Field displayed.");
             }
+            logger.debug("Interpreter finished work.");
         }
     }
 
     /**
-     * Prints message with main supported commands.
+     * Prints message with available commands.
      * */
     private void printAvailableCommands(){
         System.out.println("Available commands:\n" +
@@ -60,6 +72,7 @@ public class Interpreter {
                 "MOVE [L|R|U|D] <steps>\n" +
                 "DRAW\n" +
                 "WARD\n" +
-                "TELEPORT <x> <y>\n");
+                "TELEPORT <x> <y>\n" +
+                "EXIT");
     }
 }

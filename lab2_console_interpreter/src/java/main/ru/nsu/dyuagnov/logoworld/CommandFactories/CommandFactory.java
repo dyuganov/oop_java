@@ -1,8 +1,10 @@
 package main.ru.nsu.dyuagnov.logoworld.CommandFactories;
 
 import main.ru.nsu.dyuagnov.logoworld.Commands.Command;
+import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -27,19 +29,31 @@ public class CommandFactory {
      *
      * Checks that first command is "INIT".
      * */
-    public Command create(final String commandName) throws IOException, ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+    public Command create(final String commandName) throws IOException, ReflectiveOperationException {
+        DOMConfigurator.configure("src/java/resources/log4j.xml");
+        logger.setLevel(Level.DEBUG);
+        logger.debug("Command creation started.");
+        logger.debug("Got args command name: " + commandName);
         if (commands.containsKey(commandName)){
+            logger.info("Found command in cache.");
+            logger.debug("Command creation finished.");
             return commands.get(commandName);
         }
         else{
             if(!commands.containsKey("INIT") && !commandName.equals("INIT")){
-                throw new RuntimeException("First command should be \"INIT\". ");
+                logger.error("Throw IllegalArgumentException. Command name is not INIT and no INIT command found in cache.");
+                throw new IllegalArgumentException("First command should be \"INIT\". ");
             }
             final Properties properties = new Properties();
             properties.load(Command.class.getResourceAsStream("CommandList.properties")); // расположение относительно CLASS_NAME.class.getResourceAsStrea
+            logger.debug("Properties file loaded.");
             Class loadedClass = Class.forName(properties.getProperty(commandName));
+            logger.debug("Loaded class from properties by name.");
             Command newCommand = (Command)loadedClass.getConstructor().newInstance();
+            logger.info("Created new command.");
             commands.put(commandName, newCommand);
+            logger.debug("Command put to cache.");
+            logger.debug("Command creation finished.");
             return newCommand;
         }
     }
