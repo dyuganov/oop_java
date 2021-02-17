@@ -32,8 +32,8 @@ public class Interpreter {
      * @param UI - class to display the field and executor
      * */
     public void run(Executor executor, Field field, UI UI) throws IOException, ReflectiveOperationException {
-        DOMConfigurator.configure("src/java/resources/log4j_interpreter.xml");
-        logger.setLevel(Level.DEBUG);
+        DOMConfigurator.configure("src/java/resources/log4j.xml");
+        //logger.setLevel(Level.DEBUG);
         logger.debug("Interpreter started.");
         try (Scanner in = new Scanner(System.in)) {
             printAvailableCommands();

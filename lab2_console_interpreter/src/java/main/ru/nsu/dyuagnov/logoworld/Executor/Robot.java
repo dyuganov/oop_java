@@ -4,7 +4,6 @@ import main.ru.nsu.dyuagnov.logoworld.Interpreter;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-
 /**
  * Robot interacts with the field.
  * Has position and can turn on draw mode.
@@ -16,7 +15,7 @@ public class Robot implements Executor {
 
     /**
      * Creates robot with start position.
-     * @param coordinates - start position.
+     * @param coordinates start position.
      * */
     public Robot(final Coordinates coordinates){
         setCoordinates(coordinates);
@@ -24,7 +23,7 @@ public class Robot implements Executor {
 
     /**
      * Set new coordinates.
-     * @param coordinates - new coordinates.
+     * @param coordinates new coordinates.
      * */
     public void setCoordinates(final Coordinates coordinates){
         if(coordinates == null){
@@ -76,7 +75,7 @@ public class Robot implements Executor {
 
     /**
      * Change coordinates.
-     * @param coordinates - new position.
+     * @param coordinates new position.
      * */
     @Override
     public void teleport(Coordinates coordinates){

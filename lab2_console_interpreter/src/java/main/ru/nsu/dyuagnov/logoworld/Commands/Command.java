@@ -5,7 +5,7 @@ package main.ru.nsu.dyuagnov.logoworld.Commands;
  * */
 public interface Command {
     /**
-     * @param commandArgs - new arguments for command.
+     * @param commandArgs new arguments for command.
      * */
     void execute(CommandArgs commandArgs);
 }

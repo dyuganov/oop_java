@@ -18,7 +18,7 @@ public class Main {
     private final static Logger logger = LogManager.getLogger(Main.class);
     public static void main(String[] args) {
         DOMConfigurator.configure("src/java/resources/log4j.xml");
-        logger.setLevel(Level.DEBUG);
+        //logger.setLevel(Level.DEBUG);
         logger.debug("Main started.");
         try{
             Executor executor = new Robot(new Coordinates(0, 0));

@@ -1,0 +1,101 @@
+2021-02-17 23:12:33 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:12:38 INFO  CommandFactory:52 - Created new command.
+2021-02-17 23:12:38 INFO  InitCommand:26 - Init command execution started.
+2021-02-17 23:12:39 INFO  InitCommand:34 - Field resized.
+2021-02-17 23:12:39 INFO  InitCommand:37 - Executor coordinates changed.
+2021-02-17 23:12:39 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:12:44 INFO  CommandFactory:52 - Created new command.
+2021-02-17 23:12:44 INFO  MoveCommand:76 - Executor moved to RIGHT
+2021-02-17 23:12:44 INFO  MoveCommand:76 - Executor moved to RIGHT
+2021-02-17 23:12:44 INFO  MoveCommand:76 - Executor moved to RIGHT
+2021-02-17 23:12:44 INFO  MoveCommand:76 - Executor moved to RIGHT
+2021-02-17 23:12:44 INFO  MoveCommand:76 - Executor moved to RIGHT
+2021-02-17 23:12:44 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:12:48 INFO  CommandFactory:52 - Created new command.
+2021-02-17 23:12:48 INFO  DrawCommand:34 - Executor mode set to draw mode.
+2021-02-17 23:12:48 INFO  DrawCommand:36 - Field cell set to FILLED at (x: 1, y: 6)
+2021-02-17 23:12:48 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:12:50 INFO  CommandFactory:37 - Found command in cache.
+2021-02-17 23:12:50 INFO  MoveCommand:76 - Executor moved to DOWN
+2021-02-17 23:12:50 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 2, y: 6)
+2021-02-17 23:12:50 INFO  MoveCommand:76 - Executor moved to DOWN
+2021-02-17 23:12:50 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 3, y: 6)
+2021-02-17 23:12:50 INFO  MoveCommand:76 - Executor moved to DOWN
+2021-02-17 23:12:50 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 4, y: 6)
+2021-02-17 23:12:50 INFO  MoveCommand:76 - Executor moved to DOWN
+2021-02-17 23:12:50 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 5, y: 6)
+2021-02-17 23:12:50 INFO  MoveCommand:76 - Executor moved to DOWN
+2021-02-17 23:12:50 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 6, y: 6)
+2021-02-17 23:12:50 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:12:52 INFO  CommandFactory:37 - Found command in cache.
+2021-02-17 23:12:52 INFO  MoveCommand:76 - Executor moved to LEFT
+2021-02-17 23:12:52 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 6, y: 5)
+2021-02-17 23:12:52 INFO  MoveCommand:76 - Executor moved to LEFT
+2021-02-17 23:12:52 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 6, y: 4)
+2021-02-17 23:12:52 INFO  MoveCommand:76 - Executor moved to LEFT
+2021-02-17 23:12:52 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 6, y: 3)
+2021-02-17 23:12:52 INFO  MoveCommand:76 - Executor moved to LEFT
+2021-02-17 23:12:52 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 6, y: 2)
+2021-02-17 23:12:52 INFO  MoveCommand:76 - Executor moved to LEFT
+2021-02-17 23:12:52 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 6, y: 1)
+2021-02-17 23:12:52 INFO  MoveCommand:76 - Executor moved to LEFT
+2021-02-17 23:12:52 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 6, y: 0)
+2021-02-17 23:12:52 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:13:01 INFO  CommandFactory:37 - Found command in cache.
+2021-02-17 23:13:01 INFO  MoveCommand:76 - Executor moved to UP
+2021-02-17 23:13:01 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 5, y: 0)
+2021-02-17 23:13:01 INFO  MoveCommand:76 - Executor moved to UP
+2021-02-17 23:13:01 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 4, y: 0)
+2021-02-17 23:13:01 INFO  MoveCommand:76 - Executor moved to UP
+2021-02-17 23:13:01 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 3, y: 0)
+2021-02-17 23:13:01 INFO  MoveCommand:76 - Executor moved to UP
+2021-02-17 23:13:01 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 2, y: 0)
+2021-02-17 23:13:01 INFO  MoveCommand:76 - Executor moved to UP
+2021-02-17 23:13:01 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 1, y: 0)
+2021-02-17 23:13:01 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:13:04 INFO  CommandFactory:52 - Created new command.
+2021-02-17 23:13:04 INFO  Interpreter:30 - Executor mode set to ward mode.
+2021-02-17 23:13:04 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:13:14 INFO  CommandFactory:37 - Found command in cache.
+2021-02-17 23:13:14 INFO  MoveCommand:76 - Executor moved to RIGHT
+2021-02-17 23:13:14 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:13:18 INFO  CommandFactory:37 - Found command in cache.
+2021-02-17 23:13:18 INFO  MoveCommand:76 - Executor moved to RIGHT
+2021-02-17 23:13:18 INFO  MoveCommand:76 - Executor moved to RIGHT
+2021-02-17 23:13:18 INFO  MoveCommand:76 - Executor moved to RIGHT
+2021-02-17 23:13:18 INFO  MoveCommand:76 - Executor moved to RIGHT
+2021-02-17 23:13:18 INFO  MoveCommand:76 - Executor moved to RIGHT
+2021-02-17 23:13:18 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:13:22 INFO  CommandFactory:37 - Found command in cache.
+2021-02-17 23:13:22 INFO  MoveCommand:76 - Executor moved to RIGHT
+2021-02-17 23:13:22 INFO  MoveCommand:76 - Executor moved to RIGHT
+2021-02-17 23:13:22 INFO  MoveCommand:76 - Executor moved to RIGHT
+2021-02-17 23:13:22 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:13:27 INFO  CommandFactory:37 - Found command in cache.
+2021-02-17 23:13:27 INFO  DrawCommand:34 - Executor mode set to draw mode.
+2021-02-17 23:13:27 INFO  DrawCommand:36 - Field cell set to FILLED at (x: 1, y: 9)
+2021-02-17 23:13:27 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:13:33 INFO  CommandFactory:52 - Created new command.
+2021-02-17 23:13:33 INFO  TeleportCommand:39 - Executor coordinates changed to (x: 5, y: 5)
+2021-02-17 23:13:33 INFO  TeleportCommand:42 - Field cell set to FILLED at (x: 5, y: 5)
+2021-02-17 23:13:33 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:13:36 INFO  CommandFactory:37 - Found command in cache.
+2021-02-17 23:13:36 INFO  MoveCommand:76 - Executor moved to DOWN
+2021-02-17 23:13:36 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 6, y: 5)
+2021-02-17 23:13:36 INFO  MoveCommand:76 - Executor moved to DOWN
+2021-02-17 23:13:36 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 7, y: 5)
+2021-02-17 23:13:36 INFO  MoveCommand:76 - Executor moved to DOWN
+2021-02-17 23:13:36 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 8, y: 5)
+2021-02-17 23:13:36 INFO  MoveCommand:76 - Executor moved to DOWN
+2021-02-17 23:13:36 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 9, y: 5)
+2021-02-17 23:13:36 INFO  MoveCommand:71 - Moved over DOWN side. Teleported to UP side.
+2021-02-17 23:13:36 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 0, y: 5)
+2021-02-17 23:13:36 INFO  MoveCommand:76 - Executor moved to DOWN
+2021-02-17 23:13:36 INFO  MoveCommand:80 - Field cell set to FILLED at executor new coordinates: (x: 1, y: 5)
+2021-02-17 23:13:36 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:13:43 INFO  CommandFactory:37 - Found command in cache.
+2021-02-17 23:13:43 INFO  InitCommand:26 - Init command execution started.
+2021-02-17 23:13:43 INFO  InitCommand:34 - Field resized.
+2021-02-17 23:13:43 INFO  InitCommand:37 - Executor coordinates changed.
+2021-02-17 23:13:43 INFO  Interpreter:47 - Started command reading loop.
+2021-02-17 23:13:48 INFO  CommandFactory:37 - Found command in cache.

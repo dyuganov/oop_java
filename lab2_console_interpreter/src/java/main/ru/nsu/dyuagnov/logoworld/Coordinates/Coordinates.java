@@ -8,8 +8,8 @@ public class Coordinates {
     private int y = 0;
 
     /**
-     * @param x - new x coordinate.
-     * @param y - new y coordinate.
+     * @param x new x coordinate.
+     * @param y new y coordinate.
      * */
     public Coordinates(int x, int y){
         if(x < 0 || y < 0){
@@ -20,7 +20,7 @@ public class Coordinates {
     }
 
     /**
-     * @param val - new x coordinate.
+     * @param val new x coordinate.
      * */
     public void setX(int val){
         if(val < 0){
@@ -30,7 +30,7 @@ public class Coordinates {
     }
 
     /**
-     * @param val - new y coordinate.
+     * @param val new y coordinate.
      * */
     public void setY(int val){
         if(val < 0){

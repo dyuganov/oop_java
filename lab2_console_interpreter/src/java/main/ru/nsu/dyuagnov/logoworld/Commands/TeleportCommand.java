@@ -2,8 +2,6 @@ package main.ru.nsu.dyuagnov.logoworld.Commands;
 
 import main.ru.nsu.dyuagnov.logoworld.Coordinates.Coordinates;
 import main.ru.nsu.dyuagnov.logoworld.Field.Cell;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
@@ -20,12 +18,11 @@ public final class TeleportCommand implements Command{
     /**
      * Teleports executor to new position.
      * If draw mode is on, changes new position field cell.
-     * @param commandArgs - arguments for execution.
+     * @param commandArgs arguments for execution.
      * */
     @Override
     public void execute(CommandArgs commandArgs) {
         DOMConfigurator.configure("src/java/resources/log4j.xml");
-        logger.setLevel(Level.DEBUG);
         logger.debug("Teleport command execution started.");
         int x = parseInt(commandArgs.getArgs()[1]);
         int y = parseInt(commandArgs.getArgs()[2]);
@@ -44,5 +41,4 @@ public final class TeleportCommand implements Command{
         }
         logger.debug("Teleport command execution finished.");
     }
-
 }

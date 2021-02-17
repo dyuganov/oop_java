@@ -5,14 +5,13 @@ import main.ru.nsu.dyuagnov.logoworld.Executor.Direction;
 import main.ru.nsu.dyuagnov.logoworld.Field.Cell;
 import main.ru.nsu.dyuagnov.logoworld.Executor.Executor;
 import main.ru.nsu.dyuagnov.logoworld.Field.Field;
-import org.apache.log4j.BasicConfigurator;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
 import static java.lang.Integer.parseInt;
-import static java.lang.Integer.toUnsignedString;
 
 /**
  * Format: MOVE [L|R|U|D] <steps>
@@ -24,12 +23,11 @@ public final class MoveCommand implements Command{
     /**
      * Moves executor. If draw mode is on, changes field cells.
      * Checks edges while moving.
-     * @param commandArgs - arguments for execution.
+     * @param commandArgs arguments for execution.
      * */
     @Override
     public void execute(CommandArgs commandArgs) {
         DOMConfigurator.configure("src/java/resources/log4j.xml");
-        logger.setLevel(Level.DEBUG);
         logger.debug("Move command execution started.");
         Direction direction;
         switch (commandArgs.getArgs()[1]){
@@ -74,7 +72,7 @@ public final class MoveCommand implements Command{
             }
             else{
                 executor.move(direction);
-                logger.info("Executor moved to " + direction.toString());
+                logger.info("Executor moved " + direction.toString());
             }
             if(executor.isDrawing()){
                 field.setObject(executor.getCoordinates(), Cell.FILLED);

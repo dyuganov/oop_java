@@ -1,7 +1,6 @@
 package main.ru.nsu.dyuagnov.logoworld.Commands;
 
 import main.ru.nsu.dyuagnov.logoworld.Field.Cell;
-import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
@@ -17,12 +16,11 @@ public final class DrawCommand implements Command {
 
     /**
      * Turns on executor draw mode and changes that cell in field.
-     * @param commandArgs - arguments for execution.
+     * @param commandArgs arguments for execution.
      * */
     @Override
     public void execute(CommandArgs commandArgs) {
         DOMConfigurator.configure("src/java/resources/log4j.xml");
-        logger.setLevel(Level.DEBUG);
         logger.debug("Draw command execution started");
         logger.debug("Command args are: explorer - " + commandArgs.getExecutor() +
                 "; field - " + commandArgs.getField() + "; args - " + Arrays.toString(commandArgs.getArgs()));

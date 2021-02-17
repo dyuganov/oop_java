@@ -5,14 +5,14 @@ import main.ru.nsu.dyuagnov.logoworld.Interpreter;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+// Structure:
+// 0------> width (Y)
+// |
+// |
+// V height (X)
+
 /**
  * Main LogoWorld field.
- *
- * Structure:
- * 0------> width (Y)
- * |
- * |
- * V height (X)
  * */
 public class Field {
     private final static Logger logger = LogManager.getLogger(String.valueOf(Interpreter.class));
@@ -50,10 +50,10 @@ public class Field {
 
     /**
      * Set object at coordinates.
-     * @param coordinates - cell coordinates.
+     * @param coordinates cell coordinates.
      *                    Have to be non-negative and fit field size.
      *                    Else throws IllegalArgumentException.
-     * @param object - new Object to put in cell.
+     * @param object new Object to put in cell.
      * */
     public void setObject(final Coordinates coordinates, final Cell object){
         if(coordinates == null || object == null){
@@ -66,7 +66,7 @@ public class Field {
     }
 
     /**
-     * @param coordinates - cell coordinates.
+     * @param coordinates cell coordinates.
      * @return object at coordinates.
      * */
     public Cell getObject(final Coordinates coordinates){

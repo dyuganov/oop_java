@@ -15,12 +15,11 @@ public final class WardCommand implements Command{
 
     /**
      * Turns off executor draw mode.
-     * @param commandArgs - arguments for execution.
+     * @param commandArgs arguments for execution.
      * */
     @Override
     public void execute(CommandArgs commandArgs) {
         DOMConfigurator.configure("src/java/resources/log4j.xml");
-        logger.setLevel(Level.DEBUG);
         logger.debug("Ward command execution started.");
         if(commandArgs.getExecutor() == null){
             logger.error("Throw IllegalArgumentException. Executor is null.");

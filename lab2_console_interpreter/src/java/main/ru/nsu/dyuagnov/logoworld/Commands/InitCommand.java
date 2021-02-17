@@ -1,7 +1,6 @@
 package main.ru.nsu.dyuagnov.logoworld.Commands;
 
 import main.ru.nsu.dyuagnov.logoworld.Coordinates.Coordinates;
-import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
@@ -17,12 +16,11 @@ public final class InitCommand implements Command{
 
     /**
      * Changes field size
-     * @param commandArgs - arguments for execution.
+     * @param commandArgs arguments for execution.
      * */
     @Override
     public void execute(CommandArgs commandArgs) {
         DOMConfigurator.configure("src/java/resources/log4j.xml");
-        logger.setLevel(Level.DEBUG);
         logger.info("Init command execution started.");
         final int width = parseInt(commandArgs.getArgs()[1]);
         final int height = parseInt(commandArgs.getArgs()[2]);

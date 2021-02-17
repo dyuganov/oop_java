@@ -6,4 +6,3 @@ package main.ru.nsu.dyuagnov.logoworld.Executor;
 public enum Direction {
     UP, DOWN, LEFT, RIGHT
 }
-

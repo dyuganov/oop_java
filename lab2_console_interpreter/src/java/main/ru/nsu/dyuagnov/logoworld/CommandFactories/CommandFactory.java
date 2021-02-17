@@ -7,13 +7,12 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
 /**
- * Creates command objects that implement ru.nsu.Dyuagnov.LogoWorld.Commands.Command.
+ * Creates command objects that implement Command interface.
  * Stores created commands.
  * */
 public class CommandFactory {
@@ -23,7 +22,7 @@ public class CommandFactory {
     /**
      * Creates command using command name as a key.
      *
-     * @param commandName - key for creation a command.
+     * @param commandName key for creation a command.
      *                    This key + command class name are in "CommandList.properties" file.
      *                    Commands create in runtime using reflection.
      *
@@ -31,7 +30,6 @@ public class CommandFactory {
      * */
     public Command create(final String commandName) throws IOException, ReflectiveOperationException {
         DOMConfigurator.configure("src/java/resources/log4j.xml");
-        logger.setLevel(Level.DEBUG);
         logger.debug("Command creation started.");
         logger.debug("Got args command name: " + commandName);
         if (commands.containsKey(commandName)){

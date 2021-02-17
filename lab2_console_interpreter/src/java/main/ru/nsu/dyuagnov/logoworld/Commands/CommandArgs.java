@@ -13,9 +13,9 @@ public class CommandArgs {
     private String[] args;
 
     /**
-     * @param executor - abstract LogoWorld executor.
-     * @param field - main game field for executor to interact.
-     * @param args - parsed arguments from user command.
+     * @param executor abstract LogoWorld executor.
+     * @param field main game field for executor to interact.
+     * @param args parsed arguments from user command.
      * */
     public CommandArgs(Executor executor, Field field, String[] args){
         this.executor = executor;
