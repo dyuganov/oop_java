@@ -23,7 +23,7 @@ public class ConsoleUI implements UI {
                     System.out.print("  ");
                 }
                 else {
-                    System.out.print(field.getObject(new Coordinates(x, y)).toString() + ' ');
+                    System.out.print(field.getCell(new Coordinates(x, y)).toString() + ' ');
                 }
             }
             System.out.print('\n');

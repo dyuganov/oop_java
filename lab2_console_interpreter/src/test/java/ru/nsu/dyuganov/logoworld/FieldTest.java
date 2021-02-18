@@ -1,17 +1,18 @@
 package ru.nsu.dyuganov.logoworld;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 import ru.nsu.dyuganov.logoworld.Coordinates.Coordinates;
 import ru.nsu.dyuganov.logoworld.Field.Cell;
 import ru.nsu.dyuganov.logoworld.Field.Field;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 public class FieldTest {
     private Field field = new Field(10, 10);
 
     @Test
-    void resize(){
+    void resize() {
         // init is correct check
         assertEquals(10, field.getHeight());
         assertEquals(10, field.getWidth());
@@ -26,18 +27,18 @@ public class FieldTest {
     }
 
     @Test
-    void setObject(){
+    void setObject() {
         // init is correct check
-        final Coordinates coordinates = new Coordinates(0,0);
-        assertEquals(Cell.EMPTY, field.getObject(coordinates));
+        final Coordinates coordinates = new Coordinates(0, 0);
+        assertEquals(Cell.EMPTY, field.getCell(coordinates));
 
         // normal set case
-        field.setObject(coordinates, Cell.FILLED);
-        assertEquals(Cell.FILLED, field.getObject(coordinates));
+        field.setCell(coordinates, Cell.FILLED);
+        assertEquals(Cell.FILLED, field.getCell(coordinates));
 
         // double set case
-        field.setObject(coordinates, Cell.EMPTY);
-        field.setObject(coordinates, Cell.EMPTY);
-        assertEquals(Cell.EMPTY, field.getObject(coordinates));
+        field.setCell(coordinates, Cell.EMPTY);
+        field.setCell(coordinates, Cell.EMPTY);
+        assertEquals(Cell.EMPTY, field.getCell(coordinates));
     }
 }

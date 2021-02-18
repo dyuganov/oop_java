@@ -1,18 +1,18 @@
 package ru.nsu.dyuganov.logoworld;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 import ru.nsu.dyuganov.logoworld.Coordinates.Coordinates;
 import ru.nsu.dyuganov.logoworld.Executor.Direction;
 import ru.nsu.dyuganov.logoworld.Executor.Robot;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RobotTest {
     private final Robot robot = new Robot(new Coordinates(0, 0));
 
     @Test
-    void directionMovement(){
+    void directionMovement() {
+        // normal use
         robot.move(Direction.RIGHT);
         assertEquals(0, robot.getCoordinates().getX());
         assertEquals(1, robot.getCoordinates().getY());
@@ -28,24 +28,28 @@ public class RobotTest {
         robot.move(Direction.UP);
         assertEquals(0, robot.getCoordinates().getX());
         assertEquals(0, robot.getCoordinates().getY());
+
+        // null arg
+        assertThrows(RuntimeException.class, () -> robot.move(null));
     }
 
     @Test
-    void teleportation(){
+    void teleportation() {
         robot.teleport(new Coordinates(5, 6));
         assertEquals(5, robot.getCoordinates().getX());
         assertEquals(6, robot.getCoordinates().getY());
 
+        // normal use
         robot.teleport(new Coordinates(0, 0));
         assertEquals(0, robot.getCoordinates().getX());
         assertEquals(0, robot.getCoordinates().getY());
 
-        Exception exception = assertThrows(RuntimeException.class,
-                () -> robot.teleport(new Coordinates(-1, -1)));
+        // negative coordinates
+        assertThrows(RuntimeException.class, () -> robot.teleport(new Coordinates(-1, -1)));
     }
 
     @Test
-    void drawMode(){
+    void drawMode() {
         // normal case
         robot.draw();
         assertTrue(robot.isDrawing());

@@ -20,7 +20,9 @@ import org.apache.log4j.xml.DOMConfigurator;
  * Then draws field to console.
  * */
 public class Interpreter {
-    public Interpreter(){}
+    public Interpreter(){
+        DOMConfigurator.configure("src/main/resources/ru.nsu.dyuganov.logoworld/log4j.xml");
+    }
     private final static Logger logger = LogManager.getLogger(Interpreter.class);
 
     /**
@@ -30,8 +32,7 @@ public class Interpreter {
      * @param UI - class to display the field and executor
      * */
     public void run(Executor executor, Field field, UI UI) throws IOException, ReflectiveOperationException {
-        DOMConfigurator.configure("src/main/resources/ru.nsu.dyuganov.logoworld/log4j.xml");
-        logger.debug("ru.nsu.dyuganov.logoworld.Interpreter.ru.nsu.dyuganov.logoworld.Interpreter started.");
+        logger.debug("Interpreter run started.");
         try (Scanner in = new Scanner(System.in)) {
             printAvailableCommands();
             logger.debug("Start info message printed.");
@@ -51,13 +52,11 @@ public class Interpreter {
                     break;
                 }
                 Command currentCommand = commandFactory.create(commandArgs.getArgs()[0]);
-                logger.debug("Command created.");
                 currentCommand.execute(commandArgs);
-                logger.debug("Command executed.");
                 UI.draw(executor, field);
-                logger.debug("ru.nsu.dyuganov.logoworld.Field displayed.");
+                logger.debug("Field displayed.");
             }
-            logger.debug("ru.nsu.dyuganov.logoworld.Interpreter.ru.nsu.dyuganov.logoworld.Interpreter finished work.");
+            logger.debug("Interpreter finished work.");
         }
     }
 

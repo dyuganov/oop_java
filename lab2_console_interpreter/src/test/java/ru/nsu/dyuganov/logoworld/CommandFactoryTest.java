@@ -6,16 +6,17 @@ import ru.nsu.dyuganov.logoworld.Commands.Command;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class CommandFactoryTest {
     private CommandFactory commandFactory = new CommandFactory();
 
     @Test
-    void create(){
-        try{
+    void create() {
+        try {
             String[] commandNames = {"INIT", "DRAW", "WARD", "MOVE", "TELEPORT"};
-            for(String name : commandNames){
+            for (String name : commandNames) {
                 Command command = commandFactory.create(name);
                 assertNotEquals(null, command);
                 assertNotEquals(null, commandFactory.create(name));

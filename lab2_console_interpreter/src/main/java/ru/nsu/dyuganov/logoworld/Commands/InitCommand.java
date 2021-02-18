@@ -1,25 +1,27 @@
 package ru.nsu.dyuganov.logoworld.Commands;
 
-import ru.nsu.dyuganov.logoworld.Coordinates.Coordinates;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
+import ru.nsu.dyuganov.logoworld.Coordinates.Coordinates;
 
-import static java.lang.Integer.*;
+import static java.lang.Integer.parseInt;
 
 /**
  * Format: INIT <width> <height> <x> <y>
- * */
-public final class InitCommand implements Command{
+ */
+public final class InitCommand implements Command {
     private final static Logger logger = LogManager.getLogger(InitCommand.class);
-    public InitCommand(){
+
+    public InitCommand() {
         DOMConfigurator.configure("src/main/resources/ru.nsu.dyuganov.logoworld/log4j.xml");
     }
 
     /**
      * Changes field size
+     *
      * @param commandArgs arguments for execution.
-     * */
+     */
     @Override
     public void execute(CommandArgs commandArgs) {
         logger.info("Init command execution started.");
@@ -28,14 +30,13 @@ public final class InitCommand implements Command{
         final int x = parseInt(commandArgs.getArgs()[3]);
         final int y = parseInt(commandArgs.getArgs()[4]);
         Coordinates coordinates = new Coordinates(x, y);
-        logger.debug("Args parsed. Width = " + width + "; height = " + height + "; ru.nsu.dyuganov.logoworld.Coordinates = " + coordinates);
+        logger.debug("Args parsed. Width = " + width + "; height = " + height + "; Coordinates = " + coordinates);
         commandArgs.getField().resize(width, height);
-        logger.info("ru.nsu.dyuganov.logoworld.Field resized.");
-        if(width > y && height > x){
+        logger.info("Field resized.");
+        if (width > y && height > x) {
             commandArgs.getExecutor().setCoordinates(coordinates);
-            logger.info("ru.nsu.dyuganov.logoworld.Executor coordinates changed.");
-        }
-        else {
+            logger.info("Executor coordinates changed.");
+        } else {
             logger.error("Got wrong executor coordinates. Throw IllegalArgumentException.");
             throw new IllegalArgumentException("InitCommand.execute error. Wrong executor coordinates.");
         }

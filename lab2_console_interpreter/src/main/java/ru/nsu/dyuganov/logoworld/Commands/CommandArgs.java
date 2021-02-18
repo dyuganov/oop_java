@@ -5,33 +5,33 @@ import ru.nsu.dyuganov.logoworld.Field.Field;
 
 /**
  * Universal arguments for commands.
- * Contains ru.nsu.dyuganov.logoworld.Executor, ru.nsu.dyuganov.logoworld.Field and String[] with original line after splitting.
- * */
+ * Contains abstract Executor, Field and String[] with original line after splitting.
+ */
 public class CommandArgs {
     private Executor executor;
-    private Field field ;
+    private Field field;
     private String[] args;
 
     /**
      * @param executor abstract LogoWorld executor.
-     * @param field main game field for executor to interact.
-     * @param args parsed arguments from user command.
-     * */
-    public CommandArgs(Executor executor, Field field, String[] args){
+     * @param field    main game field for executor to interact.
+     * @param args     parsed arguments from user command.
+     */
+    public CommandArgs(Executor executor, Field field, String[] args) {
         this.executor = executor;
         this.field = field;
         this.args = args;
     }
 
-    public String[] getArgs(){
+    public String[] getArgs() {
         return args;
     }
 
-    public Executor getExecutor(){
+    public Executor getExecutor() {
         return executor;
     }
 
-    public Field getField(){
+    public Field getField() {
         return field;
     }
 
