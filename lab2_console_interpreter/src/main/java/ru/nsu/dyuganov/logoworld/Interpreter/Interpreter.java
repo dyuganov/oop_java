@@ -3,7 +3,7 @@ package ru.nsu.dyuganov.logoworld.Interpreter;
 import ru.nsu.dyuganov.logoworld.CommandFactories.CommandFactory;
 import ru.nsu.dyuganov.logoworld.Commands.Command;
 import ru.nsu.dyuganov.logoworld.Commands.CommandArgs;
-import ru.nsu.dyuganov.logoworld.Executor.Executor;
+import ru.nsu.dyuganov.logoworld.AbstractExecutor.AbstractExecutor;
 import ru.nsu.dyuganov.logoworld.Field.Field;
 import ru.nsu.dyuganov.logoworld.UI.UI;
 
@@ -28,15 +28,15 @@ public class Interpreter {
     /**
      * Endless loop for program
      * @param field - game field
-     * @param executor - object on field
+     * @param abstractExecutor - object on field
      * @param UI - class to display the field and executor
      * */
-    public void run(Executor executor, Field field, UI UI) throws IOException, ReflectiveOperationException {
+    public void run(AbstractExecutor abstractExecutor, Field field, UI UI) throws IOException, ReflectiveOperationException {
         logger.debug("Interpreter run started.");
         try (Scanner in = new Scanner(System.in)) {
             printAvailableCommands();
             logger.debug("Start info message printed.");
-            final CommandArgs commandArgs = new CommandArgs(executor, field, null);
+            final CommandArgs commandArgs = new CommandArgs(abstractExecutor, field, null);
             logger.debug("Command args created.");
             final CommandFactory commandFactory = new CommandFactory();
             logger.debug("Command factory created.");
@@ -53,7 +53,7 @@ public class Interpreter {
                 }
                 Command currentCommand = commandFactory.create(commandArgs.getArgs()[0]);
                 currentCommand.execute(commandArgs);
-                UI.draw(executor, field);
+                UI.draw(abstractExecutor, field);
                 logger.debug("Field displayed.");
             }
             logger.debug("Interpreter finished work.");

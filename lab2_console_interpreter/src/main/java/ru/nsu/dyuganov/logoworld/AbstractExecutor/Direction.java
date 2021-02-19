@@ -1,4 +1,4 @@
-package ru.nsu.dyuganov.logoworld.Executor;
+package ru.nsu.dyuganov.logoworld.AbstractExecutor;
 
 /**
  * ru.nsu.dyuganov.logoworld.Main directions used in commands format.

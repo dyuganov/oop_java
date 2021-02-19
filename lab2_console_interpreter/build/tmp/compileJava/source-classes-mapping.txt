@@ -1,11 +1,7 @@
-ru/nsu/dyuganov/logoworld/Executor/Executor.java
- ru.nsu.dyuganov.logoworld.Executor.Executor
-ru/nsu/dyuganov/logoworld/Field/Cell.java
- ru.nsu.dyuganov.logoworld.Field.Cell
 ru/nsu/dyuganov/logoworld/Coordinates/Coordinates.java
  ru.nsu.dyuganov.logoworld.Coordinates.Coordinates
-ru/nsu/dyuganov/logoworld/Executor/Direction.java
- ru.nsu.dyuganov.logoworld.Executor.Direction
+ru/nsu/dyuganov/logoworld/Field/Cell.java
+ ru.nsu.dyuganov.logoworld.Field.Cell
 ru/nsu/dyuganov/logoworld/UI/ConsoleUI.java
  ru.nsu.dyuganov.logoworld.UI.ConsoleUI
 ru/nsu/dyuganov/logoworld/CommandFactories/CommandFactory.java
@@ -18,13 +14,17 @@ ru/nsu/dyuganov/logoworld/Interpreter/Interpreter.java
  ru.nsu.dyuganov.logoworld.Interpreter.Interpreter
 ru/nsu/dyuganov/logoworld/Field/Field.java
  ru.nsu.dyuganov.logoworld.Field.Field
-ru/nsu/dyuganov/logoworld/Executor/Robot.java
- ru.nsu.dyuganov.logoworld.Executor.Robot
- ru.nsu.dyuganov.logoworld.Executor.Robot$1
+ru/nsu/dyuganov/logoworld/AbstractExecutor/AbstractExecutor.java
+ ru.nsu.dyuganov.logoworld.AbstractExecutor.AbstractExecutor
 ru/nsu/dyuganov/logoworld/Commands/DrawCommand.java
  ru.nsu.dyuganov.logoworld.Commands.DrawCommand
 ru/nsu/dyuganov/logoworld/Commands/InitCommand.java
  ru.nsu.dyuganov.logoworld.Commands.InitCommand
+ru/nsu/dyuganov/logoworld/AbstractExecutor/Direction.java
+ ru.nsu.dyuganov.logoworld.AbstractExecutor.Direction
+ru/nsu/dyuganov/logoworld/AbstractExecutor/Robot.java
+ ru.nsu.dyuganov.logoworld.AbstractExecutor.Robot
+ ru.nsu.dyuganov.logoworld.AbstractExecutor.Robot$1
 ru/nsu/dyuganov/logoworld/Commands/MoveCommand.java
  ru.nsu.dyuganov.logoworld.Commands.MoveCommand
 ru/nsu/dyuganov/logoworld/Commands/WardCommand.java

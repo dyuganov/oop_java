@@ -1,4 +1,4 @@
-package ru.nsu.dyuganov.logoworld.Executor;
+package ru.nsu.dyuganov.logoworld.AbstractExecutor;
 import ru.nsu.dyuganov.logoworld.Coordinates.Coordinates;
 import ru.nsu.dyuganov.logoworld.Interpreter.Interpreter;
 import org.apache.log4j.LogManager;
@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
  * Robot interacts with the field.
  * Has position and can turn on draw mode.
  * */
-public class Robot implements Executor {
+public class Robot implements AbstractExecutor {
     private final static Logger logger = LogManager.getLogger(String.valueOf(Interpreter.class));
     private Coordinates coordinates;
     private boolean isDrawing = false;

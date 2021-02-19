@@ -1,6 +1,6 @@
 package ru.nsu.dyuganov.logoworld.Commands;
 
-import ru.nsu.dyuganov.logoworld.Executor.Executor;
+import ru.nsu.dyuganov.logoworld.AbstractExecutor.AbstractExecutor;
 import ru.nsu.dyuganov.logoworld.Field.Field;
 
 /**
@@ -8,17 +8,17 @@ import ru.nsu.dyuganov.logoworld.Field.Field;
  * Contains abstract Executor, Field and String[] with original line after splitting.
  */
 public class CommandArgs {
-    private Executor executor;
+    private AbstractExecutor abstractExecutor;
     private Field field;
     private String[] args;
 
     /**
-     * @param executor abstract LogoWorld executor.
+     * @param abstractExecutor abstract LogoWorld executor.
      * @param field    main game field for executor to interact.
      * @param args     parsed arguments from user command.
      */
-    public CommandArgs(Executor executor, Field field, String[] args) {
-        this.executor = executor;
+    public CommandArgs(AbstractExecutor abstractExecutor, Field field, String[] args) {
+        this.abstractExecutor = abstractExecutor;
         this.field = field;
         this.args = args;
     }
@@ -27,16 +27,16 @@ public class CommandArgs {
         return args;
     }
 
-    public Executor getExecutor() {
-        return executor;
+    public AbstractExecutor getExecutor() {
+        return abstractExecutor;
     }
 
     public Field getField() {
         return field;
     }
 
-    public void setExecutor(Executor executor) {
-        this.executor = executor;
+    public void setExecutor(AbstractExecutor abstractExecutor) {
+        this.abstractExecutor = abstractExecutor;
     }
 
     public void setField(Field field) {

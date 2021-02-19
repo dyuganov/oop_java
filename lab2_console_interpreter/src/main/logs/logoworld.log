@@ -1,4 +1,15 @@
-2021-02-19 01:10:16 INFO  MoveCommand:75 - ru.nsu.dyuganov.logoworld.Field cell set to FILLED at executor new coordinates: (x: 0, y: 2)
+2021-02-19 01:10:16 INFO  MoveCommand:75 - ru.nsu.dyuganov.logoworld.Field cell set to FILLED at abstractExecutor new coordinates: (x: 0, y: 2)
 2021-02-19 01:10:16 ERROR MoveCommand:49 - Throw IllegalArgumentException exception. StepsN < 0.
 2021-02-19 01:13:18 INFO  Interpreter:31 - Executor mode set to ward mode.
 2021-02-19 01:13:18 INFO  Interpreter:31 - Executor mode set to ward mode.
+2021-02-19 11:28:42 INFO  Main:21 - ru.nsu.dyuganov.logoworld.Main started.
+2021-02-19 11:28:42 INFO  Interpreter:45 - Started command reading loop.
+2021-02-19 11:36:02 INFO  Main:21 - ru.nsu.dyuganov.logoworld.Main started.
+2021-02-19 11:36:02 INFO  Interpreter:45 - Started command reading loop.
+2021-02-19 11:36:11 INFO  CommandFactory:58 - Created new command.
+2021-02-19 11:36:11 INFO  InitCommand:27 - Init command execution started.
+2021-02-19 11:36:11 INFO  InitCommand:35 - Field resized.
+2021-02-19 11:36:11 INFO  InitCommand:38 - Executor coordinates changed.
+2021-02-19 11:36:11 INFO  Interpreter:45 - Started command reading loop.
+2021-02-19 11:36:14 INFO  CommandFactory:58 - Created new command.
+2021-02-19 11:36:14 INFO  Main:41 - ru.nsu.dyuganov.logoworld.Main finished work.

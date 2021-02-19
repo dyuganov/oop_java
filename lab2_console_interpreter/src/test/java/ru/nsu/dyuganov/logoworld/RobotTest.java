@@ -2,8 +2,8 @@ package ru.nsu.dyuganov.logoworld;
 
 import org.junit.jupiter.api.Test;
 import ru.nsu.dyuganov.logoworld.Coordinates.Coordinates;
-import ru.nsu.dyuganov.logoworld.Executor.Direction;
-import ru.nsu.dyuganov.logoworld.Executor.Robot;
+import ru.nsu.dyuganov.logoworld.AbstractExecutor.Direction;
+import ru.nsu.dyuganov.logoworld.AbstractExecutor.Robot;
 
 import static org.junit.jupiter.api.Assertions.*;
 
