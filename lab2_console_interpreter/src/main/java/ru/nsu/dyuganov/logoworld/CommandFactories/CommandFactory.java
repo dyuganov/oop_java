@@ -42,8 +42,9 @@ public class CommandFactory {
             return commands.get(commandName);
         } else {
             if (!commands.containsKey("INIT") && !commandName.equals("INIT")) {
-                logger.error("Throw IllegalArgumentException. Command name is not INIT and no INIT command found in cache.");
-                throw new IllegalArgumentException("First command should be \"INIT\". ");
+                logger.error("Command name is not INIT and no INIT command found in cache.");
+                System.err.println("First command must be INIT.");
+                return null;
             }
             final Properties properties = new Properties();
             String commandsFileName = "src/main/resources/ru.nsu.dyuganov.logoworld/commandlist.properties";

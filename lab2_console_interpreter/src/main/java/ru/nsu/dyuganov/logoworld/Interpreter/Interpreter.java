@@ -41,9 +41,9 @@ public class Interpreter {
             final CommandFactory commandFactory = new CommandFactory();
             logger.debug("Command factory created.");
 
+            System.out.print("Your command: ");
             while (true) {
                 logger.info("Started command reading loop.");
-                System.out.print("Your command: ");
                 String line = in.nextLine().toUpperCase(Locale.ROOT);
                 logger.debug("Got user command: " + line);
                 commandArgs.setArgs(line.split(" "));
@@ -52,9 +52,11 @@ public class Interpreter {
                     break;
                 }
                 Command currentCommand = commandFactory.create(commandArgs.getArgs()[0]);
+                if(currentCommand == null) continue;
                 currentCommand.execute(commandArgs);
                 UI.draw(abstractExecutor, field);
                 logger.debug("Field displayed.");
+                System.out.print("Your command: ");
             }
             logger.debug("Interpreter finished work.");
         }

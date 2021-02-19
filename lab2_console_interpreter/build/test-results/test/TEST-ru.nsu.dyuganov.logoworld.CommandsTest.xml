@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.nsu.dyuganov.logoworld.CommandsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-02-19T09:29:42" hostname="DESKTOP-LUNUNSR" time="0.376">
+  <properties/>
+  <testcase name="initCommand()" classname="ru.nsu.dyuganov.logoworld.CommandsTest" time="0.257"/>
+  <testcase name="wardCommand()" classname="ru.nsu.dyuganov.logoworld.CommandsTest" time="0.023"/>
+  <testcase name="drawCommand()" classname="ru.nsu.dyuganov.logoworld.CommandsTest" time="0.024"/>
+  <testcase name="moveCommand()" classname="ru.nsu.dyuganov.logoworld.CommandsTest" time="0.038"/>
+  <testcase name="teleportCommand()" classname="ru.nsu.dyuganov.logoworld.CommandsTest" time="0.029"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Wrong steps number.
+Wrong steps number.
+Wrong args number.
+Wrong coordinates.
+]]></system-err>
+</testsuite>

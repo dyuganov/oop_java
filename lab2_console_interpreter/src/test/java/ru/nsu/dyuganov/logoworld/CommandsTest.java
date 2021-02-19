@@ -9,6 +9,7 @@ import ru.nsu.dyuganov.logoworld.Field.Cell;
 import ru.nsu.dyuganov.logoworld.Field.Field;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CommandsTest {
     @Test
@@ -38,15 +39,17 @@ public class CommandsTest {
         String[] incorrectArgs = {"TELEPORT", "-3", "-4"};
         CommandArgs commandArgs = new CommandArgs(abstractExecutor, field, null);
 
+        // incorrect args
+        commandArgs.setArgs(incorrectArgs);
+        assertDoesNotThrow(() -> teleportCommand.execute(commandArgs));
+        assertEquals(1, abstractExecutor.getCoordinates().getX());
+        assertEquals(1, abstractExecutor.getCoordinates().getY());
+
         // normal use
         commandArgs.setArgs(args);
         teleportCommand.execute(commandArgs);
         assertEquals(3, abstractExecutor.getCoordinates().getX());
         assertEquals(4, abstractExecutor.getCoordinates().getY());
-
-        // incorrect args
-        commandArgs.setArgs(incorrectArgs);
-        assertThrows(RuntimeException.class, () -> teleportCommand.execute(commandArgs));
 
         // null args
         assertThrows(RuntimeException.class, () -> teleportCommand.execute(null));
@@ -98,16 +101,24 @@ public class CommandsTest {
         assertEquals(Cell.FILLED, field.getCell(new Coordinates(0, 2)));
 
         // wrong direction
+        abstractExecutor.setCoordinates(new Coordinates(0,0));
         commandArgs.setArgs(wrongDirectionArgs);
-        assertThrows(RuntimeException.class, () -> moveCommand.execute(commandArgs));
+        commandArgs.setArgs(wrongStepNumberArgs);
+        assertDoesNotThrow(() -> moveCommand.execute(commandArgs));
+        assertEquals(0, abstractExecutor.getCoordinates().getY());
+        assertEquals(0, abstractExecutor.getCoordinates().getX());
 
         // wrong steps number
         commandArgs.setArgs(wrongStepNumberArgs);
-        assertThrows(RuntimeException.class, () -> moveCommand.execute(commandArgs));
+        assertDoesNotThrow(() -> moveCommand.execute(commandArgs));
+        assertEquals(0, abstractExecutor.getCoordinates().getY());
+        assertEquals(0, abstractExecutor.getCoordinates().getX());
 
         // no steps number
         commandArgs.setArgs(noStepsNumberArgs);
-        assertThrows(RuntimeException.class, () -> moveCommand.execute(commandArgs));
+        assertDoesNotThrow(() -> moveCommand.execute(commandArgs));
+        assertEquals(0, abstractExecutor.getCoordinates().getY());
+        assertEquals(0, abstractExecutor.getCoordinates().getX());
 
         // null args
         assertThrows(RuntimeException.class, () -> moveCommand.execute(null));

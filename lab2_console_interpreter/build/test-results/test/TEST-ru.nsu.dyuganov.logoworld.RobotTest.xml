@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.nsu.dyuganov.logoworld.RobotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-02-18T18:15:54" hostname="DESKTOP-LUNUNSR" time="0.028">
+<testsuite name="ru.nsu.dyuganov.logoworld.RobotTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-02-19T09:29:43" hostname="DESKTOP-LUNUNSR" time="0.01">
   <properties/>
-  <testcase name="directionMovement()" classname="ru.nsu.dyuganov.logoworld.RobotTest" time="0.028"/>
+  <testcase name="teleportation()" classname="ru.nsu.dyuganov.logoworld.RobotTest" time="0.003"/>
+  <testcase name="directionMovement()" classname="ru.nsu.dyuganov.logoworld.RobotTest" time="0.002"/>
+  <testcase name="drawMode()" classname="ru.nsu.dyuganov.logoworld.RobotTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,10 +1,10 @@
+ru/nsu/dyuganov/logoworld/CoordinatesTest.java
+ ru.nsu.dyuganov.logoworld.CoordinatesTest
 ru/nsu/dyuganov/logoworld/CommandFactoryTest.java
  ru.nsu.dyuganov.logoworld.CommandFactoryTest
 ru/nsu/dyuganov/logoworld/FieldTest.java
  ru.nsu.dyuganov.logoworld.FieldTest
 ru/nsu/dyuganov/logoworld/CommandsTest.java
  ru.nsu.dyuganov.logoworld.CommandsTest
-ru/nsu/dyuganov/logoworld/CoordinatesTest.java
- ru.nsu.dyuganov.logoworld.CoordinatesTest
 ru/nsu/dyuganov/logoworld/RobotTest.java
  ru.nsu.dyuganov.logoworld.RobotTest

@@ -27,21 +27,41 @@ public final class TeleportCommand implements Command {
     @Override
     public void execute(CommandArgs commandArgs) {
         logger.debug("Teleport command execution started.");
+        if(!isCorrectArgsNumber(commandArgs)){
+            logger.debug("Teleport command execution finished.");
+            return;
+        }
         int x = parseInt(commandArgs.getArgs()[1]);
         int y = parseInt(commandArgs.getArgs()[2]);
-        logger.debug("Args parsed: x = " + x + "; y = " + y +
-                "; ru.nsu.dyuganov.logoworld.Executor = " + commandArgs.getExecutor() + "; ru.nsu.dyuganov.logoworld.Field = " + commandArgs.getField());
+        logger.debug("Args parsed: x = " + x + "; y = " + y + "; Executor = " +
+                commandArgs.getExecutor() + "; Field = " + commandArgs.getField());
         if (commandArgs.getExecutor() == null || commandArgs.getField() == null) {
             logger.error("Throw IllegalArgumentException. Got null argument.");
             throw new IllegalArgumentException("TeleportCommand.execute() error. Got null argument.");
         }
+        if(x < 0 || x >= commandArgs.getField().getHeight() || y < 0 || y >= commandArgs.getField().getWidth()){
+            logger.error("Got wrong coordinates.");
+            System.err.println("Wrong coordinates.");
+            logger.debug("Teleport command execution finished.");
+            return;
+        }
         Coordinates coordinates = new Coordinates(x, y);
         commandArgs.getExecutor().teleport(coordinates);
-        logger.info("ru.nsu.dyuganov.logoworld.Executor coordinates changed to " + coordinates);
+        logger.info("Executor coordinates changed to " + coordinates);
         if (commandArgs.getExecutor().isDrawing()) {
             commandArgs.getField().setCell(commandArgs.getExecutor().getCoordinates(), Cell.FILLED);
-            logger.info("ru.nsu.dyuganov.logoworld.Field cell set to FILLED at " + coordinates);
+            logger.info("Field cell set to FILLED at " + coordinates);
         }
         logger.debug("Teleport command execution finished.");
+    }
+
+    private boolean isCorrectArgsNumber(CommandArgs commandArgs){
+        final int correctArgsNumber = 3;
+        if(commandArgs.getArgs().length < correctArgsNumber){
+            logger.error("Got wrong args number.");
+            System.err.println("Wrong args number.");
+            return false;
+        }
+        return true;
     }
 }

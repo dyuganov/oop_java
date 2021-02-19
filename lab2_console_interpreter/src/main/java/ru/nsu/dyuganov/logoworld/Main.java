@@ -18,7 +18,7 @@ public class Main {
 
     public static void main(String[] args) {
         DOMConfigurator.configure("src/main/resources/ru.nsu.dyuganov.logoworld/log4j.xml");
-        logger.info("ru.nsu.dyuganov.logoworld.Main started.");
+        logger.info("Main started.");
         try {
             AbstractExecutor abstractExecutor = new Robot(new Coordinates(0, 0));
             Field field = new Field(1, 1);
@@ -38,6 +38,6 @@ public class Main {
             System.err.print("IOException: " + e.getLocalizedMessage());
             e.printStackTrace();
         }
-        logger.info("ru.nsu.dyuganov.logoworld.Main finished work.");
+        logger.info("Main finished work.");
     }
 }
