@@ -7,49 +7,16 @@
     <list default="true" id="526fe750-0203-4fcc-88be-580b2775ce82" name="Default Changelist" comment="Executor renamed to AbstractExecutor. Move test refactoring">
       <change beforePath="$PROJECT_DIR$/../lab1_morse_code/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1_morse_code/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab1_morse_code/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/MorseCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1_morse_code/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/MorseCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab1_morse_code/src/c_in.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1_morse_code/c_in.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab1_morse_code/src/d_in.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1_morse_code/d_in.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab1_morse_code/src/lc_in.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1_morse_code/lc_in.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab1_morse_code/src/ru/nsu/Dyuganov/MorseCoder/Alphabet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1_morse_code/src/ru/nsu/Dyuganov/MorseCoder/Alphabet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab1_morse_code/src/ru/nsu/Dyuganov/MorseCoder/MorseCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1_morse_code/src/ru/nsu/Dyuganov/MorseCoder/MorseCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/dyuganov/logoworld/CommandFactories/CommandFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/dyuganov/logoworld/CommandFactories/CommandFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/dyuganov/logoworld/Commands/InitCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/dyuganov/logoworld/Commands/InitCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/dyuganov/logoworld/Commands/MoveCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/dyuganov/logoworld/Commands/MoveCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/dyuganov/logoworld/Commands/TeleportCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/dyuganov/logoworld/Commands/TeleportCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/dyuganov/logoworld/Interpreter/Interpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/dyuganov/logoworld/Interpreter/Interpreter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/dyuganov/logoworld/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ru/nsu/dyuganov/logoworld/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/nsu/dyuganov/logoworld/CommandsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/nsu/dyuganov/logoworld/CommandsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/nsu/dyuganov/logoworld/RobotTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/nsu/dyuganov/logoworld/RobotTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/ru.nsu.dyuganov.logoworld.RobotTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/ru.nsu.dyuganov.logoworld.RobotTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/ru.nsu.dyuganov.logoworld.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/ru.nsu.dyuganov.logoworld.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-ru.nsu.dyuganov.logoworld.RobotTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-ru.nsu.dyuganov.logoworld.RobotTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/source-classes-mapping.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/CommandFactories/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/CommandFactories/CommandFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/Commands/InitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/Commands/InitCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/Commands/MoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/Commands/MoveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/Commands/TeleportCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/Commands/TeleportCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/Interpreter/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/Interpreter/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logs/logoworld.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logs/logoworld.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logs/logoworld.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/logs/logoworld.log.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/dyuganov/logoworld/CommandsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/dyuganov/logoworld/CommandsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logs/logoworld.log.2" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +103,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'lab2_console_interpreter.test'">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.nsu.dyuganov.logoworld.Main" />
       <module name="lab2_console_interpreter.main" />
@@ -287,6 +254,9 @@
       <workItem from="1613640540397" duration="6370000" />
       <workItem from="1613652366224" duration="5703000" />
       <workItem from="1613706631807" duration="12982000" />
+      <workItem from="1613820778684" duration="421000" />
+      <workItem from="1613844054740" duration="140000" />
+      <workItem from="1613888695952" duration="5167000" />
     </task>
     <task id="LOCAL-00001" summary="Executor renamed to AbstractExecutor. Move test refactoring">
       <created>1613709663787</created>
