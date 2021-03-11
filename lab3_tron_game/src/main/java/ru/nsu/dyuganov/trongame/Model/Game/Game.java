@@ -9,7 +9,17 @@ public class Game {
     Game(){}
 
     void run(){
-        ArrayList<Bike> bikes;
-        GameField gameField = new GameField();
+        final int fieldWidth = 10;
+        final int fieldLength = 10;
+        GameField gameField = new GameField(fieldWidth, fieldLength);
+
+        final ArrayList<Bike> bikes = new ArrayList<>();
+        bikes.add(new Bike(fieldWidth / 2, fieldLength / 2));
+
+
+
+        while(true){
+
+        }
     }
 }

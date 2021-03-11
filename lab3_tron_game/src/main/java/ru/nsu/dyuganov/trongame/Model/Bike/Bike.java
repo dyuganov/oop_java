@@ -10,7 +10,7 @@ public class Bike {
     private Trace trace; // новая точка добавляется только если меняется направление движения
     private Direction prevMoveDirection;
 
-    Bike(int x, int y){
+    public Bike(int x, int y){
         coordinates = new Coordinates(x, y);
         trace = new Trace();
         trace.addPoint(new Coordinates(coordinates.getX(), coordinates.getY()));
