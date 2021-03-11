@@ -1,6 +1,5 @@
 package ru.nsu.dyuganov.trongame.Model.Bike;
 
-import ru.nsu.dyuganov.trongame.Model.Color.Color;
 import ru.nsu.dyuganov.trongame.Model.Coordinates.Coordinates;
 import ru.nsu.dyuganov.trongame.Model.Direction.Direction;
 
@@ -21,13 +20,13 @@ public class Bike {
     public Bike(final Coordinates coordinates, final int id){
         this.coordinates = new Coordinates(coordinates);
         trace = new Trace();
-        trace.addPoint(new Coordinates(coordinates.getX(), coordinates.getY()));
+        trace.addPoint(new Coordinates(coordinates));
         this.id = id;
     }
 
-    // (0,0)--> (x)
+    // (0,0)--> width(x)
     //   |
-    //   v (y)
+    //   v length(y)
     public void move(Direction direction) {
         if(direction.isOpposite(prevMoveDirection)){
             direction = prevMoveDirection;

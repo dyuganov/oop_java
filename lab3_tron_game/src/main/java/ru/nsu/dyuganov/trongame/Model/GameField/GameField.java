@@ -3,7 +3,6 @@ package ru.nsu.dyuganov.trongame.Model.GameField;
 import ru.nsu.dyuganov.trongame.Model.Coordinates.Coordinates;
 import ru.nsu.dyuganov.trongame.Model.Direction.Direction;
 
-
 /**
  * (0,0)--> (X) - width<p>
  *  |<p>
@@ -36,6 +35,10 @@ public class GameField {
         else {
             throw new IllegalArgumentException("GameField.setCell(Coordinates cellCoordinates, Cell newCellType) got wrong coordinates.");
         }
+    }
+
+    Cell getCell(Coordinates coordinates){
+        return field[coordinates.getX()][coordinates.getY()];
     }
 
     boolean isAbleToMove(final Coordinates currentCoordinates, final Direction direction){
