@@ -3,28 +3,22 @@ package ru.nsu.dyuganov.trongame.Model.Game;
 import ru.nsu.dyuganov.trongame.Controller.ConsoleController;
 import ru.nsu.dyuganov.trongame.Controller.Controller;
 import ru.nsu.dyuganov.trongame.Controller.KeyboardController;
-import ru.nsu.dyuganov.trongame.Model.Bike.Bike;
-import ru.nsu.dyuganov.trongame.Model.Color.Color;
 import ru.nsu.dyuganov.trongame.Model.Direction.Direction;
-import ru.nsu.dyuganov.trongame.Model.Field.GameField;
 
-import java.util.ArrayList;
 
-public class Game {
-    public Game(){}
+public class LocalGame {
+    public LocalGame(){}
 
     public void run(RunMode runMode){
-        final int fieldWidth = 10;
-        final int fieldLength = 10;
-        GameField gameField = new GameField(fieldWidth, fieldLength);
 
-        final ArrayList<Bike> bikes = new ArrayList<>();
-        bikes.add(new Bike(fieldWidth / 2, fieldLength / 2));
+
 
         Controller controller = initController(runMode);
 
+
+        Direction currDirection = null;
         while(true){
-            System.out.println(controller.getDirection());
+
         }
     }
 
@@ -36,7 +30,13 @@ public class Game {
         return switch (runMode){
             case WINDOW -> new KeyboardController();
             case CONSOLE -> new ConsoleController();
-            default -> null;
+            //default -> null;
         };
     }
+
+/*    private void moveBike(Bike bike, Direction direction){
+        if(){ // проверка на границы карты
+            bike.move(direction);
+        }
+    }*/
 }

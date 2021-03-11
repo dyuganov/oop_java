@@ -1,7 +1,8 @@
 package ru.nsu.dyuganov.trongame.Model.Coordinates;
 
 /**
- * Stores x, y coordinates.
+ * Stores x, y coordinates. <p>
+ * x is width; y is length;
  * */
 public class Coordinates {
     private int x = 0;
@@ -17,6 +18,14 @@ public class Coordinates {
         }
         this.x = x;
         this.y = y;
+    }
+
+    /**
+     * Copy constructor
+     * */
+    public Coordinates(Coordinates other){
+        this.x = other.getX();
+        this.y = other.getY();
     }
 
     /**

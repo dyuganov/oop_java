@@ -2,27 +2,33 @@ package ru.nsu.dyuganov.trongame.Controller;
 
 import ru.nsu.dyuganov.trongame.Model.Direction.Direction;
 
+import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class KeyboardController implements Controller, KeyListener {
+public class KeyboardController extends JFrame implements Controller, KeyListener {
     private Thread thread;
 
-    private boolean isUP = false;
-    private boolean isDOWN = false;
-    private boolean isLEFT = false;
-    private boolean isRIGHT = false;
+    private KeysHandler keysHandler = new KeysHandler();
+
 
 
     @Override
     public Direction getDirection() {
+/*        JFrame frame = new KeyboardController();
+        this.setSize(1,1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
+        this.addKeyListener(this);
         thread = new MoveTread(this);
         thread.start();
         if(isDOWN) return Direction.DOWN;
         else if(isUP) return Direction.UP;
         else if(isLEFT) return Direction.LEFT;
         else if(isRIGHT) return Direction.RIGHT;
-        else return null;
+        else return null;*/
+        return null;
     }
 
     @Override
@@ -30,20 +36,12 @@ public class KeyboardController implements Controller, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_W, KeyEvent.VK_UP -> isUP = true;
-            case KeyEvent.VK_A, KeyEvent.VK_LEFT -> isLEFT = true;
-            case KeyEvent.VK_S, KeyEvent.VK_DOWN -> isDOWN = true;
-            case KeyEvent.VK_D, KeyEvent.VK_RIGHT -> isRIGHT = true;
-        }
+        keysHandler.pressedKey(e);
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        isUP = false;
-        isLEFT = false;
-        isDOWN = false;
-        isRIGHT = false;
+        keysHandler.releasedKey(e);
     }
 
 

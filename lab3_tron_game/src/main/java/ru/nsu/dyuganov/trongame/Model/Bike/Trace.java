@@ -19,6 +19,10 @@ public class Trace {
         }
     }
 
+    void deletePoint(Coordinates coordinates){
+        trace.remove(coordinates);
+    }
+
     void clear(){
         trace.clear();
     }
