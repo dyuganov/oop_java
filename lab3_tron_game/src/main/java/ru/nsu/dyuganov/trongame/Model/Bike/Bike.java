@@ -12,14 +12,14 @@ public class Bike {
     public Bike(int x, int y, int id){
         coordinates = new Coordinates(x, y);
 
-        trace = new Trace();
+        //trace = new Trace();
         trace.addPoint(new Coordinates(coordinates.getX(), coordinates.getY()));
         this.id = id;
     }
 
     public Bike(final Coordinates coordinates, final int id){
         this.coordinates = new Coordinates(coordinates);
-        trace = new Trace();
+       //trace = new Trace();
         trace.addPoint(new Coordinates(coordinates));
         this.id = id;
     }
@@ -31,7 +31,8 @@ public class Bike {
         if(direction.isOpposite(prevMoveDirection)){
             direction = prevMoveDirection;
         }
-        switch (direction) {
+        coordinates.increaseByDirection(direction);
+/*        switch (direction) {
             case RIGHT -> {
                 coordinates.setX(coordinates.getX() + 1);
             }
@@ -44,7 +45,7 @@ public class Bike {
             case UP -> {
                 coordinates.setY(coordinates.getY() - 1);
             }
-        }
+        }*/
         if(direction != prevMoveDirection){
             trace.addPoint(new Coordinates(coordinates.getX(), coordinates.getY()));
             prevMoveDirection = direction;

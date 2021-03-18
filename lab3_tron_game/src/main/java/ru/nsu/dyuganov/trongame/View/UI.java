@@ -1,5 +1,9 @@
 package ru.nsu.dyuganov.trongame.View;
 
-public interface UI {
+import ru.nsu.dyuganov.trongame.Model.Direction.Direction;
 
+
+public interface UI {
+    void draw();
+    Direction getDirection(int id);
 }

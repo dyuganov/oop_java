@@ -1,5 +1,7 @@
 package ru.nsu.dyuganov.trongame.Model.Coordinates;
 
+import ru.nsu.dyuganov.trongame.Model.Direction.Direction;
+
 /**
  * Stores x, y coordinates. <p>
  * x is width; y is length;
@@ -59,6 +61,38 @@ public class Coordinates {
     @Override
     public String toString() {
         return "(x: " + x + ", y: " + y + ")";
+    }
+
+    public void increaseByDirection(Direction direction){
+        if(direction == null){
+            throw new IllegalArgumentException("Can't increase coordinates by direction. Direction == null.");
+        }
+        final int standardOffset = 1;
+        _increaseByDirection(direction, standardOffset);
+    }
+
+    public void increaseByDirection(Direction direction, final int offset){
+        if(direction == null){
+            throw new IllegalArgumentException("Can't increase coordinates by direction. Direction == null.");
+        }
+        _increaseByDirection(direction, offset);
+    }
+
+    private void _increaseByDirection(Direction direction, final int offset){
+        switch (direction) {
+            case RIGHT -> {
+                this.x += offset;
+            }
+            case LEFT -> {
+                this.x -= offset;
+            }
+            case DOWN -> {
+                this.y += offset;
+            }
+            case UP -> {
+                this.y -= offset;
+            }
+        }
     }
 }
 

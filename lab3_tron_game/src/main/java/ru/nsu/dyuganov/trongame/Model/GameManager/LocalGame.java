@@ -1,4 +1,4 @@
-package ru.nsu.dyuganov.trongame.Model.Game;
+package ru.nsu.dyuganov.trongame.Model.GameManager;
 
 import ru.nsu.dyuganov.trongame.Controller.ConsoleController;
 import ru.nsu.dyuganov.trongame.Controller.Controller;

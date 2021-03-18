@@ -1,6 +1,6 @@
 package ru.nsu.dyuganov.trongame;
 
-import ru.nsu.dyuganov.trongame.Model.Game.LocalGame;
+import ru.nsu.dyuganov.trongame.Model.GameManager.LocalGame;
 
 public class Main {
     public static void main(String[] args) {

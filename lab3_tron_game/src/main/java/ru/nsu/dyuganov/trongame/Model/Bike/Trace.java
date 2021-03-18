@@ -6,8 +6,10 @@ import java.util.ArrayList;
 
 public class Trace {
     ArrayList<Coordinates> trace;
-    Trace(){
+    final int id;
+    Trace(int id){
         trace = new ArrayList<Coordinates>();
+        this.id = id;
     }
 
     void addPoint(Coordinates coordinates){

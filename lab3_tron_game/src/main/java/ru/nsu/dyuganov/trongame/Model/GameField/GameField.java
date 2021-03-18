@@ -23,7 +23,7 @@ public class GameField {
         field = new Cell[width][length];
     }
 
-    void setCell(Coordinates cellCoordinates, Cell newCellType){
+    void setCell(final Coordinates cellCoordinates, final Cell newCellType){
         if(cellCoordinates == null || newCellType == null){
             throw new IllegalArgumentException("GameField.setCell(Coordinates cellCoordinates, Cell newCellType) got null argument.");
         }
@@ -37,7 +37,7 @@ public class GameField {
         }
     }
 
-    Cell getCell(Coordinates coordinates){
+    Cell getCell(final Coordinates coordinates){
         return field[coordinates.getX()][coordinates.getY()];
     }
 
@@ -49,5 +49,14 @@ public class GameField {
             case RIGHT -> (currentCoordinates.getX() + 1 >= 0) && (currentCoordinates.getX() + 1 < width);
             default -> false;
         };
+    }
+
+    boolean isOverMap(final Coordinates coordinates){
+        if(coordinates == null){
+            throw new IllegalArgumentException("GameField.isOverMap got coordinates == null");
+        }
+        final int x = coordinates.getX();
+        final int y = coordinates.getY();
+        return x < 0 || x >= this.width || y < 0 || y >= this.length;
     }
 }
