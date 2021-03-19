@@ -14,7 +14,7 @@ public class Coordinates {
      * @param x new x coordinate.
      * @param y new y coordinate.
      * */
-    public Coordinates(int x, int y){
+    public Coordinates(final int x, final int y){
         if(x < 0 || y < 0){
             throw new IllegalArgumentException("Coordinates constructor got negative args.");
         }
@@ -25,29 +25,29 @@ public class Coordinates {
     /**
      * Copy constructor
      * */
-    public Coordinates(Coordinates other){
+    public Coordinates(final Coordinates other){
         this.x = other.getX();
         this.y = other.getY();
     }
 
     /**
-     * @param val new x coordinate.
+     * @param newX new x coordinate.
      * */
-    public void setX(int val){
-        if(val < 0){
-            throw new IllegalArgumentException("Coordinates.setX(int val) got negative arg.");
+    public void setX(final int newX){
+        if(newX < 0){
+            throw new IllegalArgumentException("Coordinates.setX(int newX) got negative arg.");
         }
-        this.x = val;
+        this.x = newX;
     }
 
     /**
-     * @param val new y coordinate.
+     * @param newY new y coordinate.
      * */
-    public void setY(int val){
-        if(val < 0){
-            throw new IllegalArgumentException("Coordinates.setY(int val) got negative arg.");
+    public void setY(final int newY){
+        if(newY < 0){
+            throw new IllegalArgumentException("Coordinates.setY(int newY) got negative arg.");
         }
-        this.y = val;
+        this.y = newY;
     }
 
     public int getX(){
@@ -63,7 +63,7 @@ public class Coordinates {
         return "(x: " + x + ", y: " + y + ")";
     }
 
-    public void increaseByDirection(Direction direction){
+    public void increaseByDirection(final Direction direction){
         if(direction == null){
             throw new IllegalArgumentException("Can't increase coordinates by direction. Direction == null.");
         }
@@ -71,14 +71,14 @@ public class Coordinates {
         _increaseByDirection(direction, standardOffset);
     }
 
-    public void increaseByDirection(Direction direction, final int offset){
+    public void increaseByDirection(final Direction direction, final int offset){
         if(direction == null){
             throw new IllegalArgumentException("Can't increase coordinates by direction. Direction == null.");
         }
         _increaseByDirection(direction, offset);
     }
 
-    private void _increaseByDirection(Direction direction, final int offset){
+    private void _increaseByDirection(final Direction direction, final int offset){
         switch (direction) {
             case RIGHT -> {
                 this.x += offset;

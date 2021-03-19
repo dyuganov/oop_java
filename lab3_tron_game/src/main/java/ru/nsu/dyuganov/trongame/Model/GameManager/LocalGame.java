@@ -10,16 +10,9 @@ public class LocalGame {
     public LocalGame(){}
 
     public void run(RunMode runMode){
-
-
-
         Controller controller = initController(runMode);
-
-
         Direction currDirection = null;
-        while(true){
-
-        }
+        Direction prevDirection = null;
     }
 
     public enum RunMode{
@@ -30,13 +23,6 @@ public class LocalGame {
         return switch (runMode){
             case WINDOW -> new KeyboardController();
             case CONSOLE -> new ConsoleController();
-            //default -> null;
         };
     }
-
-/*    private void moveBike(Bike bike, Direction direction){
-        if(){ // проверка на границы карты
-            bike.move(direction);
-        }
-    }*/
 }
