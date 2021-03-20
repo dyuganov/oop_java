@@ -6,11 +6,12 @@ public class ConsoleUI implements UI {
 
     @Override
     public void draw() {
-
+        // придетя что-то как-то рисовать. А может быть даже самостоятельно по таймауту
     }
 
     @Override
-    public Direction getDirection(int id) {
-        return null;
+    public void update(/*data*/) {
+
     }
+
 }

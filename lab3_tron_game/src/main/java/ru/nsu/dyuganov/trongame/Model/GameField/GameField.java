@@ -12,10 +12,12 @@ public class GameField {
     private final int length;
 
     public GameField(int width, int length){
+        if(width < 0 || length < 0) {
+            throw new IllegalArgumentException("Can't create game field. Incorrect constructor arguments.");
+        }
         this.width = width;
         this.length = length;
     }
-
 
     /**
      * Point is over map bounds check.

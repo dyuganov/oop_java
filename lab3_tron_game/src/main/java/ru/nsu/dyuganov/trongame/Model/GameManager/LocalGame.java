@@ -2,7 +2,6 @@ package ru.nsu.dyuganov.trongame.Model.GameManager;
 
 import ru.nsu.dyuganov.trongame.Controller.ConsoleController;
 import ru.nsu.dyuganov.trongame.Controller.Controller;
-import ru.nsu.dyuganov.trongame.Controller.KeyboardController;
 import ru.nsu.dyuganov.trongame.Model.Direction.Direction;
 
 

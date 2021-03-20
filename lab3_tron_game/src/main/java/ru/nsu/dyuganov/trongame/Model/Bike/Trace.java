@@ -5,11 +5,9 @@ import ru.nsu.dyuganov.trongame.Model.Coordinates.Coordinates;
 import java.util.ArrayList;
 
 public class Trace {
-    ArrayList<Coordinates> trace;
-    final int id;
-    Trace(int id){
+    final ArrayList<Coordinates> trace;
+    Trace(){
         trace = new ArrayList<Coordinates>();
-        this.id = id;
     }
 
     void addPoint(Coordinates coordinates){
@@ -27,5 +25,13 @@ public class Trace {
 
     void clear(){
         trace.clear();
+    }
+
+    boolean isEmpty(){
+        return trace.isEmpty();
+    }
+
+    int size(){
+        return trace.size();
     }
 }
