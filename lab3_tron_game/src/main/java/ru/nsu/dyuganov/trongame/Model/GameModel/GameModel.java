@@ -13,16 +13,13 @@ public class GameModel {
     final HashMap<Integer, Trace> traceByID = new HashMap<Integer, Trace>();
     GameField gameField = null; // can't be changed while playing
 
-    GameModel(final int fieldWidth, final int fieldLength){
+    public GameModel(final int fieldWidth, final int fieldLength){
         gameField = new GameField(fieldWidth, fieldLength);
     }
 
-
-
-
-
     public void setGameField(final int newGameFieldWidth, int newGameFieldWLength){
         this.gameField = new GameField(newGameFieldWidth, newGameFieldWLength);
+
     }
 
     /**
