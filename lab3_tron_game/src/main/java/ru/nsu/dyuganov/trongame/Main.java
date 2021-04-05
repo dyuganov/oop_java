@@ -4,8 +4,10 @@ import ru.nsu.dyuganov.trongame.Model.GameManager.TronGame;
 
 public class Main {
     public static void main(String[] args) {
-        TronGame game = new TronGame();
-        game.run(TronGame.RunMode.WINDOW);
+        System.out.println("Running main thread");
+        Thread gameMainThread = new Thread(new TronGame());
+        gameMainThread.start();
+        System.out.println("Main thread finished");
     }
 }
 

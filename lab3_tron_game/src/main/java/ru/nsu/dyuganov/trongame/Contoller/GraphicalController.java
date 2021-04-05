@@ -1,12 +1,11 @@
 package ru.nsu.dyuganov.trongame.Contoller;
 
-public class GraphicalController implements Controller, Runnable{
-    final int windowLength, windowWidth;
 
-    GraphicalController(int windowWidth, int windowLength){
-        this.windowWidth = windowWidth;
-        this.windowLength = windowLength;
-    }
+/**
+ * Changes game model
+ * */
+public class GraphicalController implements Controller, Runnable{
+    public GraphicalController(){}
 
     @Override
     public void run() {
