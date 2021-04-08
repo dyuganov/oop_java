@@ -1,19 +1,26 @@
 package ru.nsu.dyuganov.trongame.Model.GameModel;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import ru.nsu.dyuganov.trongame.Model.Bike.Bike;
 import ru.nsu.dyuganov.trongame.Model.Bike.Trace;
 import ru.nsu.dyuganov.trongame.Model.Coordinates.Coordinates;
 import ru.nsu.dyuganov.trongame.Model.GameField.GameField;
+import ru.nsu.dyuganov.trongame.Model.GameManager.TronGame;
 
 import java.util.HashMap;
 
 public class GameModel {
+    private final static Logger logger = LogManager.getLogger(GameModel.class);
+
     static int idGenerator = 0;
     final HashMap<Integer, Bike> bikesByID = new HashMap<Integer, Bike>();
     final HashMap<Integer, Trace> traceByID = new HashMap<Integer, Trace>();
     GameField gameField = null; // can't be changed while playing
 
     public GameModel(final int fieldWidth, final int fieldLength){
+        DOMConfigurator.configure("src/main/resources/ru.nsu.dyuganov.trongame/log4j/log4j.xml");
         gameField = new GameField(fieldWidth, fieldLength);
     }
 
