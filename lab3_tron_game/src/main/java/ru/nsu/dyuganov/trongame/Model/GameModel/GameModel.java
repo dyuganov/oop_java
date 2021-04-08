@@ -7,11 +7,13 @@ import ru.nsu.dyuganov.trongame.Model.Bike.Bike;
 import ru.nsu.dyuganov.trongame.Model.Bike.Trace;
 import ru.nsu.dyuganov.trongame.Model.Coordinates.Coordinates;
 import ru.nsu.dyuganov.trongame.Model.GameField.GameField;
-import ru.nsu.dyuganov.trongame.Model.GameManager.TronGame;
+import ru.nsu.dyuganov.trongame.Observer.GameUpdates;
+import ru.nsu.dyuganov.trongame.Observer.Publisher;
+import ru.nsu.dyuganov.trongame.Observer.Subscriber;
 
 import java.util.HashMap;
 
-public class GameModel {
+public class GameModel implements Publisher {
     private final static Logger logger = LogManager.getLogger(GameModel.class);
 
     static int idGenerator = 0;
@@ -26,7 +28,6 @@ public class GameModel {
 
     public void setGameField(final int newGameFieldWidth, int newGameFieldWLength){
         this.gameField = new GameField(newGameFieldWidth, newGameFieldWLength);
-
     }
 
     /**
@@ -51,5 +52,20 @@ public class GameModel {
 
     private void respawnBike(int id){
         // выбирает координаты для байка, очищает его и спавнит
+    }
+
+    @Override
+    public void subscribe(Subscriber subscriber) {
+
+    }
+
+    @Override
+    public void unsubscribe(Subscriber subscriber) {
+
+    }
+
+    @Override
+    public void notifySubscribers(GameUpdates gameUpdates) {
+
     }
 }

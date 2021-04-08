@@ -5,12 +5,11 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import ru.nsu.dyuganov.trongame.Contoller.Controller;
 import ru.nsu.dyuganov.trongame.Contoller.GraphicalController;
-import ru.nsu.dyuganov.trongame.Main;
 import ru.nsu.dyuganov.trongame.Model.GameModel.GameModel;
 import ru.nsu.dyuganov.trongame.View.GUI;
 
 
-// настройка
+// setup
 public class TronGame implements Runnable {
     private final static Logger logger = LogManager.getLogger(TronGame.class);
     public TronGame(){
@@ -25,8 +24,9 @@ public class TronGame implements Runnable {
         final int fieldWidth = 100;
         final int fieldLength = 100;
         GameModel gameModel = new GameModel(fieldWidth, fieldLength);
-        Controller controller = new GraphicalController();
-        GUI GUI = new GUI(gameModel, controller);
+        Controller controller = new GraphicalController(gameModel);
+        GUI GUI = new GUI(controller);
+        gameModel.subscribe(GUI);
         Thread window = new Thread(GUI);
         window.start();
     }

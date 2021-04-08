@@ -2,17 +2,19 @@ package ru.nsu.dyuganov.trongame.View;
 
 import ru.nsu.dyuganov.trongame.Contoller.Controller;
 import ru.nsu.dyuganov.trongame.Model.GameModel.GameModel;
+import ru.nsu.dyuganov.trongame.Observer.GameUpdates;
+import ru.nsu.dyuganov.trongame.Observer.Subscriber;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class GUI implements Runnable {
+public class GUI implements Runnable, Subscriber {
     private GameModel gameModel = null;
     private Controller controller = null;
 
-    public GUI(GameModel model, Controller controller){
+    public GUI(Controller controller){
         this.controller = controller;
-        this.gameModel = model;
+        //this.gameModel = model;
     }
 
     @Override
@@ -30,5 +32,10 @@ public class GUI implements Runnable {
 
         frame.pack();
         frame.setVisible(true);
+    }
+
+    @Override
+    public void update(GameUpdates gameUpdates) {
+
     }
 }
