@@ -9,12 +9,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GUI implements Runnable, Subscriber {
-    private GameModel gameModel = null;
+    private GameUpdates gameUpdates = null;
     private Controller controller = null;
 
     public GUI(Controller controller){
         this.controller = controller;
-        //this.gameModel = model;
     }
 
     @Override
@@ -32,6 +31,8 @@ public class GUI implements Runnable, Subscriber {
 
         frame.pack();
         frame.setVisible(true);
+
+        // draw and get updates
     }
 
     @Override

@@ -11,6 +11,7 @@ public class Main {
     public static void main(String[] args) {
         DOMConfigurator.configure("src/main/resources/ru.nsu.dyuganov.trongame/log4j/log4j.xml");
         Thread gameMainThread = new Thread(new TronGame());
+        logger.info("Game thread start");
         gameMainThread.start();
     }
 }

@@ -8,8 +8,7 @@ import ru.nsu.dyuganov.trongame.Contoller.GraphicalController;
 import ru.nsu.dyuganov.trongame.Model.GameModel.GameModel;
 import ru.nsu.dyuganov.trongame.View.GUI;
 
-
-// setup
+// setup game params and run game
 public class TronGame implements Runnable {
     private final static Logger logger = LogManager.getLogger(TronGame.class);
     public TronGame(){
@@ -29,5 +28,8 @@ public class TronGame implements Runnable {
         gameModel.subscribe(GUI);
         Thread window = new Thread(GUI);
         window.start();
+
+
+
     }
 }

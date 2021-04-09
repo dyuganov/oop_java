@@ -11,10 +11,13 @@ import ru.nsu.dyuganov.trongame.Observer.GameUpdates;
 import ru.nsu.dyuganov.trongame.Observer.Publisher;
 import ru.nsu.dyuganov.trongame.Observer.Subscriber;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class GameModel implements Publisher {
     private final static Logger logger = LogManager.getLogger(GameModel.class);
+    private final List<Subscriber> subscribers = new ArrayList<Subscriber>();
 
     static int idGenerator = 0;
     final HashMap<Integer, Bike> bikesByID = new HashMap<Integer, Bike>();
@@ -56,16 +59,18 @@ public class GameModel implements Publisher {
 
     @Override
     public void subscribe(Subscriber subscriber) {
-
+        subscribers.add(subscriber);
     }
 
     @Override
     public void unsubscribe(Subscriber subscriber) {
-
+        subscribers.remove(subscriber);
     }
 
     @Override
     public void notifySubscribers(GameUpdates gameUpdates) {
-
+        for(Subscriber subscriber : subscribers){
+            subscriber.update(new GameUpdates(bikesByID, traceByID));
+        }
     }
 }
