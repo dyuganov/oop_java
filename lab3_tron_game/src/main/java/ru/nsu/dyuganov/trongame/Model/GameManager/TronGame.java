@@ -24,7 +24,7 @@ public class TronGame implements Runnable {
         final int fieldLength = 100;
         GameModel gameModel = new GameModel(fieldWidth, fieldLength);
         Controller controller = new GraphicalController(gameModel);
-        GUI GUI = new GUI(controller);
+        GUI GUI = new GUI(controller, 0);
         gameModel.subscribe(GUI);
         Thread window = new Thread(GUI);
         window.start();
