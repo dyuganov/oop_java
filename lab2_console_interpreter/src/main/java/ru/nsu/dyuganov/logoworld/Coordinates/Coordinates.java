@@ -13,7 +13,7 @@ public class Coordinates {
      * */
     public Coordinates(int x, int y){
         if(x < 0 || y < 0){
-            throw new IllegalArgumentException("ru.nsu.dyuganov.logoworld.Coordinates constructor got negative args.");
+            throw new IllegalArgumentException("Coordinates constructor got negative args.");
         }
         this.x = x;
         this.y = y;

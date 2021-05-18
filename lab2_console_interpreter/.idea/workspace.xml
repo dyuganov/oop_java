@@ -13,10 +13,53 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/CommandFactories/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/CommandFactories/CommandFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/Coordinates/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/dyuganov/logoworld/Coordinates/Coordinates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/logs/logoworld.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logs/logoworld.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logs/logoworld.log.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logs/logoworld.log.2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/lab3_tron_game.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/lab3_tron_game.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/blue_bike.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/blue_corner_trace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/blue_trace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/main_game_grid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/oragne_corner_trace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/orange_bike.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/orange_trace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/pink_bike.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/pink_corner_trace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/pink_trace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/play_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/purple_bike.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/purple_corner_trace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/purple_trace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Model/GameManager/TronGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Model/GameManager/TronGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/View/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/View/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/settings_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/start_screen_bikes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/start_screen_grid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Model/GameManager/GameManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Model/GameManager/TronGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Model/GameManager/TronGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Model/GameModel/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Model/GameModel/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/View/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/View/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/blue_bike.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/blue_bike.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/blue_corner_trace.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/blue_corner_trace.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/blue_trace.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/blue_trace.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/main_game_grid.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/main_game_grid.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/oragne_corner_trace.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/oragne_corner_trace.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/orange_bike.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/orange_bike.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/orange_trace.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/orange_trace.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/pink_bike.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/pink_bike.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/pink_corner_trace.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/pink_corner_trace.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/pink_trace.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/pink_trace.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/play_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/play_button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/purple_bike.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/purple_bike.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/purple_corner_trace.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/purple_corner_trace.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/purple_trace.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/purple_trace.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/settings_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/settings_button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/start_screen_bikes.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/start_screen_bikes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/start_screen_grid.png" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/resources/ru.nsu.dyuganov.trongame/log4j/textures/start_screen_grid.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +102,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -87,11 +137,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab1_morse_code" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab3_tron_game" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.33793104" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="settings.editor.selected.configurable" value="editor.reader.mode" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -113,17 +163,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -257,6 +296,26 @@
       <workItem from="1613820778684" duration="421000" />
       <workItem from="1613844054740" duration="140000" />
       <workItem from="1613888695952" duration="5167000" />
+      <workItem from="1614001981281" duration="23000" />
+      <workItem from="1614273148806" duration="3514000" />
+      <workItem from="1614487086417" duration="104000" />
+      <workItem from="1614502321416" duration="449000" />
+      <workItem from="1614927090611" duration="709000" />
+      <workItem from="1614962031762" duration="578000" />
+      <workItem from="1615022759307" duration="617000" />
+      <workItem from="1615030510698" duration="621000" />
+      <workItem from="1615094743011" duration="327000" />
+      <workItem from="1615119669215" duration="14000" />
+      <workItem from="1615121913032" duration="795000" />
+      <workItem from="1615451830539" duration="181000" />
+      <workItem from="1615452835522" duration="10000" />
+      <workItem from="1615453358786" duration="42000" />
+      <workItem from="1615456878464" duration="897000" />
+      <workItem from="1615645683044" duration="375000" />
+      <workItem from="1617628380352" duration="687000" />
+      <workItem from="1617629094579" duration="8000" />
+      <workItem from="1617675804464" duration="6000" />
+      <workItem from="1617867371165" duration="1296000" />
     </task>
     <task id="LOCAL-00001" summary="Executor renamed to AbstractExecutor. Move test refactoring">
       <created>1613709663787</created>

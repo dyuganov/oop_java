@@ -29,7 +29,5 @@ public class TronGame implements Runnable {
         Thread window = new Thread(GUI);
         window.start();
 
-
-
     }
 }

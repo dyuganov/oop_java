@@ -3,52 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="d59e04b8-a0f7-4bf8-87f2-06e4fe25dfbf" name="Default Changelist" comment="Final classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/Alphabet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/Alphabet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/CharCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/CharCounter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/MorseCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/MorseCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/MorseDecoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/MorseDecoder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/MorseEncoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/MorseEncoder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/StatCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab1_morse_code/ru/nsu/Dyuganov/MorseCoder/StatCounter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/nsu/Dyuganov/MorseCoder/Alphabet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/nsu/Dyuganov/MorseCoder/Alphabet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/nsu/Dyuganov/MorseCoder/CharCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/nsu/Dyuganov/MorseCoder/CharCounter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/nsu/Dyuganov/MorseCoder/MorseCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/nsu/Dyuganov/MorseCoder/MorseCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/nsu/Dyuganov/MorseCoder/MorseDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/nsu/Dyuganov/MorseCoder/MorseDecoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/nsu/Dyuganov/MorseCoder/MorseEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/nsu/Dyuganov/MorseCoder/MorseEncoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/nsu/Dyuganov/MorseCoder/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/nsu/Dyuganov/MorseCoder/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/nsu/Dyuganov/MorseCoder/StatCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/nsu/Dyuganov/MorseCoder/StatCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/Command.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/CommandFactories/CommandFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/CommandFactories/DrawCommandFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/CommandFactories/InitCommandFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/CommandFactories/MoveCommandFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/CommandFactories/TeleportCommandFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/CommandFactories/WardCommandFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/DrawCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/DrawCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/InitCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/InitCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/MoveCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/MoveCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/TeleportCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/TeleportCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/WardCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Commands/WardCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Field/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Field/Field.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Interpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Interpreter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/UI/ConsoleUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/out/production/lab2_console_interpreter/ru/nsu/Dyuagnov/LogoWorld/UI/ConsoleUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/CommandFactories/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/CommandFactories/CommandFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/CommandFactories/DrawCommandFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/CommandFactories/InitCommandFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/CommandFactories/MoveCommandFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/CommandFactories/TeleportCommandFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/CommandFactories/WardCommandFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Commands/DrawCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Commands/DrawCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Commands/InitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Commands/InitCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Commands/MoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Commands/MoveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Commands/TeleportCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Commands/TeleportCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Commands/WardCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Commands/WardCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/src/ru/nsu/Dyuagnov/LogoWorld/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/main/java/ru/nsu/dyuganov/logoworld/Coordinates/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/src/main/java/ru/nsu/dyuganov/logoworld/Coordinates/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2_console_interpreter/src/main/logs/logoworld.log" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2_console_interpreter/src/main/logs/logoworld.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Model/Bike/Bike.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Model/Bike/Bike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Model/Field/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Model/Field/GameField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Model/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Model/Game/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +40,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dyuga\Desktop\study_labs\oop_java\lab1_morse_code" />
       <recent name="C:\Users\Dyuga\Desktop\study_labs\oop_java\lab1_morse_code\src" />
     </key>
   </component>
@@ -108,6 +75,9 @@
       <workItem from="1613117581198" duration="624000" />
       <workItem from="1613127243296" duration="2000" />
       <workItem from="1613144498419" duration="871000" />
+      <workItem from="1613706665044" duration="3007000" />
+      <workItem from="1614273191258" duration="834000" />
+      <workItem from="1615452864618" duration="348000" />
     </task>
     <servers />
   </component>

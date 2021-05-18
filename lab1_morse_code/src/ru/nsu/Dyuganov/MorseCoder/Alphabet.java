@@ -8,7 +8,7 @@ import java.util.Map;
 
 public final class Alphabet {
     private final Map<Character, String> charToMorse = new HashMap<Character, String>();
-    private final Map<String,Character> morseToChar = new HashMap<String, Character>();
+    private final Map<String, Character> morseToChar = new HashMap<String, Character>();
 
     public Alphabet(String fileName) throws java.io.IOException {
         final int expectedSpacePos = 1;
@@ -25,7 +25,7 @@ public final class Alphabet {
             }
         }
 
-        if(charToMorse.isEmpty() || morseToChar.isEmpty()) {
+        if (charToMorse.isEmpty() || morseToChar.isEmpty()) {
             throw new IOException("Alphabet file is empty, nothing to do there");
         }
     }

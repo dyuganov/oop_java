@@ -16,19 +16,17 @@ public final class MorseCode {
         Parser parser = new Parser();
         Alphabet alphabet = new Alphabet("src/ru/nsu/Dyuganov/MorseCoder/resources/alphabet.txt");
 
-        if(command.equals("decode")){
+        if (command.equals("decode")) {
             MorseDecoder decoder = new MorseDecoder(alphabet);
             String outputFileName = "decode_result.txt";
             decoder.decode(parser.parseForDecoder(inputFileName), outputFileName);
             System.out.println("Decode completed. Output file: " + outputFileName);
-        }
-        else if(command.equals("code")){
+        } else if (command.equals("code")) {
             String outputFileName = "encode_result.txt";
             MorseEncoder encoder = new MorseEncoder(alphabet);
             encoder.encode(parser.parseForEncoder(inputFileName), outputFileName);
             System.out.println("Encode completed. Output file: " + outputFileName);
-        }
-        else{
+        } else {
             System.out.println("Wrong command.");
         }
     }
