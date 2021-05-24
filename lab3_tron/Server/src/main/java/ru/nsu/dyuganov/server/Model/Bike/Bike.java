@@ -10,6 +10,7 @@ public class Bike {
      v length(y)
      */
     Coordinates bikeCoordinates;
+    //Trace trace = new Trace();
 
     public Bike(final Coordinates newBikeCoordinates){
         this.bikeCoordinates = new Coordinates(newBikeCoordinates);
@@ -19,7 +20,13 @@ public class Bike {
         bikeCoordinates = new Coordinates(newBikeCoordinates);
     }
 
+    public Coordinates getCoordinates(){
+        return bikeCoordinates;
+    }
+
     public void move(Direction moveBikeDirection){
         bikeCoordinates.increaseByDirection(moveBikeDirection);
+        //trace.addPoint(bikeCoordinates);
     }
+
 }
