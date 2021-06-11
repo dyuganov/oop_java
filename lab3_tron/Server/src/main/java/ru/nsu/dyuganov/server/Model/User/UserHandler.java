@@ -2,10 +2,10 @@ package main.java.ru.nsu.dyuganov.server.Model.User;
 
 import java.util.Objects;
 
-public class User {
+public class UserHandler {
     private int id = 0;
 
-    User(int id){
+    UserHandler(int id){
         this.id = id;
     }
 
@@ -16,7 +16,7 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
+        UserHandler user = (UserHandler) o;
         return id == user.id;
     }
 
