@@ -2,11 +2,9 @@ import java.util.concurrent.TimeUnit;
 
 public class Waiter implements Runnable{
     private Meal meal;
-    //int mealsCnt=0;
 
     Waiter( Meal meal){
         this.meal = meal;
-        //this.mealsCnt = mealsCnt;
     }
 
     @Override

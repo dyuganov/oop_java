@@ -1,5 +1,3 @@
-import java.util.concurrent.TimeUnit;
-
 public class Chef implements Runnable {
     private int mealsNum = 0;
     private Meal meal;
