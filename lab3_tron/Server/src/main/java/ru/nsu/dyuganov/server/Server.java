@@ -1,7 +1,7 @@
 package main.java.ru.nsu.dyuganov.server;
 
 import main.java.ru.nsu.dyuganov.server.Model.Game.GameModel;
-import main.java.ru.nsu.dyuganov.server.Communicator.ServerHandler.ServerHandler;
+import main.java.ru.nsu.dyuganov.server.ServerCommunicator.ServerHandler.ServerHandler;
 import main.java.ru.nsu.dyuganov.server.User.UserList;
 
 public class Server {
