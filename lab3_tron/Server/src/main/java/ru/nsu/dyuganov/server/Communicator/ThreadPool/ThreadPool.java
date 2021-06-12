@@ -53,10 +53,12 @@ public class ThreadPool {
 
     public void shutdown(){
         shutdownRequest = true;
+        notifyAll();
     }
 
     public void interruptAll(){
         shutdownRequest = true;
+        notifyAll();
         for(Thread thread : threadSet){
             thread.interrupt();
         }
