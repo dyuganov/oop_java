@@ -17,7 +17,7 @@ public class ThreadPool {
             Thread newThread = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    while(!Thread.interrupted() || shutdownRequest){
+                    while(!shutdownRequest){
                         if(!taskQueue.isEmpty()) {
                             try {
                                 taskQueue.poll().execute();
@@ -30,8 +30,8 @@ public class ThreadPool {
                     }
                 }
             });
-            newThread.setDaemon(true);
             threadSet.add(newThread);
+            newThread.start();
         }
     }
 
@@ -48,12 +48,6 @@ public class ThreadPool {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
-    }
-
-    public void start(){
-        for(Thread thread : threadSet){
-            thread.start();
         }
     }
 
