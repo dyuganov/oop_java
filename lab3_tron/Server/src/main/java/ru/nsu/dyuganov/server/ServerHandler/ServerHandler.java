@@ -1,6 +1,5 @@
 package main.java.ru.nsu.dyuganov.server.ServerHandler;
 
-import main.java.ru.nsu.dyuganov.server.Model.User.UserHandler;
 import main.java.ru.nsu.dyuganov.server.Model.User.UserList;
 import main.java.ru.nsu.dyuganov.server.ThreadPool.ThreadPool;
 
@@ -8,7 +7,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.Properties;
-import java.util.TreeMap;
 
 public class ServerHandler implements Runnable{
     private UserList userList;
@@ -20,8 +18,10 @@ public class ServerHandler implements Runnable{
     @Override
     public void run() {
         ThreadPool threadPool = new ThreadPool(getThreadPoolSize());
+        threadPool.start();
 
         ServerSocket serverSocket;
+        threadPool.shutdown();
     }
 
     private int getThreadPoolSize(){

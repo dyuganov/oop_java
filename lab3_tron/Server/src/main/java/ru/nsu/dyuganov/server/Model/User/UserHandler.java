@@ -1,16 +1,37 @@
 package main.java.ru.nsu.dyuganov.server.Model.User;
 
+import java.net.Socket;
 import java.util.Objects;
+
 
 public class UserHandler {
     private int id = 0;
+    private Socket clientSocket;
 
     UserHandler(int id){
         this.id = id;
     }
 
-    public void setId(int id){ this.id = id; }
-    public int getId(){ return this.id; }
+    UserHandler(int id, Socket clientSocket){
+        this.id = id;
+        this.clientSocket = clientSocket;
+    }
+
+    public void setClientSocket(Socket clientSocket){
+        this.clientSocket = clientSocket;
+    }
+
+    public Socket getClientSocket() {
+        return clientSocket;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public int getId(){
+        return this.id;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -27,6 +48,6 @@ public class UserHandler {
 
     @Override
     public String toString() {
-        return "User(" + "id=" + id + ')';
+        return "UserHandler (" + "id=" + id + "; Socket: " + clientSocket.toString() +')';
     }
 }
