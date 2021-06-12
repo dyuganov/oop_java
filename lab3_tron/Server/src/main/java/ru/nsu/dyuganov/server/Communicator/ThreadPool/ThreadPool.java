@@ -5,19 +5,20 @@ import main.java.ru.nsu.dyuganov.server.Communicator.ThreadPool.Tasks.ThreadPool
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ThreadPool {
     Set<Thread> threadSet = new HashSet<>();
     Queue<ThreadPoolTask> taskQueue = new ConcurrentLinkedQueue<>();
-    boolean shutdownRequest = false;
+    AtomicBoolean shutdownRequest = new AtomicBoolean(false);
 
     public ThreadPool(int poolSize) {
-        shutdownRequest = false;
+        shutdownRequest.set(false);
         for(int i = 0; i < poolSize; ++i){
             Thread newThread = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    while(!shutdownRequest){
+                    while(!shutdownRequest.get()){
                         if(!taskQueue.isEmpty()) {
                             try {
                                 taskQueue.poll().execute();
@@ -52,13 +53,11 @@ public class ThreadPool {
     }
 
     public void shutdown(){
-        shutdownRequest = true;
+        shutdownRequest.set(true);
         notifyAll();
     }
 
     public void interruptAll(){
-        shutdownRequest = true;
-        notifyAll();
         for(Thread thread : threadSet){
             thread.interrupt();
         }
