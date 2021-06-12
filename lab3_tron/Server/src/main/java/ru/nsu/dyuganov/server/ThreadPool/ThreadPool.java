@@ -1,18 +1,22 @@
 package main.java.ru.nsu.dyuganov.server.ThreadPool;
 
+import main.java.ru.nsu.dyuganov.server.ThreadPool.Tasks.ThreadPoolTask;
+
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class ThreadPool {
     Set<Thread> threadSet = new HashSet<>();
     Queue<ThreadPoolTask> taskQueue = new ConcurrentLinkedQueue<>();
+    boolean shutdownRequest = false;
 
     public ThreadPool(int poolSize){
+        shutdownRequest = false;
         for(int i = 0; i < poolSize; ++i){
-            threadSet.add(new Thread(new Runnable() {
+            Thread newThread = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    while(!Thread.interrupted()){
+                    while(!Thread.interrupted() || shutdownRequest){
                         if(!taskQueue.isEmpty()) {
                             taskQueue.poll().execute();
                         } else{
@@ -20,43 +24,16 @@ public class ThreadPool {
                         }
                     }
                 }
-            }));
+            });
+            newThread.setDaemon(true);
+            threadSet.add(newThread);
         }
     }
 
-    /**
-     * Executes task. If there are non-started threads, start them.
-     * */
     public void execute(ThreadPoolTask task){
         if(task == null) return;
         this.taskQueue.add(task);
-        notifyAll();
-
-        if(!taskQueue.isEmpty() && !isAllThreadsRunning()) {
-            int tasksCnt = taskQueue.size();
-            startThreads(tasksCnt);
-        }
-    }
-
-    /**
-     * Starts only created threads. If tasksQueue.size is less than threadPool.size, starts tasksQueue.size threads.
-     * */
-    private void startThreads(int threadsToStartNum){
-        for(Thread thread : threadSet){
-            if(!thread.isAlive() && threadsToStartNum > 0) thread.start();
-            --threadsToStartNum;
-        }
-    }
-
-    private boolean isAllThreadsRunning(){
-        boolean result = true;
-        for(Thread thread : threadSet){
-            if (!thread.getState().equals(Thread.State.RUNNABLE)) {
-                result = false;
-                break;
-            }
-        }
-        return result;
+        notify();
     }
 
     private void waitForTasks() {
@@ -69,15 +46,18 @@ public class ThreadPool {
         }
     }
 
-
-    /**
-     * Starts only one thread of pool. Other threads will be started if needed.
-     * */
     public void start(){
-        threadSet.iterator().next().start();
+        for(Thread thread : threadSet){
+            thread.start();
+        }
+    }
+
+    public void shutdown(){
+        shutdownRequest = true;
     }
 
     public void interruptAll(){
+        shutdownRequest = true;
         for(Thread thread : threadSet){
             thread.interrupt();
         }
