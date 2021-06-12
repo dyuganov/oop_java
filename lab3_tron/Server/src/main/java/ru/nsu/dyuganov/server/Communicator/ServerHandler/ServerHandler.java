@@ -1,7 +1,7 @@
-package main.java.ru.nsu.dyuganov.server.ServerHandler;
+package main.java.ru.nsu.dyuganov.server.Communicator.ServerHandler;
 
-import main.java.ru.nsu.dyuganov.server.Model.User.UserList;
-import main.java.ru.nsu.dyuganov.server.ThreadPool.ThreadPool;
+import main.java.ru.nsu.dyuganov.server.User.UserList;
+import main.java.ru.nsu.dyuganov.server.Communicator.ThreadPool.ThreadPool;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.util.Properties;
 public class ServerHandler implements Runnable{
     private UserList userList;
 
-    ServerHandler(UserList userList){
+    public ServerHandler(UserList userList){
         this.userList = userList;
     }
 
@@ -21,6 +21,7 @@ public class ServerHandler implements Runnable{
         threadPool.start();
 
         ServerSocket serverSocket;
+        //
         threadPool.shutdown();
     }
 

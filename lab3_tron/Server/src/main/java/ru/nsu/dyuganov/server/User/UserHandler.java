@@ -1,19 +1,14 @@
-package main.java.ru.nsu.dyuganov.server.Model.User;
+package main.java.ru.nsu.dyuganov.server.User;
 
 import java.net.Socket;
 import java.util.Objects;
 
 
 public class UserHandler {
-    private int id = 0;
     private Socket clientSocket;
+    // user info
 
-    UserHandler(int id){
-        this.id = id;
-    }
-
-    UserHandler(int id, Socket clientSocket){
-        this.id = id;
+    public UserHandler(Socket clientSocket){
         this.clientSocket = clientSocket;
     }
 
@@ -25,29 +20,17 @@ public class UserHandler {
         return clientSocket;
     }
 
-    public void setId(int id){
-        this.id = id;
-    }
-
-    public int getId(){
-        return this.id;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserHandler user = (UserHandler) o;
-        return id == user.id;
+        return clientSocket == user.clientSocket;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(clientSocket);
     }
 
-    @Override
-    public String toString() {
-        return "UserHandler (" + "id=" + id + "; Socket: " + clientSocket.toString() +')';
-    }
 }

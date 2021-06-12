@@ -1,7 +1,8 @@
-package main.java.ru.nsu.dyuganov.server.ThreadPool;
+package main.java.ru.nsu.dyuganov.server.Communicator.ThreadPool;
 
-import main.java.ru.nsu.dyuganov.server.ThreadPool.Tasks.ThreadPoolTask;
+import main.java.ru.nsu.dyuganov.server.Communicator.ThreadPool.Tasks.ThreadPoolTask;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -10,7 +11,7 @@ public class ThreadPool {
     Queue<ThreadPoolTask> taskQueue = new ConcurrentLinkedQueue<>();
     boolean shutdownRequest = false;
 
-    public ThreadPool(int poolSize){
+    public ThreadPool(int poolSize) {
         shutdownRequest = false;
         for(int i = 0; i < poolSize; ++i){
             Thread newThread = new Thread(new Runnable() {
@@ -18,7 +19,11 @@ public class ThreadPool {
                 public void run() {
                     while(!Thread.interrupted() || shutdownRequest){
                         if(!taskQueue.isEmpty()) {
-                            taskQueue.poll().execute();
+                            try {
+                                taskQueue.poll().execute();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         } else{
                             waitForTasks();
                         }

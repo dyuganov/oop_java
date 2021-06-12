@@ -1,4 +1,4 @@
-package main.java.ru.nsu.dyuganov.server.Model.User;
+package main.java.ru.nsu.dyuganov.server.User;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -13,15 +13,24 @@ public class UserList {
     private final Set<Integer> usersId;
     private static int idGenerator = 0;
 
+    private final int standardSize = 4;
+    private int maxSize = standardSize;
+
     public UserList(){
-        usersById = new HashMap<>(4);
-        usersId = new HashSet<>();
+        usersById = new HashMap<>(standardSize);
+        usersId = new HashSet<>(standardSize);
+    }
+
+    public UserList(int maxSize){
+        this.maxSize = maxSize;
+        usersById = new HashMap<>(standardSize);
+        usersId = new HashSet<>(standardSize);
     }
 
     /**
      * Generates id for new user, adds it to id list.
      * Adds user handler to active users map by id.
-     * @return added user id
+     * @return added user id (positive int), -1 if is full
      * */
     public synchronized int add(UserHandler userHandler){
         int newUserId = idGenerator++;
@@ -30,6 +39,18 @@ public class UserList {
             this.usersId.add(newUserId);
         }
         return newUserId;
+    }
+
+    public boolean isFull(){
+        return usersId.size() >= maxSize;
+    }
+
+    public int getSize(){
+        return usersId.size();
+    }
+
+    public int getMaxSize(){
+        return maxSize;
     }
 
     public synchronized UserHandler getUser(int id){

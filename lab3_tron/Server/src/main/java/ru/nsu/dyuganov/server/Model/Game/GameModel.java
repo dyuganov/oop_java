@@ -3,8 +3,8 @@ package main.java.ru.nsu.dyuganov.server.Model.Game;
 import main.java.ru.nsu.dyuganov.server.Model.Bike.Bike;
 import main.java.ru.nsu.dyuganov.server.Model.Bike.Trace;
 import main.java.ru.nsu.dyuganov.server.Model.Direction.Direction;
-import main.java.ru.nsu.dyuganov.server.Model.User.UserHandler;
-import main.java.ru.nsu.dyuganov.server.Model.User.UserList;
+import main.java.ru.nsu.dyuganov.server.User.UserHandler;
+import main.java.ru.nsu.dyuganov.server.User.UserList;
 
 import java.util.HashMap;
 import java.util.Map;
