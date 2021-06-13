@@ -1,8 +1,10 @@
 package main.java.ru.nsu.dyuganov.tron;
 
 import main.java.ru.nsu.dyuganov.tron.GUI.GUI;
+import main.java.ru.nsu.dyuganov.tron.KeyController.KeyController;
 
 import java.security.Guard;
+import java.util.concurrent.TimeUnit;
 
 public class Client {
     public static void main(String[] args) {
@@ -25,8 +27,27 @@ public class Client {
         * После игрок возвращается в главное меню.
         * */
 
-        GUI gui = new GUI();
+        KeyController keyController = new KeyController();
+        GUI gui = new GUI(keyController);
         gui.start();
+
+        Thread newThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(int i = 0; i < 1000; ++i){
+                    System.out.println(keyController.getCurrentDirection());
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+        newThread.setDaemon(true);
+        newThread.start();
+
 
 
     }

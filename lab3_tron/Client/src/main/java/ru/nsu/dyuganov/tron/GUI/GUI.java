@@ -1,25 +1,52 @@
 package main.java.ru.nsu.dyuganov.tron.GUI;
 
+import main.java.ru.nsu.dyuganov.tron.KeyController.KeyController;
+
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class GUI{
+    KeyController keyController;
+
     JFrame frame = new JFrame("Tron game");
     Container container = frame.getContentPane();
 
     private JButton serverGameButton = new JButton("Connect server");
 
-    private JButton localGameButton = new JButton("Local game", new ImageIcon("src/main/resources/images/play_button.png"));
+    private JButton localGameButton = new JButton("Local game");
     private JTextField botsNum = new JTextField("", 5);
     private JLabel botsNumText = new JLabel("Bots number: ");
     private JButton backButton = new JButton("Back");
 
+    private KeyListener keyListener = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+            keyController.handleKey(e);
+        }
+        @Override
+        public void keyPressed(KeyEvent e) {
+            keyController.handleKey(e);
+        }
+        @Override
+        public void keyReleased(KeyEvent e) {}
+    };
 
-    public GUI(){
+    public GUI(KeyController keyController){
+        this.keyController = keyController;
+
         frame.setBounds(0, 0, 1280, 720);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+        frame.addKeyListener(keyListener);
+        frame.setFocusable(true);
+        frame.requestFocusInWindow();
+
 
         localGameButton.addActionListener(new LocalGameStartEventListener());
         serverGameButton.addActionListener(new ServerGameStartEventListener());
@@ -31,18 +58,34 @@ public class GUI{
         constraintsLocal.weighty = 0;
         constraintsLocal.gridx = 0;
         constraintsLocal.gridy = 0;
-        constraintsLocal.gridheight = 2;
-        constraintsLocal.gridwidth = 2;
+        constraintsLocal.gridheight = 10;
+        constraintsLocal.gridwidth = 10;
 
         GridBagConstraints constraintsServer = new GridBagConstraints();
         constraintsServer.weightx = 0;
         constraintsServer.weighty = 0;
         constraintsServer.gridx = 0;
-        constraintsServer.gridy = 5;
+        constraintsServer.gridy = 10;
         constraintsServer.gridheight = 2;
         constraintsServer.gridwidth = 2;
 
-        //localGameButton.setBackground();
+         localGameButton.setText("");
+         final int buttonW = 82;
+         final int buttonH = 40;
+         final int scaleMul = 2;
+         int scaleButtonW = buttonW * scaleMul;
+
+         int scaleButtonH = buttonH * scaleMul;
+         localGameButton.setPreferredSize(new Dimension(scaleButtonW, scaleButtonH));
+        ImageIcon startImg = new ImageIcon("C:\\Users\\Dyuga\\Desktop\\study_labs\\oop_java\\lab3_tron\\Client\\src\\main\\resources\\images\\play_button.png");
+        Image scaledStartButton = startImg.getImage().getScaledInstance(scaleButtonW, scaleButtonH, Image.SCALE_DEFAULT);
+        localGameButton.setIcon(new ImageIcon(scaledStartButton));
+        localGameButton.setOpaque(false);
+        localGameButton.setContentAreaFilled(false);
+        Border emptyBorder = BorderFactory.createEmptyBorder();
+        localGameButton.setBorder(emptyBorder);
+        localGameButton.setBorderPainted(false);
+
         container.add(localGameButton);
         container.add(serverGameButton);
 
@@ -65,6 +108,8 @@ public class GUI{
         frame.setMinimumSize(new Dimension(1280, 720));
         frame.setResizable(false);
         frame.setLocationByPlatform(true);
+
+
     }
 
     public void start(){
