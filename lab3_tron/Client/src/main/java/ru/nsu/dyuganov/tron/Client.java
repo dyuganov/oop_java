@@ -1,6 +1,7 @@
 package main.java.ru.nsu.dyuganov.tron;
 
 import main.java.ru.nsu.dyuganov.tron.GUI.GUI;
+import main.java.ru.nsu.dyuganov.tron.GUI.GameGUI;
 import main.java.ru.nsu.dyuganov.tron.KeyController.KeyController;
 
 import java.security.Guard;
@@ -28,8 +29,12 @@ public class Client {
         * */
 
         KeyController keyController = new KeyController();
-        GUI gui = new GUI(keyController);
-        gui.start();
+        /*GUI gui = new GUI(keyController);
+        gui.start();*/
+
+        GameGUI gameGUI = new GameGUI(keyController);
+        gameGUI.start();;
+
 
         Thread newThread = new Thread(new Runnable() {
             @Override

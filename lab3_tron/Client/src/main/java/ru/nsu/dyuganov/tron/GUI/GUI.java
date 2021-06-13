@@ -2,6 +2,7 @@ package main.java.ru.nsu.dyuganov.tron.GUI;
 
 import main.java.ru.nsu.dyuganov.tron.KeyController.KeyController;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -9,6 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class GUI{
     KeyController keyController;
@@ -42,15 +46,13 @@ public class GUI{
         frame.setBounds(0, 0, 1280, 720);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
         frame.addKeyListener(keyListener);
         frame.setFocusable(true);
         frame.requestFocusInWindow();
 
-
-        localGameButton.addActionListener(new LocalGameStartEventListener());
+        /*localGameButton.addActionListener(new LocalGameStartEventListener());
         serverGameButton.addActionListener(new ServerGameStartEventListener());
-        backButton.addActionListener(new BackEventListener());
+        backButton.addActionListener(new BackEventListener());*/
 
         container.setLayout(new GridBagLayout());
         GridBagConstraints constraintsLocal = new GridBagConstraints();
@@ -74,7 +76,6 @@ public class GUI{
          final int buttonH = 40;
          final int scaleMul = 2;
          int scaleButtonW = buttonW * scaleMul;
-
          int scaleButtonH = buttonH * scaleMul;
          localGameButton.setPreferredSize(new Dimension(scaleButtonW, scaleButtonH));
         ImageIcon startImg = new ImageIcon("C:\\Users\\Dyuga\\Desktop\\study_labs\\oop_java\\lab3_tron\\Client\\src\\main\\resources\\images\\play_button.png");
@@ -86,25 +87,49 @@ public class GUI{
         localGameButton.setBorder(emptyBorder);
         localGameButton.setBorderPainted(false);
 
+
         container.add(localGameButton);
         container.add(serverGameButton);
 
 
 
-        /*ImageIcon background = new ImageIcon("C:\\Users\\Dyuga\\Desktop\\study_labs\\oop_java\\lab3_tron\\Client\\src\\main\\resources\\images\\background.png");
+
+/*
+        ImageIcon background = new ImageIcon("C:\\Users\\Dyuga\\Desktop\\study_labs\\oop_java\\lab3_tron\\Client\\src\\main\\resources\\images\\background.png");
         ImageIcon backgroundGrid = new ImageIcon("C:\\Users\\Dyuga\\Desktop\\study_labs\\oop_java\\lab3_tron\\Client\\src\\main\\resources\\images\\start_screen_grid.png");
         ImageIcon backgroundBikes = new ImageIcon("C:\\Users\\Dyuga\\Desktop\\study_labs\\oop_java\\lab3_tron\\Client\\src\\main\\resources\\images\\start_screen_bikes.png");
         Image scaleBack = background.getImage().getScaledInstance(1280, 720, Image.SCALE_FAST);
         Image scaleGrid = backgroundGrid.getImage().getScaledInstance(1280, 720, Image.SCALE_FAST);
-        Image scaleStartBikes = backgroundBikes.getImage().getScaledInstance(1280, 720, Image.SCALE_DEFAULT);*/
+        Image scaleStartBikes = backgroundBikes.getImage().getScaledInstance(1280, 720, Image.SCALE_DEFAULT);
+        container.add(new JLabel(new ImageIcon(scaleBack)));
+        container.add(new JLabel(new ImageIcon(scaleGrid)));
+        container.add(new JLabel(new ImageIcon(scaleStartBikes)));
+*/
+
+
+        ImageIcon background = new ImageIcon("C:\\Users\\Dyuga\\Desktop\\study_labs\\oop_java\\lab3_tron\\Client\\src\\main\\resources\\images\\background_compiled.png");
+        Image scaleBack = background.getImage().getScaledInstance(1280, 720, Image.SCALE_FAST);
+        //container.add(new JLabel(new ImageIcon(scaleBack)));
+
+
+
+        BufferedImage img = null;
+        try {
+            img = ImageIO.read(new File("C:\\Users\\Dyuga\\Desktop\\study_labs\\oop_java\\lab3_tron\\Client\\src\\main\\resources\\images\\background_compiled.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        JPanel backPanel = new JPanel();
+        backPanel.setPreferredSize(new Dimension(1280, 720));
+        frame.paint(img.getGraphics());
+        frame.add(backPanel);
+
+
 
         container.setBackground(new java.awt.Color(11, 20, 28));
         //container.setBackground(new java.awt.Color(111, 22, 22));
 
-
-        /*container.add(new JLabel(new ImageIcon(scaleBack)));
-        container.add(new JLabel(new ImageIcon(scaleGrid)));
-        container.add(new JLabel(new ImageIcon(scaleStartBikes)));*/
         frame.setMinimumSize(new Dimension(1280, 720));
         frame.setResizable(false);
         frame.setLocationByPlatform(true);
@@ -117,44 +142,6 @@ public class GUI{
         frame.setVisible(true);
     }
 
-    private class LocalGameStartEventListener implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // старт сервера
-            // автоподключение на локалхост
-            // запуск N ботов (выбор в окне) как отдельные потоки,
-            container.remove(serverGameButton);
-            container.add(botsNumText);
-            container.add(botsNum);
-            container.add(backButton);
 
-            container.repaint();
-            container.revalidate();
-        }
-    }
 
-    private class BackEventListener implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // старт сервера
-            // автоподключение на локалхост
-            // запуск N ботов (выбор в окне) как отдельные потоки,
-            container.add(serverGameButton);
-            container.remove(botsNumText);
-            container.remove(botsNum);
-            container.remove(backButton);
-
-            container.repaint();
-            container.revalidate();
-        }
-    }
-
-    private class ServerGameStartEventListener implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // старт игры, когда все нажмут ready
-            System.out.println("SWING SASAAAAAAAT");
-
-        }
-    }
 }
