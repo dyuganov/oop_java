@@ -3,6 +3,8 @@ package main.java.ru.nsu.dyuganov.tron.Model.Bike;
 import main.java.ru.nsu.dyuganov.tron.Model.Coordinates.Coordinates;
 import main.java.ru.nsu.dyuganov.tron.Model.Direction.Direction;
 
+import java.util.Objects;
+
 public class Bike {
     /**
      (0,0)--> width(x)<p>

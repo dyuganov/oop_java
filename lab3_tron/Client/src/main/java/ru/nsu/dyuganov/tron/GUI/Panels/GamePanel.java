@@ -1,4 +1,4 @@
-package main.java.ru.nsu.dyuganov.tron.GUI;
+package main.java.ru.nsu.dyuganov.tron.GUI.Panels;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -13,7 +13,7 @@ public class GamePanel extends JPanel {
 
 
 
-     GamePanel(){
+     public GamePanel(){
          this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
      }
 

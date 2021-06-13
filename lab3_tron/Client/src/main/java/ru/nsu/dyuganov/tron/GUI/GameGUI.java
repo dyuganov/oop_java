@@ -1,5 +1,6 @@
 package main.java.ru.nsu.dyuganov.tron.GUI;
 
+import main.java.ru.nsu.dyuganov.tron.GUI.Panels.GamePanel;
 import main.java.ru.nsu.dyuganov.tron.KeyController.KeyController;
 
 import javax.swing.*;

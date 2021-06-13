@@ -11,7 +11,6 @@ import java.util.Map;
 
 public class GameModel {
     private final Map<Integer, Bike> idToBikes = new HashMap<Integer, Bike>();
-    private final Map<Integer, Trace> idToTrace = new HashMap<Integer, Trace>();
 
     UserList activeUsers;
 
