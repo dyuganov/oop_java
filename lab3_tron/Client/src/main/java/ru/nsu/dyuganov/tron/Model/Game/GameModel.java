@@ -11,7 +11,7 @@ public class GameModel {
     static final int FIELD_WIDTH = 55;
     static final int FIELD_HEIGHT = 33;
 
-    UserList activeUsers;
+    private UserList activeUsers;
     private final Map<Integer, Bike> idToBikes = new HashMap<Integer, Bike>();
     private final List<Coordinates> startCoordinates = new ArrayList<>();
 
