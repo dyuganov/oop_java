@@ -1,14 +1,12 @@
-package main.java.ru.nsu.dyuganov.tron.Model;
+package main.java.ru.nsu.dyuganov.tron.Model.UserHandler;
 
 import java.net.Socket;
 import java.util.Objects;
 
-
-public class UserHandler {
+public class ServerUserHandler {
     private Socket clientSocket;
-    // user info
 
-    public UserHandler(Socket clientSocket){
+    public ServerUserHandler(Socket clientSocket){
         this.clientSocket = clientSocket;
     }
 
@@ -24,8 +22,8 @@ public class UserHandler {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        UserHandler user = (UserHandler) o;
-        return clientSocket == user.clientSocket;
+        ServerUserHandler user = (ServerUserHandler) o;
+        return clientSocket == user.clientSocket ;
     }
 
     @Override

@@ -16,7 +16,7 @@ public class Trace {
             trace.add(coordinates);
         }
         else{
-            throw new IllegalArgumentException("Trace.addPoint(Coordinates coordinates) error. Coordinates == null.");
+            throw new IllegalArgumentException("Cant add point to trace. Coordinates == null.");
         }
     }
 
