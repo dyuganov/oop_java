@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18087925-8440-4da9-944f-f7c189567b52" name="Default Changelist" comment="done">
-      <change beforePath="$PROJECT_DIR$/../lab3_tron/Client/src/main/java/ru/nsu/dyuganov/tron/View/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron/Client/src/main/java/ru/nsu/dyuganov/tron/View/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron/Server/src/main/java/ru/nsu/dyuganov/server/Model/Game/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron/Server/src/main/java/ru/nsu/dyuganov/server/Model/Game/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron/Server/src/main/java/ru/nsu/dyuganov/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron/Server/src/main/java/ru/nsu/dyuganov/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron/Server/src/main/java/ru/nsu/dyuganov/server/ServerManager/ServerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron/Server/src/main/java/ru/nsu/dyuganov/server/ServerManager/ServerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/lab3_tron_game.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/lab3_tron_game.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Contoller/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Contoller/GraphicalController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Model/Bike/Bike.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Model/Bike/Trace.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Model/Color/Color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Model/Coordinates/Coordinates$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Model/Coordinates/Coordinates.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Model/Direction/Direction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Model/GameField/Cell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Model/GameField/GameField.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Model/GameManager/TronGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Model/GameModel/GameModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Observer/GameUpdates.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Observer/Publisher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/Observer/Subscriber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/out/production/lab3_tron_game/ru/nsu/dyuganov/trongame/View/GUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Contoller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Contoller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Model/Bike/Bike.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3_tron_game/src/main/java/ru/nsu/dyuganov/trongame/Model/Bike/Bike.java" afterDir="false" />
-    </list>
+    <list default="true" id="18087925-8440-4da9-944f-f7c189567b52" name="Default Changelist" comment="done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,12 +38,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab3_tron" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="final_test_task" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -90,6 +76,7 @@
       <workItem from="1623387493011" duration="3594000" />
       <workItem from="1623391244979" duration="16000" />
       <workItem from="1623427199130" duration="40000" />
+      <workItem from="1624194652467" duration="91000" />
     </task>
     <servers />
   </component>
