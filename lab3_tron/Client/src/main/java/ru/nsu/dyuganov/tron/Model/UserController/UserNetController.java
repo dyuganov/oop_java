@@ -9,6 +9,6 @@ public class UserNetController implements UserController{
 
     @Override
     public Direction getDirection() {
-        return null;
+        return null; // TODO
     }
 }

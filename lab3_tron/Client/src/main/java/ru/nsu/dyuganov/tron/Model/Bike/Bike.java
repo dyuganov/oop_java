@@ -12,10 +12,19 @@ public class Bike {
     Coordinates bikeCoordinates;
     Trace trace = new Trace();
     Direction prevMoveDirection = Direction.RIGHT;
+    boolean isActive = true;
 
     public Bike(final Coordinates newBikeCoordinates){
         this.bikeCoordinates = new Coordinates(newBikeCoordinates);
         trace.addPoint(newBikeCoordinates);
+    }
+
+    public boolean isActive(){
+        return isActive;
+    }
+
+    public void setActive(boolean val){
+        this.isActive = val;
     }
 
     public void setCoordinates(final Coordinates newBikeCoordinates){

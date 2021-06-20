@@ -18,7 +18,7 @@ public class UserList {
     private final int standardSize = 4;
     private int maxSize = standardSize;
 
-    public UserList(){
+    public UserList (){
         usersById = new HashMap<>(standardSize);
         usersId = new HashSet<>(standardSize);
     }
@@ -32,11 +32,14 @@ public class UserList {
     /**
      * Generates id for new user, adds it to id list.
      * Adds user handler to active users map by id.
-     * @return added user id (positive int), -1 if is full
+     * @return added user id (positive int)
      * */
     public synchronized int add(UserHandler userHandler){
         int newUserId = idGenerator++;
-        if(!this.usersById.containsValue(userHandler)){
+        if (isFull()) {
+            throw new RuntimeException("Can't add user to user list. It is full.");
+        }
+        if (!this.usersById.containsValue(userHandler)){
             this.usersById.put(newUserId, userHandler);
             this.usersId.add(newUserId);
         }

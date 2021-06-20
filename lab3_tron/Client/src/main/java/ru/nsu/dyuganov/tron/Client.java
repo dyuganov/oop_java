@@ -3,6 +3,10 @@ package main.java.ru.nsu.dyuganov.tron;
 import main.java.ru.nsu.dyuganov.tron.GUI.GUI;
 import main.java.ru.nsu.dyuganov.tron.GUI.GameGUI;
 import main.java.ru.nsu.dyuganov.tron.KeyController.KeyController;
+import main.java.ru.nsu.dyuganov.tron.Model.UserController.BotController;
+import main.java.ru.nsu.dyuganov.tron.Model.UserController.UserLocalController;
+import main.java.ru.nsu.dyuganov.tron.Model.UserHandler.UserHandler;
+import main.java.ru.nsu.dyuganov.tron.Model.UserList;
 
 import java.security.Guard;
 import java.util.Random;
@@ -58,5 +62,13 @@ public class Client {
 
 
 
+    }
+
+    private void initUserList(UserList userList, int botsNum, KeyController keyController){
+        userList.clearAll();
+        userList.add(new UserHandler(new UserLocalController(keyController)));
+        for (int i = 0; i < botsNum; ++i){
+            userList.add(new UserHandler(new BotController()));
+        }
     }
 }
