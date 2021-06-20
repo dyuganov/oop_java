@@ -20,6 +20,10 @@ public class Trace {
         }
     }
 
+    public boolean contains(Coordinates coordinates){
+        return trace.contains(coordinates);
+    }
+
     void deletePoint(Coordinates coordinates){
         trace.remove(coordinates);
     }

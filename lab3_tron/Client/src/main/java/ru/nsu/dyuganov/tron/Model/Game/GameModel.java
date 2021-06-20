@@ -4,6 +4,8 @@ import main.java.ru.nsu.dyuganov.tron.Model.Bike.Bike;
 import main.java.ru.nsu.dyuganov.tron.Model.Coordinates.Coordinates;
 import main.java.ru.nsu.dyuganov.tron.Model.Observer.Observable;
 import main.java.ru.nsu.dyuganov.tron.Model.Observer.Observer;
+import main.java.ru.nsu.dyuganov.tron.Model.ScoreCounter.ScoreCounter;
+import main.java.ru.nsu.dyuganov.tron.Model.ScoreCounter.ScoreKillsCounter;
 import main.java.ru.nsu.dyuganov.tron.Model.UserHandler.UserHandler;
 import main.java.ru.nsu.dyuganov.tron.Model.UserList;
 
@@ -11,55 +13,61 @@ import java.util.*;
 
 public class GameModel implements Observable {
     static final int DELAY = 100;
-    private final int DEFAULT_SCORE_VAL = 0;
     static final int FIELD_WIDTH = 55; // x
     static final int FIELD_HEIGHT = 33; // y
     boolean isGameEnd = false;
 
     Set<Observer> observers = new HashSet<>();
 
-    private UserList activeUsers;
+    private final UserList activeUsers;
     private final Map<Integer, Bike> idToBikes = new HashMap<Integer, Bike>();
-    //private final Map<Integer, Boolean> idToBikeStatus = new HashMap<>();
-    private final Map<Integer, Integer> idToScore = new HashMap<>();
+    private final Map<Integer, ScoreCounter> idToScore = new HashMap<>();
+    private GameInfo currGameInfo = new GameInfo(idToBikes, idToScore);
 
     public GameModel(UserList userList) {
         assert userList != null;
         activeUsers = userList;
     }
 
-/*    public void start(){
-        // main game
-        initBikes();
-        while(!gameEnd){
-            makeStep();
-            notifyObservers();
-            // TODO
-            // delay
-        }
-    }*/
-
     public void makeStep(){
         for(Integer i : activeUsers.getUsersId()){
             UserHandler currUser = activeUsers.getUser(i);
             // TODO: передвинуть юзера ...
 
-            currUser.getMoveDirection();
+            idToBikes.get(i).move(currUser.getMoveDirection());
+            currGameInfo = new GameInfo(idToBikes, idToScore);
+        }
+        checkCollisions();
+    }
+
+    private void checkCollisions(){
+        for(Integer i : activeUsers.getUsersId()){
+            Bike first = idToBikes.get(i);
+            for(Integer j : activeUsers.getUsersId()){
+                Bike second = idToBikes.get(j);
+                if(i.equals(j) || !first.isActive() || !second.isActive()){
+                    continue;
+                }
+                if(first.getCoordinates().equals(second.getCoordinates())){
+                    first.setActive(false);
+                    second.setActive(false);
+                }
+                if(second.getTrace().contains(first.getCoordinates())){
+                    //idToScore;
+                }
+            }
         }
     }
 
     public void resetGame(){
         initBikes();
         resetScores();
-    }
-
-    public Map<Integer, Integer> getIdToScore(){
-        return idToScore;
+        currGameInfo = new GameInfo(idToBikes, idToScore);
     }
 
     private void resetScores(){
         for (Integer i : activeUsers.getUsersId()){
-            idToScore.put(i, DEFAULT_SCORE_VAL);
+            idToScore.put(i, new ScoreKillsCounter());
         }
     }
 
@@ -73,16 +81,13 @@ public class GameModel implements Observable {
 
     @Override
     public void notifyObservers() {
-        GameInfo gameInfo = new GameInfo(idToBikes, idToScore); // TODO: add info
         for(Observer o : this.observers){
-            o.update(gameInfo);
+            o.update(currGameInfo);
         }
     }
 
     public GameInfo getGameInfo(){
-        GameInfo gameInfo = new GameInfo(idToBikes, idToScore);
-
-        return gameInfo;
+        return currGameInfo;
     }
 
     public boolean isGameEnd(){
