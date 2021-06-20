@@ -4,9 +4,11 @@ import ru.nsu.dyuganov.trongame.Model.Coordinates.Coordinates;
 import ru.nsu.dyuganov.trongame.Model.Direction.Direction;
 
 public class Bike {
-    // (0,0)--> width(x)
-    //   |
-    //   v length(y)
+    /**
+     (0,0)--> width(x)<p>
+       |<p>
+       v length(y)
+     */
     Coordinates bikeCoordinates;
 
     public Bike(final Coordinates newBikeCoordinates){
