@@ -2,15 +2,18 @@ package main.java.ru.nsu.dyuganov.tron.GUI;
 
 import main.java.ru.nsu.dyuganov.tron.GUI.Panels.GamePanel;
 import main.java.ru.nsu.dyuganov.tron.KeyController.KeyController;
+import main.java.ru.nsu.dyuganov.tron.Model.Game.GameInfo;
+import main.java.ru.nsu.dyuganov.tron.Model.Observer.Observer;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GameGUI {
+public class GameGUI implements Observer{
     Frame frame = new Frame();
     GamePanel mainPanel = new GamePanel();
+    GameInfo currGameInfo = null;
 
     /* ---- Content ----*/
     Container contentPane = frame.getContentPane();
@@ -36,6 +39,11 @@ public class GameGUI {
     public void start(){
         frame.pack();
         frame.setVisible(true);
+    }
+
+    @Override
+    public void update(GameInfo gameInfo) {
+        this.currGameInfo = gameInfo;
     }
 
     private class LocalGameStartEventListener implements ActionListener {

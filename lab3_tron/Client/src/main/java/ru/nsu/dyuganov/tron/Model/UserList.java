@@ -40,6 +40,7 @@ public class UserList {
             this.usersById.put(newUserId, userHandler);
             this.usersId.add(newUserId);
         }
+        assert usersById.size() == usersId.size();
         return newUserId;
     }
 
@@ -48,6 +49,7 @@ public class UserList {
     }
 
     public int getSize(){
+        assert usersById.size() == usersId.size();
         return usersId.size();
     }
 
@@ -66,10 +68,12 @@ public class UserList {
     public synchronized void remove(int id){
         usersById.remove(id);
         usersId.remove(id);
+        assert usersById.size() == usersId.size();
     }
 
     public synchronized void clearAll(){
         this.usersId.clear();
         this.usersById.clear();
+        assert usersById.size() == usersId.size();
     }
 }

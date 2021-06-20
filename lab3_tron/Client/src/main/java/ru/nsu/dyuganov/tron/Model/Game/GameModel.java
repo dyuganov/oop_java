@@ -2,16 +2,21 @@ package main.java.ru.nsu.dyuganov.tron.Model.Game;
 
 import main.java.ru.nsu.dyuganov.tron.Model.Bike.Bike;
 import main.java.ru.nsu.dyuganov.tron.Model.Coordinates.Coordinates;
+import main.java.ru.nsu.dyuganov.tron.Model.Observer.Observable;
+import main.java.ru.nsu.dyuganov.tron.Model.Observer.Observer;
 import main.java.ru.nsu.dyuganov.tron.Model.UserHandler.UserHandler;
 import main.java.ru.nsu.dyuganov.tron.Model.UserList;
 
+import javax.print.attribute.standard.JobStateReason;
 import java.util.*;
 
-public class GameModel {
+public class GameModel implements Observable {
     static final int DELAY = 100;
     static final int FIELD_WIDTH = 55; // x
     static final int FIELD_HEIGHT = 33; // y
     boolean gameEnd = false;
+
+    Set<Observer> observers = new HashSet<>();
 
     private UserList activeUsers;
     private final Map<Integer, Bike> idToBikes = new HashMap<Integer, Bike>();
@@ -27,6 +32,8 @@ public class GameModel {
         initBikes();
         while(!gameEnd){
             makeStep();
+            notifyObservers();
+            // delay
         }
     }
 
@@ -50,5 +57,23 @@ public class GameModel {
         int x = random.nextInt(FIELD_WIDTH - xIndent) + xIndent;
         int y = random.nextInt(FIELD_HEIGHT - yIndent) + yIndent;
         return new Coordinates(x, y);
+    }
+
+    @Override
+    public void notifyObservers() {
+        GameInfo gameInfo = new GameInfo(); // TODO: add info
+        for(Observer o : this.observers){
+            o.update(gameInfo);
+        }
+    }
+
+    @Override
+    public void registerObserver(Observer newObserver) {
+        this.observers.add(newObserver);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        this.observers.remove(observer);
     }
 }

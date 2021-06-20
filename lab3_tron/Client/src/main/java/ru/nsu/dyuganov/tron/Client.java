@@ -5,6 +5,7 @@ import main.java.ru.nsu.dyuganov.tron.GUI.GameGUI;
 import main.java.ru.nsu.dyuganov.tron.KeyController.KeyController;
 
 import java.security.Guard;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class Client {
@@ -33,7 +34,9 @@ public class Client {
         gui.start();*/
 
         GameGUI gameGUI = new GameGUI(keyController);
-        gameGUI.start();;
+        gameGUI.start();
+
+
 
 
         Thread newThread = new Thread(new Runnable() {
