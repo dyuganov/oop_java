@@ -7,36 +7,36 @@ import java.util.ArrayList;
 
 public class Trace {
     final ArrayList<Coordinates> trace;
-    Trace(){
+
+    Trace() {
         trace = new ArrayList<Coordinates>();
     }
 
-    void addPoint(Coordinates coordinates){
-        if(coordinates != null){
+    void addPoint(Coordinates coordinates) {
+        if (coordinates != null) {
             trace.add(coordinates);
-        }
-        else{
+        } else {
             throw new IllegalArgumentException("Cant add point to trace. Coordinates == null.");
         }
     }
 
-    public boolean contains(Coordinates coordinates){
+    public boolean contains(Coordinates coordinates) {
         return trace.contains(coordinates);
     }
 
-    void deletePoint(Coordinates coordinates){
-        trace.remove(coordinates);
-    }
-
-    void clear(){
+    void clear() {
         trace.clear();
     }
 
-    boolean isEmpty(){
+    void deletePoint(Coordinates coordinates) {
+        trace.remove(coordinates);
+    }
+
+    boolean isEmpty() {
         return trace.isEmpty();
     }
 
-    int size(){
+    int size() {
         return trace.size();
     }
 }

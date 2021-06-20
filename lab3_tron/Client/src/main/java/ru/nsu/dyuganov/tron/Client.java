@@ -66,9 +66,9 @@ public class Client {
 
     private void initUserList(UserList userList, int botsNum, KeyController keyController){
         userList.clearAll();
-        userList.add(new UserHandler(new UserLocalController(keyController)));
+        userList.add(new UserLocalController(keyController));
         for (int i = 0; i < botsNum; ++i){
-            userList.add(new UserHandler(new BotController()));
+            userList.add(new BotController());
         }
     }
 }
