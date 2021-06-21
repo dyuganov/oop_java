@@ -35,6 +35,7 @@ public class GameGUI implements Observer{
         frame.add(mainPanel);
 
 
+
     }
 
     public void start(){
@@ -43,9 +44,10 @@ public class GameGUI implements Observer{
     }
 
     @Override
-    public void update(GameInfo gameInfo) {
+    public synchronized void update(GameInfo gameInfo) {
         this.currGameInfo = gameInfo;
     }
+
 
     private class LocalGameStartEventListener implements ActionListener {
         @Override

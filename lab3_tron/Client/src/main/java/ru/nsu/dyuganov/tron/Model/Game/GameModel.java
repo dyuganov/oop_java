@@ -23,7 +23,7 @@ public class GameModel implements Observable {
     private final UserList activeUsers;
     private final Map<Integer, Bike> idToBikes = new HashMap<Integer, Bike>();
     private final Map<Integer, ScoreCounter> idToScore = new HashMap<>();
-    private GameInfo currGameInfo = new GameInfo(idToBikes, idToScore, gameIterationsCnt);
+    private GameInfo currGameInfo = new GameInfo(idToBikes, idToScore, gameIterationsCnt, isGameEnd);
 
     public GameModel(UserList userList) {
         assert userList != null;
@@ -42,7 +42,7 @@ public class GameModel implements Observable {
                 isGameEnd = true;
             }
         }
-        currGameInfo = new GameInfo(idToBikes, idToScore, gameIterationsCnt);
+        updateGameInfo();
     }
 
     private void checkCollisions() {
@@ -55,6 +55,11 @@ public class GameModel implements Observable {
                 first.setActive(false);
                 continue;
             }
+            if(first.getTrace().contains(first.getCoordinates())){
+                first.setActive(false);
+                idToScore.get(i).decrease();
+                continue;
+            }
             for (Integer j : activeUsers.getUsersId()) {
                 Bike second = idToBikes.get(j);
                 if (i.equals(j) || !second.isActive()) {
@@ -63,12 +68,13 @@ public class GameModel implements Observable {
                 if (first.getCoordinates().equals(second.getCoordinates())) {
                     first.setActive(false);
                     second.setActive(false);
-                    continue;
+                    break;
                 }
                 if (second.getTrace().contains(first.getCoordinates())) {
                     idToScore.get(j).increase();
                     idToScore.get(i).decrease();
                     first.setActive(false);
+                    break;
                 }
             }
         }
@@ -85,7 +91,7 @@ public class GameModel implements Observable {
 
     public void resetGame() {
         initBikes();
-        currGameInfo = new GameInfo(idToBikes, idToScore, gameIterationsCnt);
+        updateGameInfo();
     }
 
     public void resetScores() {
@@ -117,6 +123,10 @@ public class GameModel implements Observable {
         return isGameEnd;
     }
 
+    public UserList getUserList(){
+        return activeUsers;
+    }
+
     @Override
     public void registerObserver(Observer newObserver) {
         this.observers.add(newObserver);
@@ -132,5 +142,9 @@ public class GameModel implements Observable {
         int x = random.nextInt(FIELD_WIDTH - xIndent) + xIndent;
         int y = random.nextInt(FIELD_HEIGHT - yIndent) + yIndent;
         return new Coordinates(x, y);
+    }
+
+    private void updateGameInfo(){
+        this.currGameInfo = new GameInfo(idToBikes, idToScore, gameIterationsCnt, isGameEnd);
     }
 }

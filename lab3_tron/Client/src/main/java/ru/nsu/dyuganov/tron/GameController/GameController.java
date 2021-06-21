@@ -5,9 +5,9 @@ import main.java.ru.nsu.dyuganov.tron.Model.Game.GameModel;
 
 import java.util.concurrent.TimeUnit;
 
-public class GameController { // implements Runnable
-    private GameModel gameModel;
-    private GameGUI GUI;
+public class GameController implements Runnable { // implements Runnable
+    private final GameModel gameModel;
+    private final GameGUI GUI;
     private int TIMEOUT_MILS = 500;
 
     public GameController(GameModel gameModel, GameGUI gui) {
@@ -15,22 +15,29 @@ public class GameController { // implements Runnable
         this.GUI = gui;
     }
 
-    public void run() throws InterruptedException {
+    @Override
+    public void run() {
         gameModel.registerObserver(GUI);
         gameModel.resetGame();
-        while (!gameModel.isGameEnd()) {
-            gameModel.makeStep();
-            gameModel.notifyObservers();
-            TimeUnit.MILLISECONDS.sleep(TIMEOUT_MILS); // can be used timer
+        gameModel.notifyObservers();
+        try {
+            waitForUsersConnected();
+            while (!gameModel.isGameEnd()) {
+                gameModel.makeStep();
+                gameModel.notifyObservers();
+                TimeUnit.MILLISECONDS.sleep(TIMEOUT_MILS); // can be used timer
+            }
         }
-
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         gameModel.resetGame();
         gameModel.resetScores();
     }
 
-    private void pauseGame() {
-
+    private void waitForUsersConnected() throws InterruptedException {
+        while(gameModel.getUserList().getSize() < 2){
+            wait();
+        }
     }
-
-
 }

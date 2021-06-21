@@ -15,7 +15,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class Client {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // интерфейс, выбор режима игры (локальная / по сети)
         // запуск игры в нужном режиме (фабрику бы организовать...)
 
@@ -39,8 +39,10 @@ public class Client {
         /*GUI gui = new GUI(keyController);
         gui.start();*/
 
+
         GameGUI gameGUI = new GameGUI(keyController);
         gameGUI.start();
+
 
         UserList userList = new UserList();
         int botsNum = 2;
@@ -48,26 +50,8 @@ public class Client {
         GameModel gameModel = new GameModel(userList);
         GameController gameController = new GameController(gameModel, gameGUI);
 
-/*
-        Thread newThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for(int i = 0; i < 1000; ++i){
-                    System.out.println(keyController.getCurrentDirection());
-                    try {
-                        TimeUnit.SECONDS.sleep(1);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        });
+        gameController.run();
 
-        newThread.setDaemon(true);
-        newThread.start();
-
-
-*/
     }
 
     private static void initUserList(UserList userList, int botsNum, KeyController keyController){

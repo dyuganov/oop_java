@@ -12,7 +12,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-// OLD!!!!!!!!!!!!!!!!!
+// TODO: OLD!!!!!!!!!!!!!!!!!
 public class GUI{
     KeyController keyController;
 

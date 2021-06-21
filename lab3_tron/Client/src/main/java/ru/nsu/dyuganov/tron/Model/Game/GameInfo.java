@@ -11,12 +11,13 @@ public class GameInfo {
     private final Map<Integer, Bike> idToBikes;
     private final Map<Integer, ScoreCounter> idToScore;
     private int gameIterationsCnt = -1;
+    private boolean isGameEnd = false;
 
-    public GameInfo(Map<Integer, Bike> idToBikes,
-                    Map<Integer, ScoreCounter> idToScore, int gameIterationsCnt) {
+    public GameInfo(Map<Integer, Bike> idToBikes, Map<Integer, ScoreCounter> idToScore, int gameIterationsCnt, boolean isGameEnd) {
         this.idToBikes = idToBikes;
         this.idToScore = idToScore;
         this.gameIterationsCnt = gameIterationsCnt;
+        this.isGameEnd = isGameEnd;
     }
 
     public int getGameIterationsCnt() {
@@ -33,5 +34,9 @@ public class GameInfo {
 
     public Map<Integer, ScoreCounter> getIdToScore() {
         return idToScore;
+    }
+
+    public boolean isGameEnd(){
+        return isGameEnd;
     }
 }
