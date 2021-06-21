@@ -13,14 +13,9 @@ public class GamePanel extends JPanel {
     static final int SCREEN_WIDTH = 1280;
     static final int SCREEN_HEIGHT = 720;
 
-    private final int startBikeX = 166;
-    private final int startBikeY = 40;
-
-    private final int startTraceX = 168;
-    private final int startTraceY = 40;
-
-    private final int startCornerX = 168; // fix
-    private final int startCornerY = 40; // fix
+    private final int startOffsetX = 166;
+    private final int startOffsetY = 40;
+    private final int offset = 22;
 
     private final Color darkBlueColor = new Color(11, 20, 28);
 
@@ -82,8 +77,8 @@ public class GamePanel extends JPanel {
         g.drawImage(background, 0, 0, null);
         g.drawImage(backGrid, 0, 0, null);
 
-        //g.drawImage(blueTrace, startTraceX, startTraceY, null);
-        g.drawImage(blueTraceCorner, startCornerX, startCornerY, null);
+        g.drawImage(blueTrace, startOffsetX + offset, startOffsetY + offset*2, null);
+        //g.drawImage(blueTraceCorner, startOffsetX, startOffsetY, null);
 
 
     }
