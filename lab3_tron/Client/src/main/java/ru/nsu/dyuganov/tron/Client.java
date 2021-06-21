@@ -2,7 +2,9 @@ package main.java.ru.nsu.dyuganov.tron;
 
 import main.java.ru.nsu.dyuganov.tron.GUI.GUI;
 import main.java.ru.nsu.dyuganov.tron.GUI.GameGUI;
+import main.java.ru.nsu.dyuganov.tron.GameController.GameController;
 import main.java.ru.nsu.dyuganov.tron.KeyController.KeyController;
+import main.java.ru.nsu.dyuganov.tron.Model.Game.GameModel;
 import main.java.ru.nsu.dyuganov.tron.Model.UserController.BotController;
 import main.java.ru.nsu.dyuganov.tron.Model.UserController.UserLocalController;
 import main.java.ru.nsu.dyuganov.tron.Model.UserHandler.UserHandler;
@@ -40,9 +42,13 @@ public class Client {
         GameGUI gameGUI = new GameGUI(keyController);
         gameGUI.start();
 
+        UserList userList = new UserList();
+        int botsNum = 2;
+        initUserList(userList, botsNum, keyController);
+        GameModel gameModel = new GameModel(userList);
+        GameController gameController = new GameController(gameModel, gameGUI);
 
-
-
+/*
         Thread newThread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -61,10 +67,10 @@ public class Client {
         newThread.start();
 
 
-
+*/
     }
 
-    private void initUserList(UserList userList, int botsNum, KeyController keyController){
+    private static void initUserList(UserList userList, int botsNum, KeyController keyController){
         userList.clearAll();
         userList.add(new UserLocalController(keyController));
         for (int i = 0; i < botsNum; ++i){

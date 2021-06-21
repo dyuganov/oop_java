@@ -23,6 +23,7 @@ public class GameGUI implements Observer{
     private JLabel botsNumText = new JLabel("Bots number: ");
     private JButton backButton = new JButton("Back");
 
+    private int botsNumber = 0;
 
     public GameGUI(KeyController keyController){
         /* ---- Key listener ---- */
@@ -49,9 +50,7 @@ public class GameGUI implements Observer{
     private class LocalGameStartEventListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            // старт сервера
-            // автоподключение на локалхост
-            // запуск N ботов (выбор в окне) как отдельные потоки,
+
             contentPane.remove(serverGameButton);
             contentPane.add(botsNumText);
             contentPane.add(botsNum);
@@ -59,6 +58,8 @@ public class GameGUI implements Observer{
 
             contentPane.repaint();
             contentPane.revalidate();
+
+            botsNumber = Integer.parseInt(botsNum.getText());
         }
     }
 

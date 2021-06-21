@@ -23,7 +23,7 @@ public class GameModel implements Observable {
     private final UserList activeUsers;
     private final Map<Integer, Bike> idToBikes = new HashMap<Integer, Bike>();
     private final Map<Integer, ScoreCounter> idToScore = new HashMap<>();
-    private GameInfo currGameInfo = new GameInfo(idToBikes, idToScore);
+    private GameInfo currGameInfo = new GameInfo(idToBikes, idToScore, gameIterationsCnt);
 
     public GameModel(UserList userList) {
         assert userList != null;
@@ -42,7 +42,7 @@ public class GameModel implements Observable {
                 isGameEnd = true;
             }
         }
-        currGameInfo = new GameInfo(idToBikes, idToScore);
+        currGameInfo = new GameInfo(idToBikes, idToScore, gameIterationsCnt);
     }
 
     private void checkCollisions() {
@@ -85,7 +85,7 @@ public class GameModel implements Observable {
 
     public void resetGame() {
         initBikes();
-        currGameInfo = new GameInfo(idToBikes, idToScore);
+        currGameInfo = new GameInfo(idToBikes, idToScore, gameIterationsCnt);
     }
 
     public void resetScores() {

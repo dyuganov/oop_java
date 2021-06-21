@@ -10,7 +10,7 @@ public class GameController { // implements Runnable
     private GameGUI GUI;
     private int TIMEOUT_MILS = 500;
 
-    GameController(GameModel gameModel, GameGUI gui) {
+    public GameController(GameModel gameModel, GameGUI gui) {
         this.gameModel = gameModel;
         this.GUI = gui;
     }
