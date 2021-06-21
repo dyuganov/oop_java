@@ -17,9 +17,9 @@ public class Client {
 
         UserList userList = new UserList();
 
-        initUserList(userList, 2, keyController);
+        initUserList(userList, 3, keyController);
 
-        Thread controllerThread = new Thread( new GameController(new GameModel(userList), gameGUI));
+        Thread controllerThread = new Thread(new GameController(new GameModel(userList), gameGUI));
         controllerThread.start();
         controllerThread.join();
     }

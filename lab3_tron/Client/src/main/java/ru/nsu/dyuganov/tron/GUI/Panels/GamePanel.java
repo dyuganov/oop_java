@@ -78,13 +78,14 @@ public class GamePanel extends JPanel {
         g.drawImage(background, 0, 0, null);
         g.drawImage(backGrid, 0, 0, null);
 
-        for(Integer i : gameInfo.getIdToBikes().keySet()){
-            for(Coordinates traceCoord : gameInfo.getIdToBikes().get(i).getTrace().getTrace()){
-                int x = offset * traceCoord.getX() + startOffsetX;
-                int y = offset * traceCoord.getY() + startOffsetY;
-                Image img = idToBikeImages.get(i).get(traceIdx);
+        for(Integer userId : gameInfo.getIdToBikes().keySet()){
+            ArrayList<Coordinates> trace = gameInfo.getIdToBikes().get(userId).getTrace().getTrace();
+            for(int i = 0; i < trace.size(); ++i){
+                int x = offset * trace.get(i).getX() + startOffsetX;
+                int y = offset * trace.get(i).getY() + startOffsetY;
+                Image img = idToBikeImages.get(userId).get(traceIdx);
                 if(i == 0){
-                    img = idToBikeImages.get(i).get(bikeIdx);
+                    img = idToBikeImages.get(userId).get(bikeIdx);
                 }
                 g.drawImage(img, x, y, null);
             }

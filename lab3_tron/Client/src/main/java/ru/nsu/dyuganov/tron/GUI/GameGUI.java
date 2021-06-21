@@ -61,7 +61,7 @@ public class GameGUI implements Observer {
         startPanel.add(serverGameButton);
     }
 
-    public void run() { // TODO ?
+    public void run() {
         frame.pack();
         frame.setVisible(true);
     }
@@ -156,7 +156,8 @@ public class GameGUI implements Observer {
         @Override
         public void actionPerformed(ActionEvent e) {
             setServerGame(true);
-            // TODO старт игровой отрисвоки
+            System.out.println("Sever connection could be here...");
+            // TODO: try connect to server and start drawing game
         }
     }
 

@@ -35,6 +35,8 @@ public class GameController implements Runnable { // implements Runnable
         gameModel.resetScores();
     }
 
+
+
     private void waitForUsersConnected() throws InterruptedException {
         while(gameModel.getUserList().getSize() < 2){
             TimeUnit.SECONDS.sleep(1);
