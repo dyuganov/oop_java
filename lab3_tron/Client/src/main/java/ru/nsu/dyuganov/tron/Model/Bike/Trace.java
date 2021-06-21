@@ -6,13 +6,13 @@ import main.java.ru.nsu.dyuganov.tron.Model.Coordinates.Coordinates;
 import java.util.ArrayList;
 
 public class Trace {
-    final ArrayList<Coordinates> trace;
+    private final ArrayList<Coordinates> trace;
 
-    Trace() {
+    public Trace() {
         trace = new ArrayList<Coordinates>();
     }
 
-    void addPoint(Coordinates coordinates) {
+    public void addPoint(Coordinates coordinates) {
         if (coordinates != null) {
             trace.add(coordinates);
         } else {
@@ -24,19 +24,23 @@ public class Trace {
         return trace.contains(coordinates);
     }
 
-    void clear() {
+    public void clear() {
         trace.clear();
     }
 
-    void deletePoint(Coordinates coordinates) {
+    public ArrayList<Coordinates> getTrace(){
+        return trace;
+    }
+
+    public void deletePoint(Coordinates coordinates) {
         trace.remove(coordinates);
     }
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return trace.isEmpty();
     }
 
-    int size() {
+    public int size() {
         return trace.size();
     }
 }

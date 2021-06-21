@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 public class GameController implements Runnable { // implements Runnable
     private final GameModel gameModel;
     private final GameGUI GUI;
-    private int TIMEOUT_MILS = 500;
+    private final int TIMEOUT_MILS = 500;
 
     public GameController(GameModel gameModel, GameGUI gui) {
         this.gameModel = gameModel;

@@ -15,8 +15,9 @@ import java.awt.event.ActionListener;
 public class GameGUI implements Observer {
     Frame frame = new Frame();
     StartPanel startPanel = new StartPanel();
-    //GamePanel gamePanel = new GamePanel();
     GameInfo currGameInfo = null;
+    GamePanel gamePanel;
+    boolean isUsersInitReady = false;
 
     /* ---- Content ----*/
     Container contentPane = frame.getContentPane();
@@ -90,7 +91,6 @@ public class GameGUI implements Observer {
         ImageIcon startImg = new ImageIcon("Client/src/main/resources/scaled_images/local_game_button_pink.png");
         Image scaledStartButton = startImg.getImage().getScaledInstance(scaleButtonW, scaleButtonH, Image.SCALE_DEFAULT);
         localGameButton.setIcon(new ImageIcon(scaledStartButton));
-        //localGameButton.setIcon(new ImageIcon("Client/src/main/resources/scaled_images/local_game_button.png"));
         localGameButton.setOpaque(false);
         localGameButton.setContentAreaFilled(false);
         localGameButton.setBorder(BorderFactory.createEmptyBorder());
@@ -143,11 +143,12 @@ public class GameGUI implements Observer {
             setLocalGame(true);
             setBotsNumber(Integer.parseInt(botsNumTextField.getText()));
             frame.remove(startPanel);
-            //frame.add(new GameCanvas()); // !!
+
             frame.add(new GamePanel(currGameInfo));
             frame.repaint();
             frame.revalidate();
-            // TODO старт игровой отрисвоки
+
+
         }
     }
 
@@ -166,14 +167,19 @@ public class GameGUI implements Observer {
     }
 
     private synchronized GameInfo getCurrGameInfo(){
-        return this.getCurrGameInfo();
+        return currGameInfo;
     }
 
     private synchronized void setBotsNumber(int val) {
         this.botsNumber = val;
+        isUsersInitReady = true;
     }
 
-    public synchronized int getBotsNumTextField() {
+    public synchronized boolean isUsersInitReady(){
+        return isUsersInitReady;
+    }
+
+    public synchronized int getBotsNum() {
         return this.botsNumber;
     }
 

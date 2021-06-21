@@ -1,5 +1,6 @@
 package main.java.ru.nsu.dyuganov.tron.GUI.Panels;
 
+import main.java.ru.nsu.dyuganov.tron.Model.Coordinates.Coordinates;
 import main.java.ru.nsu.dyuganov.tron.Model.Game.GameInfo;
 
 import javax.swing.*;
@@ -19,9 +20,9 @@ public class GamePanel extends JPanel {
 
     private final Color darkBlueColor = new Color(11, 20, 28);
 
-    private final int BikeIdx = 0;
-    private final int TraceIdx = 1;
-    private final int CornerTraceIdx = 2;
+    private final int bikeIdx = 0;
+    private final int traceIdx = 1;
+    private final int cornerTraceIdx = 2;
 
     private GameInfo gameInfo;
     private Map<Integer, ArrayList<Image>> idToBikeImages = new HashMap<>();
@@ -77,10 +78,17 @@ public class GamePanel extends JPanel {
         g.drawImage(background, 0, 0, null);
         g.drawImage(backGrid, 0, 0, null);
 
-        g.drawImage(blueTrace, startOffsetX + offset, startOffsetY + offset*2, null);
-        //g.drawImage(blueTraceCorner, startOffsetX, startOffsetY, null);
-
-
+        for(Integer i : gameInfo.getIdToBikes().keySet()){
+            for(Coordinates traceCoord : gameInfo.getIdToBikes().get(i).getTrace().getTrace()){
+                int x = offset * traceCoord.getX() + startOffsetX;
+                int y = offset * traceCoord.getY() + startOffsetY;
+                Image img = idToBikeImages.get(i).get(traceIdx);
+                if(i == 0){
+                    img = idToBikeImages.get(i).get(bikeIdx);
+                }
+                g.drawImage(img, x, y, null);
+            }
+        }
     }
 
     public void updateGameInfo(GameInfo gameInfo){
