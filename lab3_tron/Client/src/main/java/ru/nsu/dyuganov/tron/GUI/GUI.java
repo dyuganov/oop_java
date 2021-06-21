@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 
 // TODO: OLD!!!!!!!!!!!!!!!!!
-public class GUI{
+public class GUI {
     KeyController keyController;
 
     JFrame frame = new JFrame("Tron game");
@@ -31,15 +31,18 @@ public class GUI{
         public void keyTyped(KeyEvent e) {
             keyController.handleKey(e);
         }
+
         @Override
         public void keyPressed(KeyEvent e) {
             keyController.handleKey(e);
         }
+
         @Override
-        public void keyReleased(KeyEvent e) {}
+        public void keyReleased(KeyEvent e) {
+        }
     };
 
-    public GUI(KeyController keyController){
+    public GUI(KeyController keyController) {
         this.keyController = keyController;
 
         frame.setBounds(0, 0, 1280, 720);
@@ -70,13 +73,13 @@ public class GUI{
         constraintsServer.gridheight = 2;
         constraintsServer.gridwidth = 2;
 
-         localGameButton.setText("");
-         final int buttonW = 82;
-         final int buttonH = 40;
-         final int scaleMul = 2;
-         int scaleButtonW = buttonW * scaleMul;
-         int scaleButtonH = buttonH * scaleMul;
-         localGameButton.setPreferredSize(new Dimension(scaleButtonW, scaleButtonH));
+        localGameButton.setText("");
+        final int buttonW = 82;
+        final int buttonH = 40;
+        final int scaleMul = 2;
+        int scaleButtonW = buttonW * scaleMul;
+        int scaleButtonH = buttonH * scaleMul;
+        localGameButton.setPreferredSize(new Dimension(scaleButtonW, scaleButtonH));
         ImageIcon startImg = new ImageIcon("C:\\Users\\Dyuga\\Desktop\\study_labs\\oop_java\\lab3_tron\\Client\\src\\main\\resources\\images\\play_button.png");
         Image scaledStartButton = startImg.getImage().getScaledInstance(scaleButtonW, scaleButtonH, Image.SCALE_DEFAULT);
         localGameButton.setIcon(new ImageIcon(scaledStartButton));
@@ -111,7 +114,6 @@ public class GUI{
         //container.add(new JLabel(new ImageIcon(scaleBack)));
 
 
-
         BufferedImage img = null;
         try {
             img = ImageIO.read(new File("C:\\Users\\Dyuga\\Desktop\\study_labs\\oop_java\\lab3_tron\\Client\\src\\main\\resources\\images\\background_compiled.png"));
@@ -125,7 +127,6 @@ public class GUI{
         frame.add(backPanel);
 
 
-
         container.setBackground(new java.awt.Color(11, 20, 28));
         //container.setBackground(new java.awt.Color(111, 22, 22));
 
@@ -136,11 +137,10 @@ public class GUI{
 
     }
 
-    public void start(){
+    public void start() {
         frame.pack();
         frame.setVisible(true);
     }
-
 
 
 }

@@ -34,7 +34,7 @@ public class UserList {
         if (!this.usersById.containsValue(userController)) {
             this.usersById.put(newUserId, userController);
         }
-        notify();
+        //notify();
         return newUserId;
     }
 

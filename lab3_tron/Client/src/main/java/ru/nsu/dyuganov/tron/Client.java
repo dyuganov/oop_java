@@ -1,18 +1,12 @@
 package main.java.ru.nsu.dyuganov.tron;
 
-import main.java.ru.nsu.dyuganov.tron.GUI.GUI;
 import main.java.ru.nsu.dyuganov.tron.GUI.GameGUI;
 import main.java.ru.nsu.dyuganov.tron.GameController.GameController;
 import main.java.ru.nsu.dyuganov.tron.KeyController.KeyController;
 import main.java.ru.nsu.dyuganov.tron.Model.Game.GameModel;
 import main.java.ru.nsu.dyuganov.tron.Model.UserController.BotController;
 import main.java.ru.nsu.dyuganov.tron.Model.UserController.UserLocalController;
-import main.java.ru.nsu.dyuganov.tron.Model.UserHandler.UserHandler;
 import main.java.ru.nsu.dyuganov.tron.Model.UserList;
-
-import java.security.Guard;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 public class Client {
     public static void main(String[] args) throws InterruptedException {
@@ -36,22 +30,18 @@ public class Client {
         * */
 
         KeyController keyController = new KeyController();
-        /*GUI gui = new GUI(keyController);
-        gui.start();*/
-
 
         GameGUI gameGUI = new GameGUI(keyController);
-        gameGUI.start();
-
+        gameGUI.run();
 
         UserList userList = new UserList();
-        int botsNum = 2;
-        initUserList(userList, botsNum, keyController);
+        initUserList(userList, gameGUI.getBotsNum(), keyController);
         GameModel gameModel = new GameModel(userList);
         GameController gameController = new GameController(gameModel, gameGUI);
 
-        gameController.run();
-
+        Thread controllerThread = new Thread(gameController);
+        controllerThread.start();
+        controllerThread.join();
     }
 
     private static void initUserList(UserList userList, int botsNum, KeyController keyController){
