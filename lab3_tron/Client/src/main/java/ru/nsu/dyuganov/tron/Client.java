@@ -35,7 +35,7 @@ public class Client {
         gameGUI.run();
 
         UserList userList = new UserList();
-        initUserList(userList, gameGUI.getBotsNum(), keyController);
+        initUserList(userList, gameGUI.getBotsNumTextField(), keyController);
         GameModel gameModel = new GameModel(userList);
         GameController gameController = new GameController(gameModel, gameGUI);
 

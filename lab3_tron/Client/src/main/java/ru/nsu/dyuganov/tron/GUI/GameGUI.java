@@ -6,7 +6,6 @@ import main.java.ru.nsu.dyuganov.tron.Model.Game.GameInfo;
 import main.java.ru.nsu.dyuganov.tron.Model.Observer.Observer;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,10 +19,13 @@ public class GameGUI implements Observer {
     Container contentPane = frame.getContentPane();
     private JButton serverGameButton = new JButton("Connect server");
     private JButton localGameButton = new JButton("Local game");
-    private JTextField botsNum = new JTextField("1", 5);
+    private JTextField botsNumTextField = new JTextField("1", 5);
     private JLabel botsNumText = new JLabel("Bots number: ");
     private JButton backButton = new JButton("Back");
     private JButton startLocalGameButton = new JButton("Go!");
+
+    private final Color pinkColour = new Color(194, 0, 127);
+    private final Color darkBlueColor = new Color(11, 20, 28);
 
     private int botsNumber = 0;
     private boolean isLocalGame = false;
@@ -33,7 +35,7 @@ public class GameGUI implements Observer {
     public GameGUI(KeyController keyController) {
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainPanel.setBackground(new java.awt.Color(11, 20, 28));
+        mainPanel.setBackground(darkBlueColor);
 
         /* ---- Key listener ---- */
         frame.addKeyListener(new GameKeyListener(keyController));
@@ -66,17 +68,20 @@ public class GameGUI implements Observer {
     }
 
     private void setupBotsText(){
-        botsNumText.setForeground(new Color(194, 0, 127));
-        //botsNumText.setFont(new Font(botsNumText.getFont().getName(), Font.PLAIN, 18));
+        botsNumText.setForeground(pinkColour);
         botsNumText.setFont(new Font("Raleway", Font.PLAIN, 18));
     }
 
     private void setupStartLocalGameButton(){
-
+        startLocalGameButton.addActionListener(new LocalGameStartActionListener());
+        startLocalGameButton.setBackground(darkBlueColor);
+        startLocalGameButton.setForeground(pinkColour);
     }
 
     private void setupBackMenuButton(){
-
+        backButton.addActionListener(new BackEventListener());
+        backButton.setBackground(darkBlueColor);
+        backButton.setForeground(pinkColour);
     }
 
     private void setupLocalGameButton(){
@@ -92,7 +97,7 @@ public class GameGUI implements Observer {
         localGameButton.setContentAreaFilled(false);
         localGameButton.setBorder(BorderFactory.createEmptyBorder());
         localGameButton.setBorderPainted(false);
-        localGameButton.addActionListener(new LocalGameStartEventListener());
+        localGameButton.addActionListener(new LocalGameSetActionListener());
     }
 
     private void setupServerGameButton(){
@@ -102,7 +107,53 @@ public class GameGUI implements Observer {
         serverGameButton.setContentAreaFilled(false);
         serverGameButton.setBorder(BorderFactory.createEmptyBorder());
         serverGameButton.setBorderPainted(false);
-        serverGameButton.addActionListener(new ServerGameStartEventListener());
+        serverGameButton.addActionListener(new ServerGameStartActionListener());
+    }
+
+    private class LocalGameSetActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            mainPanel.remove(serverGameButton);
+            mainPanel.add(botsNumText);
+            mainPanel.add(botsNumTextField);
+            mainPanel.add(startLocalGameButton);
+            mainPanel.add(backButton);
+
+            mainPanel.repaint();
+            mainPanel.revalidate();
+        }
+    }
+
+    private class BackEventListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            mainPanel.add(serverGameButton);
+            mainPanel.remove(botsNumText);
+            mainPanel.remove(botsNumTextField);
+            mainPanel.remove(backButton);
+            mainPanel.remove(startLocalGameButton);
+
+            mainPanel.repaint();
+            mainPanel.revalidate();
+        }
+    }
+
+    private class LocalGameStartActionListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            setLocalGame(true);
+            setBotsNumber(Integer.parseInt(botsNumTextField.getText()));
+            // TODO старт игровой отрисвоки
+        }
+    }
+
+    private class ServerGameStartActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            setServerGame(true);
+            // TODO старт игровой отрисвоки
+        }
     }
 
     @Override
@@ -110,33 +161,11 @@ public class GameGUI implements Observer {
         this.currGameInfo = gameInfo;
     }
 
-    private class LocalGameStartEventListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if(!isLocalGame()){
-                mainPanel.remove(serverGameButton);
-                mainPanel.add(botsNumText);
-                mainPanel.add(botsNum);
-                mainPanel.add(startLocalGameButton);
-                mainPanel.add(backButton);
-
-                mainPanel.repaint();
-                mainPanel.revalidate();
-
-                setBotsNumber(Integer.parseInt(botsNum.getText()));
-            }
-            else{
-                setLocalGame(true);
-
-            }
-        }
-    }
-
     private synchronized void setBotsNumber(int val) {
         this.botsNumber = val;
     }
 
-    public synchronized int getBotsNum() {
+    public synchronized int getBotsNumTextField() {
         return this.botsNumber;
     }
 
@@ -156,34 +185,5 @@ public class GameGUI implements Observer {
     private synchronized void setServerGame(boolean val){
         this.isServerGame = val;
         assert isLocalGame != isServerGame;
-    }
-
-
-    private class BackEventListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // старт сервера
-            // автоподключение на локалхост
-            // запуск N ботов (выбор в окне) как отдельные потоки,
-            contentPane.add(serverGameButton);
-            contentPane.remove(botsNumText);
-            contentPane.remove(botsNum);
-            contentPane.remove(backButton);
-
-            contentPane.repaint();
-            contentPane.revalidate();
-        }
-    }
-
-    private class ServerGameStartEventListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // старт игры, когда все нажмут ready
-            System.out.println("SWING SASAAAAAAAT");
-
-            // отрисовать интерфейс игры
-            setServerGame(true);
-
-        }
     }
 }
