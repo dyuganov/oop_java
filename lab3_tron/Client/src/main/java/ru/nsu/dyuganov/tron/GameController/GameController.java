@@ -37,7 +37,7 @@ public class GameController implements Runnable { // implements Runnable
 
     private void waitForUsersConnected() throws InterruptedException {
         while(gameModel.getUserList().getSize() < 2){
-            TimeUnit.MILLISECONDS.sleep(500);
+            TimeUnit.SECONDS.sleep(1);
         }
     }
 }

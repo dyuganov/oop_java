@@ -1,6 +1,8 @@
 package main.java.ru.nsu.dyuganov.tron.GUI;
 
+import main.java.ru.nsu.dyuganov.tron.GUI.Panels.GameCanvas;
 import main.java.ru.nsu.dyuganov.tron.GUI.Panels.GamePanel;
+import main.java.ru.nsu.dyuganov.tron.GUI.Panels.StartPanel;
 import main.java.ru.nsu.dyuganov.tron.KeyController.KeyController;
 import main.java.ru.nsu.dyuganov.tron.Model.Game.GameInfo;
 import main.java.ru.nsu.dyuganov.tron.Model.Observer.Observer;
@@ -12,7 +14,8 @@ import java.awt.event.ActionListener;
 
 public class GameGUI implements Observer {
     Frame frame = new Frame();
-    GamePanel mainPanel = new GamePanel();
+    StartPanel startPanel = new StartPanel();
+    //GamePanel gamePanel = new GamePanel();
     GameInfo currGameInfo = null;
 
     /* ---- Content ----*/
@@ -35,7 +38,7 @@ public class GameGUI implements Observer {
     public GameGUI(KeyController keyController) {
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainPanel.setBackground(darkBlueColor);
+        startPanel.setBackground(darkBlueColor);
 
         /* ---- Key listener ---- */
         frame.addKeyListener(new GameKeyListener(keyController));
@@ -43,9 +46,9 @@ public class GameGUI implements Observer {
         frame.requestFocusInWindow();
 
         /* ---- Display info ----*/
-        frame.add(mainPanel);
+        frame.add(startPanel);
 
-        mainPanel.setLayout(new GridBagLayout());
+        startPanel.setLayout(new GridBagLayout());
 
         setupBotsText();
         setupBackMenuButton();
@@ -53,13 +56,8 @@ public class GameGUI implements Observer {
         setupLocalGameButton();
         setupServerGameButton();
 
-
-        mainPanel.add(localGameButton);
-        mainPanel.add(serverGameButton);
-
-
-
-
+        startPanel.add(localGameButton);
+        startPanel.add(serverGameButton);
     }
 
     public void run() { // TODO ?
@@ -113,28 +111,28 @@ public class GameGUI implements Observer {
     private class LocalGameSetActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            mainPanel.remove(serverGameButton);
-            mainPanel.add(botsNumText);
-            mainPanel.add(botsNumTextField);
-            mainPanel.add(startLocalGameButton);
-            mainPanel.add(backButton);
+            startPanel.remove(serverGameButton);
+            startPanel.add(botsNumText);
+            startPanel.add(botsNumTextField);
+            startPanel.add(startLocalGameButton);
+            startPanel.add(backButton);
 
-            mainPanel.repaint();
-            mainPanel.revalidate();
+            startPanel.repaint();
+            startPanel.revalidate();
         }
     }
 
     private class BackEventListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            mainPanel.add(serverGameButton);
-            mainPanel.remove(botsNumText);
-            mainPanel.remove(botsNumTextField);
-            mainPanel.remove(backButton);
-            mainPanel.remove(startLocalGameButton);
+            startPanel.add(serverGameButton);
+            startPanel.remove(botsNumText);
+            startPanel.remove(botsNumTextField);
+            startPanel.remove(backButton);
+            startPanel.remove(startLocalGameButton);
 
-            mainPanel.repaint();
-            mainPanel.revalidate();
+            startPanel.repaint();
+            startPanel.revalidate();
         }
     }
 
@@ -144,6 +142,11 @@ public class GameGUI implements Observer {
         public void actionPerformed(ActionEvent e) {
             setLocalGame(true);
             setBotsNumber(Integer.parseInt(botsNumTextField.getText()));
+            frame.remove(startPanel);
+            //frame.add(new GameCanvas()); // !!
+            frame.add(new GamePanel(currGameInfo));
+            frame.repaint();
+            frame.revalidate();
             // TODO старт игровой отрисвоки
         }
     }
@@ -158,7 +161,12 @@ public class GameGUI implements Observer {
 
     @Override
     public synchronized void update(GameInfo gameInfo) {
+        assert gameInfo != null;
         this.currGameInfo = gameInfo;
+    }
+
+    private synchronized GameInfo getCurrGameInfo(){
+        return this.getCurrGameInfo();
     }
 
     private synchronized void setBotsNumber(int val) {

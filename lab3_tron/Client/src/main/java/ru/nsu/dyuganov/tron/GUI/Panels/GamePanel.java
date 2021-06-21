@@ -1,37 +1,95 @@
 package main.java.ru.nsu.dyuganov.tron.GUI.Panels;
 
-import javax.imageio.ImageIO;
+import main.java.ru.nsu.dyuganov.tron.Model.Game.GameInfo;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GamePanel extends JPanel {
     static final int SCREEN_WIDTH = 1280;
     static final int SCREEN_HEIGHT = 720;
 
+    private final int startBikeX = 166;
+    private final int startBikeY = 40;
 
+    private final int startTraceX = 168;
+    private final int startTraceY = 40;
 
-     public GamePanel(){
-         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
-     }
+    private final int startCornerX = 168; // fix
+    private final int startCornerY = 40; // fix
 
-     public void draw(Graphics g){
+    private final Color darkBlueColor = new Color(11, 20, 28);
 
-     }
+    private final int BikeIdx = 0;
+    private final int TraceIdx = 1;
+    private final int CornerTraceIdx = 2;
 
-/*    public void paint(Graphics g){
-        Graphics2D g2D = (Graphics2D) g;
+    private GameInfo gameInfo;
+    private Map<Integer, ArrayList<Image>> idToBikeImages = new HashMap<>();
 
-        BufferedImage img = null;
-        try {
-            img = ImageIO.read(new File("Client/src/main/resources/images/start_back_scaled.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
+    final Image backGrid = new ImageIcon("Client/src/main/resources/scaled_images/main_game_grid.png").getImage();
+    final Image background = new ImageIcon("Client/src/main/resources/scaled_images/background.png").getImage();
+
+    final Image blueBike = new ImageIcon("Client/src/main/resources/scaled_images/blue_bike.png").getImage();
+    final Image blueTrace = new ImageIcon("Client/src/main/resources/scaled_images/blue_trace.png").getImage();
+    final Image blueTraceCorner = new ImageIcon("Client/src/main/resources/scaled_images/blue_corner_trace.png").getImage();
+    final ArrayList<Image> blueImagesList = new ArrayList<>(Arrays.asList(blueBike, blueTrace, blueTraceCorner));
+
+    final Image pinkBike = new ImageIcon("Client/src/main/resources/scaled_images/pink_bike.png").getImage();
+    final Image pinkTrace = new ImageIcon("Client/src/main/resources/scaled_images/pink_trace.png").getImage();
+    final Image pinkTraceCorner = new ImageIcon("Client/src/main/resources/scaled_images/pink_corner_trace.png").getImage();
+    final ArrayList<Image> pinkImagesList = new ArrayList<>(Arrays.asList(pinkBike, pinkTrace, pinkTraceCorner));
+
+    final Image orangeBike = new ImageIcon("Client/src/main/resources/scaled_images/orange_bike.png").getImage();
+    final Image orangeTrace = new ImageIcon("Client/src/main/resources/scaled_images/orange_trace.png").getImage();
+    final Image orangeTraceCorner = new ImageIcon("Client/src/main/resources/scaled_images/orange_corner_trace.png").getImage();
+    final ArrayList<Image> orangeImagesList = new ArrayList<>(Arrays.asList(orangeBike, orangeTrace, orangeTraceCorner));
+
+    final Image purpleBike = new ImageIcon("Client/src/main/resources/scaled_images/purple_bike.png").getImage();
+    final Image purpleTrace = new ImageIcon("Client/src/main/resources/scaled_images/purple_trace.png").getImage();
+    final Image purpleTraceCorner = new ImageIcon("Client/src/main/resources/scaled_images/purple_corner_trace.png").getImage();
+    final ArrayList<Image> purpleImagesList = new ArrayList<>(Arrays.asList(purpleBike, purpleTrace, purpleTraceCorner));
+
+    final ArrayList<ArrayList<Image>> imageLists = new ArrayList<>(Arrays.asList(blueImagesList, pinkImagesList, orangeImagesList, purpleImagesList));
+
+    public GamePanel(GameInfo gameInfo){
+        this.gameInfo = gameInfo;
+        this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
+        this.setBackground(darkBlueColor);
+
+        updateIdToBikeImages();
+    }
+
+    private void updateIdToBikeImages(){
+        assert gameInfo.getIdToBikes().size() <= 4;
+        if(gameInfo.getIdToBikes().size() == idToBikeImages.size()){
+            return;
         }
-        assert img != null;
-        g2D.drawImage(img, 0, 0, null);
-    }*/
-}
+        idToBikeImages.clear();
+        for(Integer i : gameInfo.getIdToBikes().keySet()){
+            idToBikeImages.put(i, imageLists.get(i));
+        }
+    }
 
+    @Override
+    public void paint(Graphics g){
+        updateIdToBikeImages();
+        g.setColor(darkBlueColor);
+        g.drawImage(background, 0, 0, null);
+        g.drawImage(backGrid, 0, 0, null);
+
+        //g.drawImage(blueTrace, startTraceX, startTraceY, null);
+        g.drawImage(blueTraceCorner, startCornerX, startCornerY, null);
+
+
+    }
+
+    public void updateGameInfo(GameInfo gameInfo){
+        this.gameInfo = gameInfo;
+    }
+
+}
