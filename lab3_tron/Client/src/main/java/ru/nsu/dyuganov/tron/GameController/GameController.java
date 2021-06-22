@@ -7,18 +7,16 @@ import java.util.concurrent.TimeUnit;
 
 public class GameController implements Runnable { // implements Runnable
     private final GameModel gameModel;
-    private final GameGUI GUI;
     private final int TIMEOUT_MILS = 500;
 
-    public GameController(GameModel gameModel, GameGUI gui) {
+    public GameController(GameModel gameModel) {
         this.gameModel = gameModel;
-        this.GUI = gui;
     }
 
     @Override
     public void run() {
-        gameModel.registerObserver(GUI);
         gameModel.resetGame();
+        gameModel.resetScores();
         gameModel.notifyObservers();
         try {
             waitForUsersConnected();
@@ -31,11 +29,10 @@ public class GameController implements Runnable { // implements Runnable
         catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         gameModel.resetGame();
         gameModel.resetScores();
     }
-
-
 
     private void waitForUsersConnected() throws InterruptedException {
         while(gameModel.getUserList().getSize() < 2){

@@ -5,12 +5,14 @@ import main.java.ru.nsu.dyuganov.tron.Model.Game.GameInfo;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GamePanel extends JPanel {
+public class GamePanel extends JPanel implements ActionListener {
     static final int SCREEN_WIDTH = 1280;
     static final int SCREEN_HEIGHT = 720;
 
@@ -96,4 +98,8 @@ public class GamePanel extends JPanel {
         this.gameInfo = gameInfo;
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        repaint();
+    }
 }

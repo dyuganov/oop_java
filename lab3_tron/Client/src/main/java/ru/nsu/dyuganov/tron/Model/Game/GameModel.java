@@ -12,8 +12,8 @@ import java.util.*;
 
 public class GameModel implements Observable {
     static final int GAME_ITERATIONS = 3;
-    static final int FIELD_WIDTH = 55; // x
-    static final int FIELD_HEIGHT = 33; // y
+    static final int FIELD_WIDTH = 49; // x
+    static final int FIELD_HEIGHT = 28; // y
 
     Set<Observer> observers = new HashSet<>();
 
@@ -57,7 +57,7 @@ public class GameModel implements Observable {
             }
             if(first.getTrace().contains(first.getCoordinates())){
                 first.setActive(false);
-                //idToScore.get(i).decrease();
+                idToScore.get(i).decrease();
                 continue;
             }
             for (Integer j : activeUsers.getUsersId()) {
@@ -71,8 +71,8 @@ public class GameModel implements Observable {
                     break;
                 }
                 if (second.getTrace().contains(first.getCoordinates())) {
-                    //idToScore.get(j).increase();
-                    //idToScore.get(i).decrease();
+                    idToScore.get(j).increase();
+                    idToScore.get(i).decrease();
                     first.setActive(false);
                     break;
                 }
