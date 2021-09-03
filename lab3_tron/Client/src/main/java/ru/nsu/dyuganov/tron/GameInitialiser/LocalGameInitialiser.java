@@ -12,7 +12,7 @@ public class LocalGameInitialiser implements GameInitialiser {
     private final GameGUI gameGUI;
     private final KeyController keyController;
 
-    LocalGameInitialiser(GameGUI gameGUI, KeyController keyController){
+    public LocalGameInitialiser(GameGUI gameGUI, KeyController keyController){
         this.gameGUI = gameGUI;
         this.keyController = keyController;
     }
@@ -23,6 +23,8 @@ public class LocalGameInitialiser implements GameInitialiser {
         initUserList(userList, gameGUI.getBotsNum(), keyController);
         GameModel gameModel = new GameModel(userList);
         gameModel.registerObserver(gameGUI);
+        gameModel.notifyObservers();
+        notify();
 
         Thread controllerThread = new Thread(new GameController(gameModel));
         controllerThread.start();

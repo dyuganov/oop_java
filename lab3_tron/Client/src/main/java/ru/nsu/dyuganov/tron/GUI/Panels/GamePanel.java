@@ -54,15 +54,17 @@ public class GamePanel extends JPanel implements ActionListener {
 
     final ArrayList<ArrayList<Image>> imageLists = new ArrayList<>(Arrays.asList(blueImagesList, pinkImagesList, orangeImagesList, purpleImagesList));
 
-    public GamePanel(GameInfo gameInfo){
-        this.gameInfo = gameInfo;
+    public GamePanel(){
+        //this.gameInfo = gameInfo;
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
         this.setBackground(darkBlueColor);
 
+        waitForGameInfo();
         updateIdToBikeImages();
     }
 
     private void updateIdToBikeImages(){
+        assert gameInfo != null;
         assert gameInfo.getIdToBikes().size() <= 4;
         if(gameInfo.getIdToBikes().size() == idToBikeImages.size()){
             return;
@@ -70,6 +72,12 @@ public class GamePanel extends JPanel implements ActionListener {
         idToBikeImages.clear();
         for(Integer i : gameInfo.getIdToBikes().keySet()){
             idToBikeImages.put(i, imageLists.get(i));
+        }
+    }
+
+    private void waitForGameInfo(){
+        while (gameInfo == null){
+
         }
     }
 
@@ -94,7 +102,7 @@ public class GamePanel extends JPanel implements ActionListener {
         }
     }
 
-    public void updateGameInfo(GameInfo gameInfo){
+    public synchronized void updateGameInfo(GameInfo gameInfo){
         this.gameInfo = gameInfo;
     }
 

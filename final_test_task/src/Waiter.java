@@ -15,6 +15,11 @@ public class Waiter implements Runnable{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             meal.setServed();
 
         }

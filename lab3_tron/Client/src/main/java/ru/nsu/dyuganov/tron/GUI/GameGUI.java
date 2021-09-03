@@ -11,11 +11,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.TimeUnit;
 
 public class GameGUI implements Observer {
     Frame frame = new Frame();
     StartPanel startPanel = new StartPanel();
     GameInfo currGameInfo = null;
+    GamePanel gamePanel = new GamePanel();
     GamePanel gamePanel;
     boolean isUsersInitReady = false;
 
@@ -144,11 +146,9 @@ public class GameGUI implements Observer {
             setBotsNumber(Integer.parseInt(botsNumTextField.getText()));
             frame.remove(startPanel);
 
-            frame.add(new GamePanel(currGameInfo));
+            frame.add();
             frame.repaint();
             frame.revalidate();
-
-
         }
     }
 

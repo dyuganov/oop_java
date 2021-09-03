@@ -1,5 +1,4 @@
 public class Restaurant{
-
     void work(int mealsCnt) throws InterruptedException {
         Meal meal = new Meal();
         Thread chefThread = new Thread(new Chef(mealsCnt, meal));
